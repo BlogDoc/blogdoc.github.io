@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="How the blog works ?" />
+
+		<link rel="shortcut icon" href="/static/icons/favicon.ico" type="image/x-icon" />
+
+		<title>Blog-Doc | The blog</title>
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css" />
+	<link rel="stylesheet" href="/static/styles/styles.min.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.8.0/styles/atom-one-dark.min.css" />
+	</head>
+	<body>
+		<div id="layout">
+			<span id="menuLink" class="menu-link" tabindex="0">
+		<span></span>
+</span>
+
+<div id="menu">
+	<div class="pure-menu">
+		<a href="/" class="pure-menu-heading">Blog-Doc</a>
+
+		<ul class="pure-menu-list">
+						<li class="pure-menu-item">
+				<a href="/posts" class="pure-menu-link">Archive</a>
+			</li>
+						<li class="pure-menu-item">
+				<a href="/tags" class="pure-menu-link">Tags</a>
+			</li>
+						<li class="pure-menu-item">
+				<a href="/search" class="pure-menu-link">Search</a>
+			</li>
+						<li class="pure-menu-item">
+				<a href="/pages/documentation" class="pure-menu-link">Documentation</a>
+			</li>
+						<li class="pure-menu-item">
+				<a href="https://github.com/LebCit/blog-doc" class="pure-menu-link">GitHub Repo</a>
+			</li>
+					</ul>
+	</div>
+
+	</div>
+			<div id="main">
+				<style>
+	.post-header {
+		background-image: url("/static/images/the-blog.webp");
+	}
+</style>
+<style>
+	.post-header {
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+	.post-header .overlay {
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+	.post-header .overlay h1,
+	.post-header .overlay h2 {
+		color: #fff;
+	}
+	@media (min-width: 48em) {
+		.post-header .overlay {
+			display: inline-block;
+			width: 50%;
+		}
+	}
+</style>
+
+<div class="header post-header">
+	<div class="overlay">
+		<h1>The blog</h1>
+		<h2>How the blog works ?</h2>
+	</div>
+</div>
+				<div  class="content">    					<!-- Start Markdown file content -->
+					<p class="post-meta">
+	<span>Posted on</span>
+	<span class="posted-on"><time class="post-date">2022/10/05</time></span>
+		<br />
+	<span>Tagged</span>
+	<!--Start tag(s)-->
+		<a href="/tags/Blog-Doc" class="post-tag">Blog-Doc</a>
+		<a href="/tags/Blog" class="post-tag">Blog</a>
+		<!--End tag(s)-->
+	</p>
+<div><p>This post is an introduction to the blog design and functionalities. We&#39;ll explore how things are related and how they work together. We&#39;ll understand what&#39;s mandatory for the blog to work properly and what&#39;s optional.</p>
+<h2>Blog&#39;s design &amp; functionalities</h2>
+<p>You&#39;ll notice that the homepage, dedicated to the blog, shares with the archive page and the page of a particular tag almost the same design. They give us a view of existing posts, however their designs are slightly different, only the blog is paginated.</p>
+<p>The blog sorts your posts by their publication&#39;s dates in descending order, newest to oldest, and displays the <a href="/admin-config-site#posts-per-page">defined number of posts</a> in the settings on each page. <strong>The blog will not be paginated if the number of posts is less than the defined number of posts !</strong></p>
+<h2>Single post preview</h2>
+<p>Each post in the blog is represented by a card like the following one :</p>
+<img class="pure-img-responsive" alt="Screenshot of a single post card in the blog" src="/static/images/screenshot-card-blog.png">
+
+<p>First things first, the design of this card is the work of <a href="https://codepen.io/ChynoDeluxe">Chyno Deluxe</a> that you can find on his <a href="https://codepen.io/ChynoDeluxe/pen/bdXeqQ">Blog Cards</a> pen.<br>The card is composed of two parts:</p>
+<ol>
+<li>A featured image of the post</li>
+<li>A brief preview of the post</li>
+</ol>
+<p><strong>The featured image is optional</strong>. If you don&#39;t assign a featured image to a post, a fallback image will be displayed. This fallback image can of course be changed depending on your needs.<br>To change the fallback image :</p>
+<ol>
+<li>Upload the desired image to the <a href="/admin-gallery">gallery</a>.</li>
+<li>And select it in the <a href="/admin-config-site#post-preview-fallback-image-select">post preview fallback image</a>.</li>
+</ol>
+<h3>Publishing date &amp; tag(s)</h3>
+<p>When the preview of a single post is hovered, a zoom in with a little rotation is applied to the featured image while it gets covered by an overlay.<br>The overlay reveals the publishing date of the post and the tag(s) associated to this post <strong>if any</strong>. Yes, <strong>if any means that you can choose to tag or not any post</strong>, tagging a post is an optional feature while giving it a <strong>publishing date is mandatory</strong>, some logic please!</p>
+<p>The hovered card will look like the following image:</p>
+<img class="pure-img-responsive" alt="Screenshot of a hovered single post card in the blog" src="/static/images/screenshot-card-blog-hovered.png">
+
+<h3>Brief preview</h3>
+<p>The right section of the card contains the post&#39;s <strong>title</strong>, <strong>description</strong>, first <strong>180 characters</strong>, and a <strong>Read the post</strong> button linking to the post itself, just like it&#39;s title.<br>When this button is hovered, the previous effects are applied and the button expands a little bit to the left, gets a blue background while it&#39;s label becomes white and an arrow takes the available space to the right, like the following image:</p>
+<img class="pure-img-responsive" alt="Screenshot of a hovered button of a single post card in the blog" src="/static/images/screenshot-card-blog-read-hovered.png">
+
+<h2>Pagination</h2>
+<p>Like explained previously, the pagination will only work if your blog contains more than the defined number of posts. Once this number exceeded, a pagination will be displayed at the bottom of each blog&#39;s page.</p>
+<p>The homepage will have a pagination to the <strong>Older Posts</strong>, page 1 of the blog, as well as a left chevron icon linking to the last page of the blog.<br>The last page of the blog will have a pagination to the <strong>Newer Posts</strong>, as well as a right chevron icon linking to the first page of the blog.<br>In between, every other page of the blog will have a pagination to the <strong>Older Posts</strong>, the <strong>Newer Posts</strong>, a left chevron icon linking to the last page of the blog and a right chevron icon linking to the first page of the blog.</p>
+<p>This one ends here, I&#39;ll be talking more about the pagination later on.</p>
+<p>See you in the next one 😉</p>
+</div>
+<!--Start posts pagination-->
+<style>
+	nav {
+		display: flex;
+		justify-content: center;
+		margin-top: 50px;
+	}
+
+	.pagination {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+	}
+
+	.pagination li {
+		margin: 10px;
+	}
+
+	.default {
+		border-color: #e7e7e7;
+		color: black;
+		text-decoration: none;
+	}
+
+	.default:hover,
+	.default:focus {
+		background: #e7e7e7;
+		text-decoration: underline;
+	}
+
+	.post-link {
+		background-color: #ffc10d;
+		color: #000000;
+		padding: 0.5rem 1rem 0.75rem;
+		border: 5px solid #000000;
+		border-radius: 5px;
+		font-size: 1em;
+		text-decoration: none;
+		display: inline-grid;
+		font-family: "Open Sans", sans-serif;
+	}
+
+	.post-link:hover,
+	.post-link:focus,
+	.post-link:active {
+		text-decoration: underline;
+		background: #000000;
+		color: #ffffff;
+		cursor: pointer;
+	}
+
+	@media (max-width: 48em) {
+		.pagination {
+			flex-direction: column-reverse;
+		}
+		.pagination li {
+			margin: 5px;
+		}
+	}
+</style>
+
+<nav aria-label="pagination">
+	<ul class="pagination">
+				<li>
+			<a
+				class="post-link prev"
+				role="button"
+				href="/posts/what-is-blog-doc"
+				aria-label="Go to the previous post"
+			>
+				<span aria-hidden="true">Previous: What is Blog-Doc ?</span>
+				<span class="hidden">Go to the previous post</span>
+			</a>
+		</li>
+		  		<li>
+			<a class="post-link next" role="button" href="/posts/archive-and-tags" aria-label="Go to the next post">
+				<span aria-hidden="true">Next: Archive and tags</span>
+				<span class="hidden">Go to the next post</span>
+			</a>
+		</li>
+			</ul>
+</nav>
+<!--End posts pagination-->
+					<!-- End Markdown file content -->
+					      				</div>
+			</div>
+		</div>
+		<!--Start footer-->
+		<div class="footer">
+	<div class="pure-g">
+		<div class="pure-u-1">
+			<p class="copyright">App built with ❤️ by <a href='https://lebcit.github.io/'>LebCit</a></p>
+		</div>
+	</div>
+</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<script src="/static/scripts/main.js"></script>
+		<!--End footer-->
+	</body>
+</html>

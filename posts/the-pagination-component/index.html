@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Navigating between blog&#39;s pages" />
+
+		<link rel="shortcut icon" href="/static/icons/favicon.ico" type="image/x-icon" />
+
+		<title>Blog-Doc | The pagination component</title>
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css" />
+	<link rel="stylesheet" href="/static/styles/styles.min.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.8.0/styles/atom-one-dark.min.css" />
+	</head>
+	<body>
+		<div id="layout">
+			<span id="menuLink" class="menu-link" tabindex="0">
+		<span></span>
+</span>
+
+<div id="menu">
+	<div class="pure-menu">
+		<a href="/" class="pure-menu-heading">Blog-Doc</a>
+
+		<ul class="pure-menu-list">
+						<li class="pure-menu-item">
+				<a href="/posts" class="pure-menu-link">Archive</a>
+			</li>
+						<li class="pure-menu-item">
+				<a href="/tags" class="pure-menu-link">Tags</a>
+			</li>
+						<li class="pure-menu-item">
+				<a href="/search" class="pure-menu-link">Search</a>
+			</li>
+						<li class="pure-menu-item">
+				<a href="/pages/documentation" class="pure-menu-link">Documentation</a>
+			</li>
+						<li class="pure-menu-item">
+				<a href="https://github.com/LebCit/blog-doc" class="pure-menu-link">GitHub Repo</a>
+			</li>
+					</ul>
+	</div>
+
+	</div>
+			<div id="main">
+				<style>
+	.post-header {
+		background-image: url("/static/images/pagination-component.avif");
+	}
+</style>
+<style>
+	.post-header {
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+	.post-header .overlay {
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+	.post-header .overlay h1,
+	.post-header .overlay h2 {
+		color: #fff;
+	}
+	@media (min-width: 48em) {
+		.post-header .overlay {
+			display: inline-block;
+			width: 50%;
+		}
+	}
+</style>
+
+<div class="header post-header">
+	<div class="overlay">
+		<h1>The pagination component</h1>
+		<h2>Navigating between blog&#39;s pages</h2>
+	</div>
+</div>
+				<div  class="content">    					<!-- Start Markdown file content -->
+					<p class="post-meta">
+	<span>Posted on</span>
+	<span class="posted-on"><time class="post-date">2022/11/10</time></span>
+		<br />
+	<span>Tagged</span>
+	<!--Start tag(s)-->
+		<a href="/tags/Blog-Doc" class="post-tag">Blog-Doc</a>
+		<a href="/tags/Blog" class="post-tag">Blog</a>
+		<a href="/tags/Pagination" class="post-tag">Pagination</a>
+		<!--End tag(s)-->
+	</p>
+<div><p>One of the functionalities that we have seen in <a href="/posts/the-main-route">The Main Route</a> is how the blog gets paginated under the hood. In this post, we will talk about the pagination component itself and see how it&#39;s rendered on the front-end.</p>
+<p>The file <code>pagination.html</code> in the <strong>components</strong> folder under the <strong>views</strong> folder holds the logic behind the display and the look of the pagination component and is only used by the <code>index.html</code> file in the <strong>layouts</strong> folder under the <strong>views</strong> folder on line 72:</p>
+<pre><code class="hljs language-html"><span class="hljs-comment">&lt;!--Start Pagination--&gt;</span>
+&lt;% if (it.paginated) { %&gt;
+<span class="hljs-comment">&lt;!--Start include Pagination--&gt;</span>
+&lt;%~ include(&#x27;../components/pagination.html&#x27;, it) %&gt;
+<span class="hljs-comment">&lt;!--End include Pagination--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;archive-link&quot;</span>&gt;</span>
+    All the posts can be found in the
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/posts&quot;</span>&gt;</span>archive<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    📦
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+&lt;% } %&gt;
+<span class="hljs-comment">&lt;!--End Pagination--&gt;</span>
+</code></pre><p>Using Eta as a template engine allows us to write plain <code>JavaScript</code> inside an <code>HTML</code> file!</p>
+<p>The <code>paginated</code> condition is a passed data object to display or not the pagination component.</p>
+<p>At the top of the <code>pagination.html</code> file, you can find a link to the stylesheet related to this component.</p>
+<pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/static/styles/pagination.css&quot;</span> /&gt;</span>
+</code></pre><p>Those styles will only be available when the pagination component is displayed. This is very useful to avoid loading unnecessary styles in the app.</p>
+<p>In <a href="/posts/the-main-route">The Main Route</a> we have seen that the pagination component will only be displayed for the homepage if the length off all the posts is greater than the <a href="http://localhost:3000/admin-config-site#posts-per-page">defined number of posts per page</a> for the blog in the settings.</p>
+<p>That&#39;s nice, but how the pagination works on the front-end? How does it know where to go?<br>Well, if you look again in <code>pagination.html</code> on line 4, you&#39;ll see that the pagination for the homepage has a condition:</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">if</span> (it.<span class="hljs-property">firstPage</span> &amp;&amp; it.<span class="hljs-property">lastPage</span> &gt; <span class="hljs-number">0</span>)
+</code></pre><p>Hey ! Where those data objects came from?<br>They also came from the <code>mainRoute.js</code> file under the <strong>routes</strong> folder.<br>You can see in there that we have calculated the result of the last page on line 16 with the help of <code>getPosts</code> and <code>paginator</code> functions which are located under the <strong>functions</strong> folder:</p>
+<pre><code class="hljs language-js"><span class="hljs-comment">// /routes/mainRoute.js</span>
+
+<span class="hljs-keyword">import</span> { getPosts } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../functions/blog-doc.js&quot;</span> <span class="hljs-comment">// Line 2</span>
+<span class="hljs-keyword">import</span> { paginator } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../functions/helpers.js&quot;</span> <span class="hljs-comment">// Line 3</span>
+<span class="hljs-keyword">const</span> posts = <span class="hljs-keyword">await</span> <span class="hljs-title function_">getPosts</span>() <span class="hljs-comment">// Line 4</span>
+...
+<span class="hljs-comment">// Paginate all the posts. Set the first page to 1 and X posts per page. | Line 14</span>
+<span class="hljs-keyword">const</span> paginatedPosts = <span class="hljs-title function_">paginator</span>(posts, <span class="hljs-number">1</span>, settings.<span class="hljs-property">postsPerPage</span>)
+<span class="hljs-comment">// Get the last page number by removing 1 from the total number of pages. | Line 16</span>
+<span class="hljs-keyword">const</span> lastPage = paginatedPosts.<span class="hljs-property">total_pages</span> - <span class="hljs-number">1</span>
+</code></pre><p>After that, always in the <code>mainRoute.js</code> file, we pass those data objects to the entry route <code>/</code>:</p>
+<pre><code class="hljs language-js"><span class="hljs-comment">// /routes/mainRoute.js</span>
+
+<span class="hljs-keyword">const</span> res = eta.<span class="hljs-title function_">render</span>(<span class="hljs-string">&quot;layouts/base.html&quot;</span>, {
+    <span class="hljs-comment">// Passing Route data</span>
+    <span class="hljs-attr">mainRoute</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">firstPage</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-comment">// Passing document data</span>
+    <span class="hljs-attr">data</span>: data,
+    <span class="hljs-attr">posts</span>: newestPosts,
+    <span class="hljs-attr">lastPage</span>: lastPage,
+    <span class="hljs-attr">paginated</span>: postsLength &gt; settings.<span class="hljs-property">postsPerPage</span> ? <span class="hljs-literal">true</span> : <span class="hljs-literal">false</span>, <span class="hljs-comment">// To display or not the pagination component on the main route.</span>
+    <span class="hljs-comment">// Passing document image data</span>
+    <span class="hljs-attr">postPreviewFallbackImage</span>: settings.<span class="hljs-property">postPreviewFallbackImage</span>,
+    <span class="hljs-comment">// Passing needed settings for the template</span>
+    <span class="hljs-attr">siteTitle</span>: settings.<span class="hljs-property">siteTitle</span>,
+    <span class="hljs-attr">menuLinks</span>: settings.<span class="hljs-property">menuLinks</span>,
+    <span class="hljs-attr">footerCopyright</span>: settings.<span class="hljs-property">footerCopyright</span>,
+})
+</code></pre><p>So now, back to our condition in <code>pagination.html</code> on line 4, <code>firstPage</code> is true for the homepage and we are also checking that the <code>lastPage</code> exists as an extra layer of precaution. We can omit the use of this extra layer at this point, but since the pagination component have a particular display for the blog&#39;s last page, we need to pass this data object right here to make sure that their will be no future conflict when the <code>firstPage</code> is false and the <code>lastPage</code> exists. With both conditions acquired, we can display the pagination component for the homepage that will have a link to the <strong>Older Posts</strong>, page 1 of the blog, as well as a left chevron icon linking to the last page of the blog.</p>
+<p>For the other pages of the blog, the condition is declared on line 25:</p>
+<pre><code class="hljs language-js"><span class="hljs-comment">// /views/components/pagination.html</span>
+<span class="hljs-keyword">if</span> (!it.<span class="hljs-property">firstPage</span>)
+</code></pre><p>We just check that we are not on the first page. Three scenarios can take place:</p>
+<ol>
+<li>We are not on the last page but on any page between it and the homepage</li>
+<li>We are on the last page which is not after the homepage</li>
+<li>We are on the last page which is just after the homepage</li>
+</ol>
+<p>In <a href="/posts/the-main-route">The Main Route</a>, we have seen that the function <code>paginator</code> gives us some values that we can use to paginate our collection of posts, like the actual page, the previous page and the next page. By using this function in <code>mainRoute.js</code> on line 60 and passing it to the dynamic route <code>&quot;/page/:actualBlogPage&quot;</code> on line 69, we can access those values through the pagination component:</p>
+<pre><code class="hljs language-js"><span class="hljs-comment">// /routes/mainRoute.js</span>
+<span class="hljs-keyword">const</span> paginatedPostsList = <span class="hljs-title function_">paginator</span>(posts.<span class="hljs-title function_">slice</span>(settings.<span class="hljs-property">postsPerPage</span>), actualBlogPage, settings.<span class="hljs-property">postsPerPage</span>)) <span class="hljs-comment">// line 60</span>
+...
+<span class="hljs-attr">paginatedPostsList</span>: paginatedPostsList <span class="hljs-comment">// line 69</span>
+</code></pre><p>So, for the first scenario, we just have to check that the page we are on have at least one page after it. In other words, we check if their is a <code>next_page</code> property returned by the <code>paginatedPostsList</code> data object. A simplified explanation would be that we check if there are some previous posts rendered on a page after the page we are on. You can see it in <code>pagination.html</code> on line 30 :</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">if</span> (it.<span class="hljs-property">paginatedPostsList</span>.<span class="hljs-property">next_page</span>)
+</code></pre><p>So if this condition is true, we display a link to the last page as well as a link to the previous page.</p>
+<p>The same logic applies for the page before, but here we solve the last two scenarios together.<br>We know for fact that there is a page before the one we are on, so we just check for the page before where the newer set of posts are rendered on line 52 :</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">if</span> (it.<span class="hljs-property">paginatedPostsList</span>.<span class="hljs-property">prev_page</span>)
+</code></pre><p>So if this condition is true, we display a link to the homepage as well as a link to the next page, and that solves the second scenario.</p>
+<blockquote>
+<p>Don&#39;t be confused by the switch between previous and next here, remember that the posts are rendered by their publication&#39;s dates in descending order, newest to oldest !</p>
+</blockquote>
+<p>For the third scenario, where the last page is the first page of the blog, the function will not return a value for the page before it since it&#39;s the first one, we check that the <code>prev_page</code> property of <code>paginatedPostsList</code> is not returned on line 72 with a simple <code>else</code> and if this condition is true we display a link to the homepage as well as a link to the previous page who&#39;s also the homepage, so 2 links to the homepage in different tastes.</p>
+<p>And that&#39;s how the pagination component is rendered on the front-end, allowing us to navigate between the blog&#39;s pages.</p>
+</div>
+<!--Start posts pagination-->
+<style>
+	nav {
+		display: flex;
+		justify-content: center;
+		margin-top: 50px;
+	}
+
+	.pagination {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+	}
+
+	.pagination li {
+		margin: 10px;
+	}
+
+	.default {
+		border-color: #e7e7e7;
+		color: black;
+		text-decoration: none;
+	}
+
+	.default:hover,
+	.default:focus {
+		background: #e7e7e7;
+		text-decoration: underline;
+	}
+
+	.post-link {
+		background-color: #ffc10d;
+		color: #000000;
+		padding: 0.5rem 1rem 0.75rem;
+		border: 5px solid #000000;
+		border-radius: 5px;
+		font-size: 1em;
+		text-decoration: none;
+		display: inline-grid;
+		font-family: "Open Sans", sans-serif;
+	}
+
+	.post-link:hover,
+	.post-link:focus,
+	.post-link:active {
+		text-decoration: underline;
+		background: #000000;
+		color: #ffffff;
+		cursor: pointer;
+	}
+
+	@media (max-width: 48em) {
+		.pagination {
+			flex-direction: column-reverse;
+		}
+		.pagination li {
+			margin: 5px;
+		}
+	}
+</style>
+
+<nav aria-label="pagination">
+	<ul class="pagination">
+				<li>
+			<a
+				class="post-link prev"
+				role="button"
+				href="/posts/the-main-route"
+				aria-label="Go to the previous post"
+			>
+				<span aria-hidden="true">Previous: The Main Route</span>
+				<span class="hidden">Go to the previous post</span>
+			</a>
+		</li>
+		  		<li>
+			<a class="post-link next" role="button" href="/posts/the-markdown-route" aria-label="Go to the next post">
+				<span aria-hidden="true">Next: The Markdown route</span>
+				<span class="hidden">Go to the next post</span>
+			</a>
+		</li>
+			</ul>
+</nav>
+<!--End posts pagination-->
+					<!-- End Markdown file content -->
+					      				</div>
+			</div>
+		</div>
+		<!--Start footer-->
+		<div class="footer">
+	<div class="pure-g">
+		<div class="pure-u-1">
+			<p class="copyright">App built with ❤️ by <a href='https://lebcit.github.io/'>LebCit</a></p>
+		</div>
+	</div>
+</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<script src="/static/scripts/main.js"></script>
+		<!--End footer-->
+	</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Writing with Markdown" />
+
+		<link rel="shortcut icon" href="/static/icons/favicon.ico" type="image/x-icon" />
+
+		<title>Blog-Doc | Posts and Pages</title>
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css" />
+	<link rel="stylesheet" href="/static/styles/styles.min.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.8.0/styles/atom-one-dark.min.css" />
+	</head>
+	<body>
+		<div id="layout">
+			<span id="menuLink" class="menu-link" tabindex="0">
+		<span></span>
+</span>
+
+<div id="menu">
+	<div class="pure-menu">
+		<a href="/" class="pure-menu-heading">Blog-Doc</a>
+
+		<ul class="pure-menu-list">
+						<li class="pure-menu-item">
+				<a href="/posts" class="pure-menu-link">Archive</a>
+			</li>
+						<li class="pure-menu-item">
+				<a href="/tags" class="pure-menu-link">Tags</a>
+			</li>
+						<li class="pure-menu-item">
+				<a href="/search" class="pure-menu-link">Search</a>
+			</li>
+						<li class="pure-menu-item">
+				<a href="/pages/documentation" class="pure-menu-link">Documentation</a>
+			</li>
+						<li class="pure-menu-item">
+				<a href="https://github.com/LebCit/blog-doc" class="pure-menu-link">GitHub Repo</a>
+			</li>
+					</ul>
+	</div>
+
+	</div>
+			<div id="main">
+				<style>
+	.post-header {
+		background-image: url("/static/images/posts-and-pages.avif");
+	}
+</style>
+<style>
+	.post-header {
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+	.post-header .overlay {
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+	.post-header .overlay h1,
+	.post-header .overlay h2 {
+		color: #fff;
+	}
+	@media (min-width: 48em) {
+		.post-header .overlay {
+			display: inline-block;
+			width: 50%;
+		}
+	}
+</style>
+
+<div class="header post-header">
+	<div class="overlay">
+		<h1>Posts and Pages</h1>
+		<h2>Writing with Markdown</h2>
+	</div>
+</div>
+				<div  class="content">    					<!-- Start Markdown file content -->
+					<p class="post-meta">
+	<span>Posted on</span>
+	<span class="posted-on"><time class="post-date">2022/11/12</time></span>
+		<br />
+	<span>Tagged</span>
+	<!--Start tag(s)-->
+		<a href="/tags/Blog-Doc" class="post-tag">Blog-Doc</a>
+		<a href="/tags/Posts" class="post-tag">Posts</a>
+		<a href="/tags/Pages" class="post-tag">Pages</a>
+		<a href="/tags/Server-Side" class="post-tag">Server-Side</a>
+		<!--End tag(s)-->
+	</p>
+<div><p>This post intends to show you how to format a Markdown file to write a post or a page.<br />
+The bellow instructions are applicable if you want to create a post or a page  by yourself.<br>Otherwise, head over the <a href="/admin-create">administration page to create</a> with ease.</p>
+<p>The most important tool for this task is the IDE, Integrated Development Environment, that you&#39;re using. I&#39;m using the one and only <a href="https://code.visualstudio.com/">VS Code</a>, the best IDE in my opinion, with <a href="https://prettier.io/">Prettier</a> as a well known extension for VS Code <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode">Prettier - Code formatter</a>. Another great VS Code extension to write in Markdown with ease is <a href="https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one">Markdown All in One</a>. If you are using another IDE, look for an addon/plugin/extension to format your Markdown files while writing a post or a page.</p>
+<h2>Posts</h2>
+<p>To write a post, head to the <strong>posts</strong> folder under the <strong>views</strong> folder and create a new Markdown file. A Markdown file ends with <code>.md</code>. If you are using VS Code, I&#39;ve already setup snippets to generate Markdown front matter in the <code>.vscode</code> folder, all you have to do is press <code>Ctrl+spacebar</code> and choose the <code>Blog-Doc Post Frontmatter</code>, you&#39;ll be served with the following block:</p>
+<pre><code class="hljs language-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">title:</span>
+<span class="hljs-attr">date:</span> <span class="hljs-number">2022</span><span class="hljs-string">/11/12</span>
+<span class="hljs-attr">description:</span>
+<span class="hljs-attr">featuredImage:</span> <span class="hljs-string">/static/images/</span>
+<span class="hljs-attr">tags:</span> []
+<span class="hljs-meta">---</span>
+</code></pre><p>Type the title of your post, the date is automatically generated, give it a short description, put its featured image in the <strong>images</strong> folder under the <strong>static</strong> folder and add the filename after <code>/static/images/</code> like <code>/static/images/an_image.png</code> or simply link to any image out there like <code>featuredImage: https://link_to_an_image.com</code>, and finally tag it with the appropriate keywords in the array of <code>tags</code> like <code>[Development, Node.js, Markdown]</code>.<br>You should now be able to see your post on the blog and click on it&#39;s title or it&#39;s <em>Read the post</em> button to access it !</p>
+<blockquote>
+<p><em>Nota Bene: it&#39;s always a good idea to give your post the same file name as it&#39;s title for SEO !</em></p>
+</blockquote>
+<p>So if the title of your post will be <strong><em>Just another dev journey story</em></strong>, the filename should be <code>just-another-dev-journey-story.md</code>.</p>
+<h2>Pages</h2>
+<p>The same logic applies to write a page. Create a Markdown file in the <strong>pages</strong> folder under the <strong>views</strong> folder. Press <code>Ctrl+spacebar</code> and choose the <code>Blog-Doc Page Frontmatter</code> to get the following snippet:</p>
+<pre><code class="hljs language-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">title:</span>
+<span class="hljs-attr">description:</span>
+<span class="hljs-attr">featuredImage:</span> <span class="hljs-string">/static/images/</span>
+<span class="hljs-meta">---</span>
+</code></pre><p>Also, give your page the same file name as it&#39;s title for SEO.</p>
+<p>The page will be rendered on a route matching its file name. As an example, if your page filename is <code>contact-me.md</code>, this page would be accessible on a route like <code>https://domain-name/pages/contact-me</code>. Then, you&#39;ll be able to add a link to your page in the menu or anywhere else that suits your needs.</p>
+<p>A page is generally informational, which is why I didn&#39;t add a date or a tags&#39; array to the pages.<br>Keep in mind that <strong>everything in Blog-Doc can be modified, adapted or improved</strong>.</p>
+<h2>Notes</h2>
+<p>If you don&#39;t use VS Code, copy and paste the post or page front-matter above.<br>Please note that the content of a Markdown file starts two lines after its front-matter!<br>You should leave an empty line between the front-matter and the beginning of your post!<br>You can read more about the Markdown parser used for Blog-Doc by visiting its <a href="https://github.com/markedjs/marked">repository</a>.<br>There is also a <a href="https://marked.js.org/demo/">demo page</a> for this parser where you can see how it works.</p>
+<p>And that&#39;s how simply you can write posts and pages using Markdown in Blog-Doc, see you in the next one.</p>
+</div>
+<!--Start posts pagination-->
+<style>
+	nav {
+		display: flex;
+		justify-content: center;
+		margin-top: 50px;
+	}
+
+	.pagination {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+	}
+
+	.pagination li {
+		margin: 10px;
+	}
+
+	.default {
+		border-color: #e7e7e7;
+		color: black;
+		text-decoration: none;
+	}
+
+	.default:hover,
+	.default:focus {
+		background: #e7e7e7;
+		text-decoration: underline;
+	}
+
+	.post-link {
+		background-color: #ffc10d;
+		color: #000000;
+		padding: 0.5rem 1rem 0.75rem;
+		border: 5px solid #000000;
+		border-radius: 5px;
+		font-size: 1em;
+		text-decoration: none;
+		display: inline-grid;
+		font-family: "Open Sans", sans-serif;
+	}
+
+	.post-link:hover,
+	.post-link:focus,
+	.post-link:active {
+		text-decoration: underline;
+		background: #000000;
+		color: #ffffff;
+		cursor: pointer;
+	}
+
+	@media (max-width: 48em) {
+		.pagination {
+			flex-direction: column-reverse;
+		}
+		.pagination li {
+			margin: 5px;
+		}
+	}
+</style>
+
+<nav aria-label="pagination">
+	<ul class="pagination">
+				<li>
+			<a
+				class="post-link prev"
+				role="button"
+				href="/posts/the-markdown-route"
+				aria-label="Go to the previous post"
+			>
+				<span aria-hidden="true">Previous: The Markdown route</span>
+				<span class="hidden">Go to the previous post</span>
+			</a>
+		</li>
+		  		<li>
+			<a class="post-link next" role="button" href="/posts/templates" aria-label="Go to the next post">
+				<span aria-hidden="true">Next: Templates</span>
+				<span class="hidden">Go to the next post</span>
+			</a>
+		</li>
+			</ul>
+</nav>
+<!--End posts pagination-->
+					<!-- End Markdown file content -->
+					      				</div>
+			</div>
+		</div>
+		<!--Start footer-->
+		<div class="footer">
+	<div class="pure-g">
+		<div class="pure-u-1">
+			<p class="copyright">App built with ❤️ by <a href='https://lebcit.github.io/'>LebCit</a></p>
+		</div>
+	</div>
+</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<script src="/static/scripts/main.js"></script>
+		<!--End footer-->
+	</body>
+</html>

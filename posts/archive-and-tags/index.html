@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Archive and tags pages" />
+
+		<link rel="shortcut icon" href="/static/icons/favicon.ico" type="image/x-icon" />
+
+		<title>Blog-Doc | Archive and tags</title>
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css" />
+	<link rel="stylesheet" href="/static/styles/styles.min.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.8.0/styles/atom-one-dark.min.css" />
+	</head>
+	<body>
+		<div id="layout">
+			<span id="menuLink" class="menu-link" tabindex="0">
+		<span></span>
+</span>
+
+<div id="menu">
+	<div class="pure-menu">
+		<a href="/" class="pure-menu-heading">Blog-Doc</a>
+
+		<ul class="pure-menu-list">
+						<li class="pure-menu-item">
+				<a href="/posts" class="pure-menu-link">Archive</a>
+			</li>
+						<li class="pure-menu-item">
+				<a href="/tags" class="pure-menu-link">Tags</a>
+			</li>
+						<li class="pure-menu-item">
+				<a href="/search" class="pure-menu-link">Search</a>
+			</li>
+						<li class="pure-menu-item">
+				<a href="/pages/documentation" class="pure-menu-link">Documentation</a>
+			</li>
+						<li class="pure-menu-item">
+				<a href="https://github.com/LebCit/blog-doc" class="pure-menu-link">GitHub Repo</a>
+			</li>
+					</ul>
+	</div>
+
+	</div>
+			<div id="main">
+				<style>
+	.post-header {
+		background-image: url("/static/images/archive-and-tags.webp");
+	}
+</style>
+<style>
+	.post-header {
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+	.post-header .overlay {
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+	.post-header .overlay h1,
+	.post-header .overlay h2 {
+		color: #fff;
+	}
+	@media (min-width: 48em) {
+		.post-header .overlay {
+			display: inline-block;
+			width: 50%;
+		}
+	}
+</style>
+
+<div class="header post-header">
+	<div class="overlay">
+		<h1>Archive and tags</h1>
+		<h2>Archive and tags pages</h2>
+	</div>
+</div>
+				<div  class="content">    					<!-- Start Markdown file content -->
+					<p class="post-meta">
+	<span>Posted on</span>
+	<span class="posted-on"><time class="post-date">2022/10/20</time></span>
+		<br />
+	<span>Tagged</span>
+	<!--Start tag(s)-->
+		<a href="/tags/Archive" class="post-tag">Archive</a>
+		<a href="/tags/Tags" class="post-tag">Tags</a>
+		<a href="/tags/Blog-Doc" class="post-tag">Blog-Doc</a>
+		<!--End tag(s)-->
+	</p>
+<div><p>The archive and tags pages are very similar to the blog as mentioned before, except that they have no pagination. The archive is a reversed chronological list of all the posts in the blog, while the tags is an alphabetical ordered list of all the tags used in all the posts with the number of occurrence for each tag.<br>In this post, we&#39;ll explore how those pages work behind the scene aka server-side.</p>
+<h2>Archive route</h2>
+<p>Under the <strong>routes</strong> folder, the first file is <code>archiveRoute.js</code>. This tiny file collects all the posts and displays them on the <code>/posts</code> route using the <code>base.html</code> template located in the <strong>layouts</strong> folder under the <strong>views</strong> folder.</p>
+<p>To understand the archive route file, you&#39;ll have to read the following posts :</p>
+<ol>
+<li><a href="https://lebcit.github.io/posts/express-global-router-for-a-dry-code/">Express global router for a DRY code</a></li>
+<li><a href="https://lebcit.github.io/posts/markdown-blog-with-ejs/">Markdown blog with EJS</a></li>
+</ol>
+<p>The first post shoes us how to parse an express router to a global router variable. The second one is <strong>very important</strong> to understand the logic behind the process of writing in Markdown and rendering it on the front-end.</p>
+<h3>Modifying archive&#39;s route</h3>
+<p>To modify the route on which the list of all the posts is displayed, you just have to change <code>/posts</code> on line 11 inside <code>archiveRoute.js</code> to whatever suits you. As an example, you can change it to <code>/archive</code> and the list will now be available on this route instead of the previous one.</p>
+<blockquote>
+<p><em>Nota Bene: whenever you make a change, always check through the whole app for changes to be made according to the one you&#39;re making !</em></p>
+</blockquote>
+<h2>Tags route</h2>
+<p>Under the <strong>routes</strong> folder, the last file is <code>tagsRoute.js</code>. This file has 2 tasks:</p>
+<ol>
+<li>Display all the tags in the blog&#39;s posts</li>
+<li>Display all the posts for a particular tag</li>
+</ol>
+<p>The first task is accomplished by a function defined in <code>blog-doc.js</code> under the <strong>functions</strong> folder, that creates an array of the tags from all the posts and sort them alphabetically then count the occurrence of each tag in this tags&#39; array and return the result as an object.<br>The function is imported to <code>tagsRoute.js</code> on line 2:</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">import</span> { postsByTagCount, ... } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../functions/blog-doc.js&quot;</span>
+</code></pre><p>The function is then passed to the <code>/tags</code> route, <code>posts: await postsByTagCount()</code>, where we loop through the resulting object in <code>postsByTagCount.html</code> on line 2 :</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> property <span class="hljs-keyword">in</span> it.<span class="hljs-property">posts</span>)
+</code></pre><p>Then we check inside the loop, on line 4, if each tag exists and it&#39;s value is greater than 0, to avoid displaying a null tag in the list of tags if one or more post have no tag(s) :</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">if</span> (property !== <span class="hljs-string">&quot;null&quot;</span> &amp;&amp; property !== <span class="hljs-string">&quot;undefined&quot;</span>)
+</code></pre><h3>Tag route</h3>
+<p>The second task, leading to the display of all the posts for a particular tag, begins with a simple function living in <code>blog-doc.js</code> under the <strong>functions</strong> folder. This function, with a <code>(tag)</code> parameter, filters the posts to retrieve an array of post(s) including the requested tag, otherwise it returns an empty array.<br>The function is imported in <code>tagsRoute.js</code> on line 5 :</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">import</span> { ..., postsByTagList } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../functions/blog-doc.js&quot;</span>
+</code></pre><p>This function is used with the requested parameter (the requested tag) on line 31 inside the dynamic route <code>&quot;/tags/:tag&quot;</code> :</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">const</span> tag = c.<span class="hljs-property">req</span>.<span class="hljs-title function_">param</span>(<span class="hljs-string">&quot;tag&quot;</span>)
+<span class="hljs-keyword">const</span> postsByTag = <span class="hljs-keyword">await</span> <span class="hljs-title function_">postsByTagList</span>(tag)
+</code></pre><p>Finally <code>postsByTag</code> is passed through the dynamic route as a data object :</p>
+<pre><code class="hljs language-js"><span class="hljs-attr">posts</span>: postsByTag
+</code></pre><p>This data object, the array of post(s) related to a single tag, is sent to the <code>base.html</code> file in the <strong>layout</strong> folder under the <strong>views</strong> folder, where it will be used by the <code>index.html</code> file living in the same folder :</p>
+<pre><code class="hljs language-js"><span class="hljs-comment">// index.html | line 3</span>
+it.<span class="hljs-property">posts</span>.<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">post, index</span>) =&gt;</span> {...})
+</code></pre><p>The file <code>index.html</code> is responsible of the look and feel of each and every post&#39;s preview. I&#39;ll be talking later on about this file in details.</p>
+<p>A last thing to mention in the dynamic route is that if the returned array is empty, not even one post is related to the requested tag, the 404 error page is rendered.<br>Try to hit a tag route that doesn&#39;t exists, as an example : <a href="/tags/INEXISTENTTAG">inexistent tag</a>.</p>
+<h3>Modifying the tags route</h3>
+<p>Modifying the tags route is quite simple, all you have to do is to change the path <code>/tags</code> in <code>tagsRoute.js</code> on line 11 to whatever you desire.<br>If you change it to <code>/hashtags</code>, the list of all available tags will now be displayed on this route instead of the previous one.</p>
+<h3>Modifying tags&#39; dynamic route</h3>
+<p>The route of each individual tag is defined by a parameter <code>/:tag</code> in the dynamic route <code>&quot;/tags/:tag&quot;</code>. There is absolutely no need to change the parameter by itself !<br>Let&#39;s say you changed previously <code>/tags</code> to <code>/hashtags</code>. To keep some logic, you&#39;ll have to make the same modification in the dynamic route to <code>&quot;/hashtags/:tag&quot;</code>.</p>
+<blockquote>
+<p><em>Nota Bene: whenever you make a change, always check through the whole app for changes to be made according to the one you&#39;re making !</em></p>
+</blockquote>
+<p>That&#39;s all for archive and tags, see you in the next one.</p>
+</div>
+<!--Start posts pagination-->
+<style>
+	nav {
+		display: flex;
+		justify-content: center;
+		margin-top: 50px;
+	}
+
+	.pagination {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+	}
+
+	.pagination li {
+		margin: 10px;
+	}
+
+	.default {
+		border-color: #e7e7e7;
+		color: black;
+		text-decoration: none;
+	}
+
+	.default:hover,
+	.default:focus {
+		background: #e7e7e7;
+		text-decoration: underline;
+	}
+
+	.post-link {
+		background-color: #ffc10d;
+		color: #000000;
+		padding: 0.5rem 1rem 0.75rem;
+		border: 5px solid #000000;
+		border-radius: 5px;
+		font-size: 1em;
+		text-decoration: none;
+		display: inline-grid;
+		font-family: "Open Sans", sans-serif;
+	}
+
+	.post-link:hover,
+	.post-link:focus,
+	.post-link:active {
+		text-decoration: underline;
+		background: #000000;
+		color: #ffffff;
+		cursor: pointer;
+	}
+
+	@media (max-width: 48em) {
+		.pagination {
+			flex-direction: column-reverse;
+		}
+		.pagination li {
+			margin: 5px;
+		}
+	}
+</style>
+
+<nav aria-label="pagination">
+	<ul class="pagination">
+				<li>
+			<a
+				class="post-link prev"
+				role="button"
+				href="/posts/the-blog"
+				aria-label="Go to the previous post"
+			>
+				<span aria-hidden="true">Previous: The blog</span>
+				<span class="hidden">Go to the previous post</span>
+			</a>
+		</li>
+		  		<li>
+			<a class="post-link next" role="button" href="/posts/the-main-route" aria-label="Go to the next post">
+				<span aria-hidden="true">Next: The Main Route</span>
+				<span class="hidden">Go to the next post</span>
+			</a>
+		</li>
+			</ul>
+</nav>
+<!--End posts pagination-->
+					<!-- End Markdown file content -->
+					      				</div>
+			</div>
+		</div>
+		<!--Start footer-->
+		<div class="footer">
+	<div class="pure-g">
+		<div class="pure-u-1">
+			<p class="copyright">App built with ❤️ by <a href='https://lebcit.github.io/'>LebCit</a></p>
+		</div>
+	</div>
+</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<script src="/static/scripts/main.js"></script>
+		<!--End footer-->
+	</body>
+</html>

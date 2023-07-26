@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Why and how to use Blog-Doc?" />
+
+		<link rel="shortcut icon" href="/static/icons/favicon.ico" type="image/x-icon" />
+
+		<title>Blog-Doc | Blog-Doc&#39;s documentation</title>
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css" />
+	<link rel="stylesheet" href="/static/styles/styles.min.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.8.0/styles/atom-one-dark.min.css" />
+	</head>
+	<body>
+		<div id="layout">
+			<span id="menuLink" class="menu-link" tabindex="0">
+		<span></span>
+</span>
+
+<div id="menu">
+	<div class="pure-menu">
+		<a href="/" class="pure-menu-heading">Blog-Doc</a>
+
+		<ul class="pure-menu-list">
+						<li class="pure-menu-item">
+				<a href="/posts" class="pure-menu-link">Archive</a>
+			</li>
+						<li class="pure-menu-item">
+				<a href="/tags" class="pure-menu-link">Tags</a>
+			</li>
+						<li class="pure-menu-item">
+				<a href="/search" class="pure-menu-link">Search</a>
+			</li>
+						<li class="pure-menu-item">
+				<a href="/pages/documentation" class="pure-menu-link">Documentation</a>
+			</li>
+						<li class="pure-menu-item">
+				<a href="https://github.com/LebCit/blog-doc" class="pure-menu-link">GitHub Repo</a>
+			</li>
+					</ul>
+	</div>
+
+	</div>
+			<div id="main">
+				<div class="header">
+	<h1>Blog-Doc&#39;s documentation</h1>
+	<h2>Why and how to use Blog-Doc?</h2>
+</div>
+				<div  class="content">    					<!-- Start Markdown file content -->
+					<div><h1>Blog-Doc</h1>
+<p>The Simplest Node.js CMS &amp; SSG!<br />
+A tiny flame in the darkness of error...</p>
+<h2>Motivation &amp; Purpose</h2>
+<p><em>With all due respect to the time and hard work of every developer who made a Static Site Generator with Node.js, <strong>including the previous versions of Blog-Doc</strong>, those are gasworks!</em><br />
+<em>I offer my sincerest apologies in advance to each one of these developers, but an app is not supposed to be a gasworks...</em><br />
+<strong>Please read <a href="https://lebcit.github.io/posts/from-145-to-7/">From 145 to 7 💪</a></strong><br />
+<strong>Also read <a href="/posts/the-new-blog-doc">The New Blog-Doc</a></strong></p>
+<h2>Requirements</h2>
+<ol>
+<li>Blog-Doc works on <a href="https://nodejs.org/en">Node.js</a> versions greater than 18.x.<br /><ol>
+<li>Use the latest version of each major release.</li>
+</ol>
+</li>
+<li>The latest version of <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">npm</a></li>
+</ol>
+<h2>Solid stack of technologies 🪨</h2>
+<h3>Backend (input)</h3>
+<ul>
+<li>Node.js 18.x or higher.</li>
+<li><a href="https://hono.dev/">Hono</a>, small, simple, and ultrafast web framework for the Edges.</li>
+<li><a href="https://eta.js.org/">Eta</a>, lightweight, powerful, pluggable embedded JS template engine.</li>
+<li><a href="https://marked.js.org/">Marked</a>, Markdown parser and compiler. Built for speed.</li>
+</ul>
+<h3>Frontend (output)</h3>
+<ul>
+<li>HTML, CSS and a tiny JS file.</li>
+</ul>
+<h2>Blazing fast and simple 🚀</h2>
+<ul>
+<li>A zero code configuration static site generator.</li>
+<li>Ready to use on your Node.js server as a Node.js CMS.</li>
+<li>Ready to use, after build, as a static site.</li>
+<li>Without any unnecessary functionalities, loads in a blink of an eye.</li>
+<li>Easy to install and use.</li>
+</ul>
+<h2>Design 🎨</h2>
+<ul>
+<li>Responsive, elegant and simple layout.</li>
+<li>Ready to use template for blog and/or documentation.</li>
+<li>Easy to modify if you opt for another design.</li>
+</ul>
+<h2>Features ⚡</h2>
+<ul>
+<li>Administrate your app from the front-end! <img src="/static/icons/settings.svg" alt="Settings icon"></li>
+<li><a href="#the-gallery">Gallery</a> to upload your images <img src="/static/icons/photo-up.svg" alt="Image upload icon"></li>
+<li>Create, Read, Update &amp; Delete your pages and posts <img src="/static/icons/pencil.svg" alt="Pencil icon"></li>
+<li>Paginated blog with chosen number of posts per page <img src="/static/icons/arrows-left-right.svg" alt="Left and right arrows icon"></li>
+<li>Posts pagination to navigate between your posts <img src="/static/icons/arrow-left-right.svg" alt="Arrow left and right icon"></li>
+<li>Write your content in Markdown <img src="/static/icons/markdown.svg" alt="Markdown icon"></li>
+<li>Ability to use HTML in Markdown <img src="/static/icons/brand-html5.svg" alt="HTML5 icon"></li>
+<li>Tag(s) for posts <img src="/static/icons/tags.svg" alt="Tags icon"></li>
+<li>Featured image for posts and pages <img src="/static/icons/photo.svg" alt="Image icon"></li>
+<li>Archive route for posts <img src="/static/icons/archive.svg" alt="Archive icon"></li>
+<li>Tags list route <img src="/static/icons/bookmarks.svg" alt="Bookmarks icon"></li>
+<li>Individual route for each tag <img src="/static/icons/bookmark.svg" alt="Bookmark icon"></li>
+<li>Titles &amp; Meta Descriptions <img src="/static/icons/h-1.svg" alt="H1 icon"></li>
+<li>Drag and drop your menu links to sort them <img src="/static/icons/menu-order.svg" alt="Menu order icon"></li>
+<li><a href="#rss">RSS feed</a> <img src="/static/icons/rss.svg" alt="RSS icon"></li>
+<li><a href="#sitemap">Sitemap</a> <img src="/static/icons/sitemap.svg" alt="Sitemap icon"></li>
+<li><a href="#search">Search</a> <img src="/static/icons/search.svg" alt="Search icon"></li>
+<li><a href="#code-highlighting">Code highlighting</a> with highlight.js <img src="/static/icons/highlight.svg" alt="Highlight icon"></li>
+<li><a href="#ids-for-h2-till-h4-in-markdown">Ids for H2 till H4 in Markdown</a> <img src="/static/icons/hash.svg" alt="Hash icon"></li>
+<li>No need for hot reloading in development mode <img src="/static/icons/flame-off.svg" alt="Flame icon"></li>
+</ul>
+<h2>How to install Blog-Doc?</h2>
+<p>Blog-Doc is a <code>Node.js</code> app. You should have <a href="https://nodejs.org/en/">Node.js</a> on your machine.<br />
+Always go for the <strong>LTS</strong> version.</p>
+<p>If you want to try Blog-Doc, head over it&#39;s <a href="https://github.com/LebCit/blog-doc">Github repository</a> and download it.<br />
+You can also download it&#39;s zip by clicking on the following link: <a href="https://github.com/LebCit/blog-doc/archive/refs/heads/master.zip">Blog-Doc ZIP</a>.</p>
+<p>Once downloaded, extract the zipped folders and files to a new folder and open it in your IDE (I use <a href="https://code.visualstudio.com/">VS Code</a>).</p>
+<p>Another way is to directly clone the repository itself.<br /></p>
+<pre><code class="hljs language-bash">git <span class="hljs-built_in">clone</span> https://github.com/LebCit/blog-doc.git
+</code></pre><p>Whatever method you use to get Blog-Doc, the process after having it is to open the folder where Blog-Doc lives with your IDE and type in the terminal:</p>
+<pre><code class="hljs language-bash">npm install
+</code></pre><p>After the install, to see what Blog-Doc looks like, type in the terminal the following command:</p>
+<pre><code class="hljs language-bash">npm run fire
+</code></pre><p>This command will allow you to explore the app in the browser of your choice by visiting <a href="http://localhost:3000">localhost on port 3000</a>.</p>
+<p>Blog-Doc comes with some posts and pages. You can now begin to create your own pages and posts from the administration, then remove the existing ones also from the administration.</p>
+<p>I wish you an enjoyable trip with Blog-Doc 🚀</p>
+<h2>Generate a static site</h2>
+<p>To generate a static site out of the created content:</p>
+<ol>
+<li>Click the <code>Admin ⚡</code> link.</li>
+<li>Click the <code>Build Static Site</code> link or card.</li>
+<li>Download the <code>site.zip</code> file to your disk.</li>
+<li>Extract <code>site.zip</code> and open the extracted folder with you IDE.</li>
+<li>Launch the site from the server of your IDE.</li>
+</ol>
+<p>Alternatively, type the following command in the terminal:</p>
+<pre><code class="hljs language-bash">npm run build
+</code></pre><p>This command will create a <strong>_site</strong> folder in which all the necessary folders and files are created. You can now copy the entire content of the <strong>_site</strong> folder to the server of your choice or just test it locally.</p>
+<p><em><strong>Nota Bene: In both cases, the administration part and all of it&#39;s components will be removed from the generated static site!</strong></em></p>
+<h2>How to use it?</h2>
+<h3>Test it locally</h3>
+<p>Open the <strong>_site</strong> folder in your IDE, I use <a href="https://code.visualstudio.com/">VS Code</a> with the <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">Live Server</a> extension.<br />
+Launch the local server and you&#39;ll be able to explore the static site.</p>
+<h3>Host it!</h3>
+<p>Push the content of the <strong>_site</strong> folder to a host of your choice.<br />
+There are many free hosts for static sites. The most known are:</p>
+<ul>
+<li><a href="https://azure.microsoft.com/en-us/products/app-service/static/">Azure Static Web Apps</a></li>
+<li><a href="https://pages.cloudflare.com/">Cloudflare Pages</a></li>
+<li><a href="https://deta.space/">Deta Space</a></li>
+<li><a href="https://pages.github.com/">GitHub Pages</a></li>
+<li><a href="https://docs.gitlab.com/ee/user/project/pages/#gitlab-pages">GitLab Pages</a></li>
+<li><a href="https://www.netlify.com/">Netlify</a></li>
+<li><a href="https://render.com/">Render</a></li>
+<li><a href="https://surge.sh/">Surge</a></li>
+<li><a href="https://vercel.com/">Vercel</a></li>
+</ul>
+<p><em>Nota Bene: the above list can be much longer with the different services out there to host a static site!</em></p>
+<h2 id="rss">RSS!</h2>
+<p>⚠️ You <strong>MUST</strong> provide the <strong>live URL</strong> of your site in the <strong>Settings page</strong> under the administration by modifying the <code>siteURL</code> value before deploying the application.</p>
+<p>At build time, a <code>rss.xml</code> file is generated in the <strong>_site</strong> folder.<br />
+This file takes the live URL that you provided to generate the correct links for your feed.<br />
+<em>Nota Bene: The live URL <strong>MUST</strong> end with a slash <code>/</code></em></p>
+<p>Of course, you <strong>MUST</strong> also modify <code>siteTitle</code>, <code>siteDescription</code> and <code>rssCopyright</code> in the Settings page.<br />
+You <strong>SHOULD</strong> replace the <code>siteTitle</code>, <code>siteDescription</code> and <code>rssCopyright</code> <strong>values</strong> with the ones of your site.<br />
+You <strong>MAY</strong> replace the <code>rssSiteLanguage</code> value with the language of your site.<br />
+A list of available language codes can be found on the <a href="https://www.rssboard.org/rss-language-codes">RSS language codes page</a>.</p>
+<p>Bellow is a screenshot of the old RSS feed of Blog-Doc in <a href="https://vivaldi.com/">Vivaldi browser</a></p>
+<style>
+.pure-img-responsive {
+  border-style: dashed;
+}
+</style>
+<img class="pure-img-responsive" src="/static/images/blog-doc-rss.xml.png">
+
+<h2 id="sitemap">Sitemap</h2>
+<p>Like the RSS feed, you <strong>MUST</strong> provide the <strong>live URL</strong> of your site in the Settings page by modifying the <code>siteURL</code> value to generate the correct links for each page, post, tag and template as well as for the blog routes.<br />
+Please remember that the <strong>Site URL</strong> <strong>MUST</strong> end with a slash <code>/</code></p>
+<p>You can check the sitemap of your site under the <code>/sitemap</code> route.<br />
+At build time, a <code>sitemap.xml</code> is generated in the <strong>_site</strong> folder.</p>
+<h2 id="search">Search</h2>
+<p>Blog-Doc has a built-in search feature.<br />
+The search functionality allows a user to make a research on <strong>the titles</strong> and <strong>the contents</strong> of the posts.</p>
+<p>You can check the search of your site under the <code>/search</code> route.<br />
+At build time, a <code>posts.json</code> and a <code>search.js</code> are generated in <strong>_site/js</strong>.<br />
+Also, at build time, an <code>index.html</code> is generated under the <code>search</code> folder in the <strong>_site</strong> folder.</p>
+<p>You can disable the search in the Node.js app as well as for the generated static site by giving <code>searchFeature</code> a value of <code>false</code> in the Settings page.</p>
+<h2 id="code-highlighting">Code highlighting</h2>
+<p>Blog-Doc uses <a href="https://highlightjs.org/">highlight.js</a> to highlight <strong>block of code</strong>.</p>
+<p>To write <strong>inline code</strong>, surround your code with backticks <code>``</code>.<br /></p>
+<p>To write a <strong>block of code</strong>, surround your block with a pair of 3 backticks <code>```</code>.<br />
+To highlight it, provide the alias of the language for the block just after the first 3 backticks.<br />
+An example to highlight a block of CSS:</p>
+<pre><code>
+```css
+p { 
+    color: red 
+}
+```
+</code></pre>
+
+<p>We&#39;ll get the following output:</p>
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">p</span> {
+    <span class="hljs-attribute">color</span>: red;
+}
+</code></pre><p>⚠️ <strong>The alias of the code language</strong>, inline or block, <strong>is always lowercase</strong> ⚠️</p>
+<p>Visit the <a href="https://highlightjs.org/static/demo/">highlight.js demo</a> to get the correct alias if you&#39;re unsure.</p>
+<h2 id="ids-for-h2-till-h4-in-markdown">Ids for H2 till H4 in Markdown</h2>
+<p>Adding an <code>id</code> attribute to a heading tag, H2 till H4 only, is an optional activated feature by default.</p>
+<p>This feature was built with edge cases and typing typos in mind:</p>
+<ul>
+<li>Regex to match curly braces ignoring everything before the last hashtag</li>
+<li>Replace accented characters, by their non accented letter</li>
+<li>Replace upper case letters by lower case one</li>
+<li>Remove special characters except hyphen and underscore</li>
+<li>Replace any number of underscore by one hyphen</li>
+<li>Replace any number of space by one hyphen</li>
+<li>Remove any number of hyphen at the beginning</li>
+<li>Replace any number of hyphen by one hyphen only</li>
+<li>Remove any number of hyphen at the end</li>
+</ul>
+<p>To add an <code>id</code>, add a curly braces with a hashtag followed by the id&#39;s text.<br />
+The following examples will give you a better idea:</p>
+<pre><code class="hljs language-markdown">&lt;!-- Heading tags with an id property --&gt;
+
+<span class="hljs-section">## My awesome H2 title {# my-awesome-h2-title}</span>
+
+The HTML output will be: <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;my-awesome-h2-title&quot;</span>&gt;</span></span>My awesome H2 title<span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span></span>
+
+<span class="hljs-section">### My awesome H3 title {# my awesome h3 title}</span>
+
+The HTML output will be: <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;my-awesome-h3-title&quot;</span>&gt;</span></span>My awesome H3 title<span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span></span>
+
+<span class="hljs-section">#### My awesome H4 title {# My awesome H4 title}</span>
+
+The HTML output will be: <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;my-awesome-h4-title&quot;</span>&gt;</span></span>My awesome H4 title<span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span></span>
+</code></pre><p>Every Whitespace is automatically replaced by a hyphen and any number of consecutive hyphens are replaced by one hyphen only.<br>Any number of hyphen at the beginning or the end of the id&#39;s text are removed so the following is also valid:</p>
+<pre><code class="hljs language-markdown"><span class="hljs-section">## My awesome H2 title { # ----- My ----- aWEsOMe ----- h2 ----- tITlE ----- }</span>
+
+Whatever the number of whitespace characters / hyphens is at the beginning,
+between the words or at the end, the HTML output will still be:
+
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;my-awesome-h2-title&quot;</span>&gt;</span></span>My awesome H2 title<span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span></span>
+</code></pre><p>Anything before the <strong>last</strong> hashtag is ignored and special characters in the id&#39;s text are ignored too:</p>
+<pre><code class="hljs language-markdown"><span class="hljs-section">## My awesome H2 title { /!@# a comment ?%^&amp; # -my= awesome+ h2 \ ( title ) | }</span>
+
+The HTML output will be: <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;my-awesome-h2-title&quot;</span>&gt;</span></span>My awesome H2 title<span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span></span>
+</code></pre><p>⚠️ Please be aware that the following special characters, if used <strong>inside the id&#39;s text</strong> after the <strong>last</strong> hashtag, will not be deleted:</p>
+<pre><code class="hljs language-txt">&amp; will be parsed to amp (ampersand)
+&quot; will be parsed to quot (quotation)
+&gt; will be parsed to gt (greater then)
+&lt; will be parsed to lt (less then)
+</code></pre><p>As an example:</p>
+<pre><code class="hljs language-markdown"><span class="hljs-section">## Honey &amp; Bees {#Honey &amp; Bees}</span>
+
+The HTML output will be: <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;honey-amp-bees&quot;</span>&gt;</span></span>Honey &amp; Bees<span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span></span>
+</code></pre><p>At build time, predefined ids will be generated into the HTML of the static site.</p>
+<p>If you wish to disable this feature, set the <code>addIdsToHeadings</code> value to <code>false</code> in the Settings page.</p>
+<h2 id="the-gallery">The Gallery!</h2>
+<p>Since Blog-Doc turned into a CMS, I&#39;ve planned to add a gallery and a way to retrieve images for the pages and posts directly.<br />
+Now it&#39;s almost done. Almost, because there is always space to bring on improvements.<br />
+For now, you can visit the gallery by hitting the <code>/admin-gallery</code> route, or go to the Administration page and click on the <strong>Gallery</strong> link in the menu or it&#39;s card.</p>
+<p>In the global spirit of Blog-Doc, The Galley is pretty simple to use.<br />
+You&#39;ll find a drop zone where you can drop your image(s) or click on it and choose the image(s) you wish to upload.<br />
+⚠️ Once an image added, it will be directly uploaded to the <strong>images</strong> folder but will not be available yet in the gallery, you <strong>MUST</strong> click on the <strong>Add image(s) ✅</strong> button to add the image(s) to the gallery!</p>
+<p>You can also delete an image from the gallery by clicking on it&#39;s <strong>&#10008; DELETE</strong> button.</p>
+<p>Finally, to assign an image to a page or a post, you can, while creating or updating, choose an image from the gallery by selecting it directly from the page or post.</p>
+<h2>What&#39;s next?</h2>
+<p>I intend to make a lot of improvements to this app in my short free time.</p>
+<p>You can take Blog-Doc as a prototype and modify it totally to use it with another design and/or another template language.</p>
+<p>I really hope that this app will be useful in any way for a lot of people out there, I&#39;m considering it as my personal contribution to the Node.js and Markdown communities.</p>
+<p>Ideas, comments and suggestions are most welcome.</p>
+<p>SYA,<br />
+LebCit</p>
+<p>Built with ❤️ by <a href="https://lebcit.github.io/">LebCit</a></p>
+</div>
+					<!-- End Markdown file content -->
+					      				</div>
+			</div>
+		</div>
+		<!--Start footer-->
+		<div class="footer">
+	<div class="pure-g">
+		<div class="pure-u-1">
+			<p class="copyright">App built with ❤️ by <a href='https://lebcit.github.io/'>LebCit</a></p>
+		</div>
+	</div>
+</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<script src="/static/scripts/main.js"></script>
+		<!--End footer-->
+	</body>
+</html>

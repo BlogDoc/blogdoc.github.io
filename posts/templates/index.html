@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Using EJS for specific pages" />
+
+		<link rel="shortcut icon" href="/static/icons/favicon.ico" type="image/x-icon" />
+
+		<title>Blog-Doc | Templates</title>
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css" />
+	<link rel="stylesheet" href="/static/styles/styles.min.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.8.0/styles/atom-one-dark.min.css" />
+	</head>
+	<body>
+		<div id="layout">
+			<span id="menuLink" class="menu-link" tabindex="0">
+		<span></span>
+</span>
+
+<div id="menu">
+	<div class="pure-menu">
+		<a href="/" class="pure-menu-heading">Blog-Doc</a>
+
+		<ul class="pure-menu-list">
+						<li class="pure-menu-item">
+				<a href="/posts" class="pure-menu-link">Archive</a>
+			</li>
+						<li class="pure-menu-item">
+				<a href="/tags" class="pure-menu-link">Tags</a>
+			</li>
+						<li class="pure-menu-item">
+				<a href="/search" class="pure-menu-link">Search</a>
+			</li>
+						<li class="pure-menu-item">
+				<a href="/pages/documentation" class="pure-menu-link">Documentation</a>
+			</li>
+						<li class="pure-menu-item">
+				<a href="https://github.com/LebCit/blog-doc" class="pure-menu-link">GitHub Repo</a>
+			</li>
+					</ul>
+	</div>
+
+	</div>
+			<div id="main">
+				<style>
+	.post-header {
+		background-image: url("/static/images/templates.avif");
+	}
+</style>
+<style>
+	.post-header {
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+	.post-header .overlay {
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+	.post-header .overlay h1,
+	.post-header .overlay h2 {
+		color: #fff;
+	}
+	@media (min-width: 48em) {
+		.post-header .overlay {
+			display: inline-block;
+			width: 50%;
+		}
+	}
+</style>
+
+<div class="header post-header">
+	<div class="overlay">
+		<h1>Templates</h1>
+		<h2>Using EJS for specific pages</h2>
+	</div>
+</div>
+				<div  class="content">    					<!-- Start Markdown file content -->
+					<p class="post-meta">
+	<span>Posted on</span>
+	<span class="posted-on"><time class="post-date">2022/11/13</time></span>
+		<br />
+	<span>Tagged</span>
+	<!--Start tag(s)-->
+		<a href="/tags/Blog-Doc" class="post-tag">Blog-Doc</a>
+		<a href="/tags/Templates" class="post-tag">Templates</a>
+		<a href="/tags/Server-Side" class="post-tag">Server-Side</a>
+		<!--End tag(s)-->
+	</p>
+<div><p>You may ask yourself the reason for a third option of files since we already can create posts and pages in Markdown. Well the reason is that a template can do much more than a Markdown file...<br />
+A template file have more capabilities and can render a totally different architecture and design than the predefined ones for a Markdown file.<br />
+I intend to make templates editable from the front-end like pages and posts, but not in a near future...</p>
+<h2>Nota bene</h2>
+<p><strong>This post has been retained for demonstration purposes, but its content is no longer relevant to the <a href="/posts/the-new-blog-doc">new version of Blog-Doc</a>.</strong></p>
+<h2>Capabilities &amp; Security</h2>
+<p>A simple example would be to create a contact form, this would take a serious amount of data objects to be passed in the front-matter of a Markdown file as well as in the route where it would be rendered, all of this without forgetting the serious security risks of directly parsing sensitive data to HTML...</p>
+<h2>Architecture &amp; Design</h2>
+<p>Blog-Doc&#39;s architecture parses Markdown content to HTML which is injected into EJS templates that are rendered on routes matching the Markdown&#39;s file name.<br>The design is obviously at the templates&#39; level. We can pass personalized CSS for a post or a page directly from the Markdown file, but structuring a whole web page from Markdown would be a time killer...<br>This is why we use a templating language, EJS in Blog-Doc, to generate our final HTML markup with the power of plain JavaScript.<br>Another advantage is that we could completely change the design of a site for a particular page to whatever we like with a template, but this would result in a labyrinthine system if we try to achieve it from a Markdown file...</p>
+<h2>How to use a template?</h2>
+<p>To use a template file, head over to the <strong>templates</strong> folder under the <strong>views</strong> folder and create in there an <code>.ejs</code> file.<br>You can name it whatever you like. As an example : <code>my-template.ejs</code>
+Now paste the following block of code:</p>
+<pre><code class="hljs language-html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        &lt;%# Metadata %&gt;
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;IE=edge&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;description&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;A DESCRIPTION OF YOUR EJS TEMPLATE&quot;</span> /&gt;</span>
+
+        &lt;%# Title %&gt;
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Blog-Doc | THE TITLE OF YOUR EJS TEMPLATE<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+
+        &lt;%# Pure.css %&gt;
+        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css&quot;</span> /&gt;</span>
+        &lt;%# Pure.css grids. Not necessary if you don&#x27;t want to use it ! %&gt;
+        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css&quot;</span> /&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;shortcut icon&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/icons/favicon.ico&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;image/x-icon&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/css/styles.min.css&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;layout&quot;</span>&gt;</span>
+            &lt;%- include(&#x27;../components/menu&#x27;) %&gt;
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;main&quot;</span>&gt;</span>
+                &lt;%# Page header %&gt;
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;header&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>THE TITLE OF YOUR EJS TEMPLATE<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>A DESCRIPTION OF YOUR EJS TEMPLATE<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                &lt;%# Page content %&gt;
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span>
+                    THE CONTENT OF YOUR EJS TEMPLATE
+                    <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+                    YOU CAN USE PLAIN HTML INSIDE AN EJS FILE
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        &lt;%- include(&#x27;../components/footer&#x27;) %&gt;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre><p>Replace the values of the description <code>&lt;meta&gt;</code> tag, the <code>&lt;title&gt;</code> tag and the headers inside <code>&lt;div class=&quot;header&quot;&gt;</code> by the appropriate ones for your template.<br>Create the desired content Inside the <code>&lt;div class=&quot;content&quot;&gt;</code>.<br>Remember that an <code>.ejs</code> file is an <code>HTML</code> file supercharged with <code>JavaScript</code> powers, meaning that you can use both of them inside it !</p>
+<p>If your new to EJS, please take the time to read the following articles on my personal blog :</p>
+<ol>
+<li><a href="https://lebcit.github.io/posts/templating-a-nodejs-app-with-ejs/">Templating a Node.js app with EJS</a></li>
+<li><a href="https://lebcit.github.io/posts/improving-a-nodejs-app-built-with-express-and-ejs/">Improving a Node.js app built with Express and EJS</a></li>
+</ol>
+<p>After creating your content with a template, you&#39;ll be able to add a link to it in the menu or anywhere else that suits your needs.<br>The path of any template that you create will always be : <code>https://domaine.name/templates/the-template-file-name</code>.<br>If you created the previous template <code>my-template.ejs</code>, you can visit it by clicking on this <a href="/templates/my-template">link</a>.<br>Otherwise, Blog-Doc comes with an identical template to the previous code. You can visit <a href="/templates/template-file">template-file</a> to see it.</p>
+<h2>Conclusion</h2>
+<p>If you followed the articles related to <a href="/tags/Blog-Doc">Blog-Doc</a> from the beginning till this one, you now have a solid understanding of how everything works under the hood, how the components are displayed on the front-end, how the posts, pages and templates files are rendered on the front-end, and how to use them.</p>
+<p>You can take Blog-Doc as a prototype and modify it totally to use it with another design and/or another template language.<br><strong>As a proof of concept, I&#39;ve rebuild <a href="https://lebcit.github.io/">my own blog</a> with Blog-Doc</strong> ❤️</p>
+<p>I really hope that this app will be useful in any way for a lot of people out there, I&#39;m considering it as my personal contribution to the Node.js, Express, EJS and Markdown communities.</p>
+</div>
+<!--Start posts pagination-->
+<style>
+	nav {
+		display: flex;
+		justify-content: center;
+		margin-top: 50px;
+	}
+
+	.pagination {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+	}
+
+	.pagination li {
+		margin: 10px;
+	}
+
+	.default {
+		border-color: #e7e7e7;
+		color: black;
+		text-decoration: none;
+	}
+
+	.default:hover,
+	.default:focus {
+		background: #e7e7e7;
+		text-decoration: underline;
+	}
+
+	.post-link {
+		background-color: #ffc10d;
+		color: #000000;
+		padding: 0.5rem 1rem 0.75rem;
+		border: 5px solid #000000;
+		border-radius: 5px;
+		font-size: 1em;
+		text-decoration: none;
+		display: inline-grid;
+		font-family: "Open Sans", sans-serif;
+	}
+
+	.post-link:hover,
+	.post-link:focus,
+	.post-link:active {
+		text-decoration: underline;
+		background: #000000;
+		color: #ffffff;
+		cursor: pointer;
+	}
+
+	@media (max-width: 48em) {
+		.pagination {
+			flex-direction: column-reverse;
+		}
+		.pagination li {
+			margin: 5px;
+		}
+	}
+</style>
+
+<nav aria-label="pagination">
+	<ul class="pagination">
+				<li>
+			<a
+				class="post-link prev"
+				role="button"
+				href="/posts/posts-and-pages"
+				aria-label="Go to the previous post"
+			>
+				<span aria-hidden="true">Previous: Posts and Pages</span>
+				<span class="hidden">Go to the previous post</span>
+			</a>
+		</li>
+		  		<li>
+			<a class="post-link next" role="button" href="/posts/the-new-blog-doc" aria-label="Go to the next post">
+				<span aria-hidden="true">Next: The New Blog-Doc</span>
+				<span class="hidden">Go to the next post</span>
+			</a>
+		</li>
+			</ul>
+</nav>
+<!--End posts pagination-->
+					<!-- End Markdown file content -->
+					      				</div>
+			</div>
+		</div>
+		<!--Start footer-->
+		<div class="footer">
+	<div class="pure-g">
+		<div class="pure-u-1">
+			<p class="copyright">App built with ❤️ by <a href='https://lebcit.github.io/'>LebCit</a></p>
+		</div>
+	</div>
+</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<script src="/static/scripts/main.js"></script>
+		<!--End footer-->
+	</body>
+</html>

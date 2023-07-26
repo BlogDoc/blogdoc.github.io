@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="The blog behind the curtains" />
+
+		<link rel="shortcut icon" href="/static/icons/favicon.ico" type="image/x-icon" />
+
+		<title>Blog-Doc | The Main Route</title>
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css" />
+	<link rel="stylesheet" href="/static/styles/styles.min.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.8.0/styles/atom-one-dark.min.css" />
+	</head>
+	<body>
+		<div id="layout">
+			<span id="menuLink" class="menu-link" tabindex="0">
+		<span></span>
+</span>
+
+<div id="menu">
+	<div class="pure-menu">
+		<a href="/" class="pure-menu-heading">Blog-Doc</a>
+
+		<ul class="pure-menu-list">
+						<li class="pure-menu-item">
+				<a href="/posts" class="pure-menu-link">Archive</a>
+			</li>
+						<li class="pure-menu-item">
+				<a href="/tags" class="pure-menu-link">Tags</a>
+			</li>
+						<li class="pure-menu-item">
+				<a href="/search" class="pure-menu-link">Search</a>
+			</li>
+						<li class="pure-menu-item">
+				<a href="/pages/documentation" class="pure-menu-link">Documentation</a>
+			</li>
+						<li class="pure-menu-item">
+				<a href="https://github.com/LebCit/blog-doc" class="pure-menu-link">GitHub Repo</a>
+			</li>
+					</ul>
+	</div>
+
+	</div>
+			<div id="main">
+				<style>
+	.post-header {
+		background-image: url("/static/images/the-main-route.avif");
+	}
+</style>
+<style>
+	.post-header {
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+	.post-header .overlay {
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+	.post-header .overlay h1,
+	.post-header .overlay h2 {
+		color: #fff;
+	}
+	@media (min-width: 48em) {
+		.post-header .overlay {
+			display: inline-block;
+			width: 50%;
+		}
+	}
+</style>
+
+<div class="header post-header">
+	<div class="overlay">
+		<h1>The Main Route</h1>
+		<h2>The blog behind the curtains</h2>
+	</div>
+</div>
+				<div  class="content">    					<!-- Start Markdown file content -->
+					<p class="post-meta">
+	<span>Posted on</span>
+	<span class="posted-on"><time class="post-date">2022/11/07</time></span>
+		<br />
+	<span>Tagged</span>
+	<!--Start tag(s)-->
+		<a href="/tags/Blog-Doc" class="post-tag">Blog-Doc</a>
+		<a href="/tags/Blog" class="post-tag">Blog</a>
+		<a href="/tags/Server-Side" class="post-tag">Server-Side</a>
+		<!--End tag(s)-->
+	</p>
+<div><p>The<code> mainRoute.js</code> file, under the <strong>routes</strong> folder, is where all the functionalities of the blog are defined. It collects, paginates and displays, all the Markdown files in the <strong>posts</strong> folder under the <strong>views</strong> folder.</p>
+<p>This file uses two functions to get the posts and paginate them :</p>
+<ol>
+<li><code>import { getPosts } from &quot;../functions/blog-doc.js&quot;</code></li>
+<li><code>import { paginator } from &quot;../functions/helpers.js&quot;</code></li>
+</ol>
+<p>To understand how <code>getPosts</code> works, you should read <a href="https://lebcit.github.io/posts/markdown-blog-with-ejs/">Markdown blog with EJS</a> who’s very important to understand the logic behind the process of writing in Markdown and rendering it on the front-end.<br>On the other hand, the second one is a pagination function. There are a lot of modules to accomplish the desired output, one of the most popular is <a href="https://www.npmjs.com/package/paginator">Paginator</a> but I didn&#39;t want to add another module to this app for a simple task nor reinvent the wheel, so I did a little research to find a ready made pagination that suits my needs and found it while reading the <a href="https://shouts.dev/articles/easiest-way-to-paginate-an-array-in-javascript">Easiest Way to Paginate an Array in JavaScript</a>.</p>
+<p>With both functions ready to spin, the only task left was some logic.<br>Since I decided to have the blog on the entry route <code>/</code>, and paginate it with a maximum of the <a href="/admin-config-site#posts-per-page">defined number of posts per page</a>, I just had to do the following steps :</p>
+<ol>
+<li>get the newest <strong>X</strong> posts from the array of posts and display them on the homepage</li>
+<li>get the rest of them and display them with a pagination of <strong>X</strong> posts per page</li>
+<li>make the pagination available only if the blog have more than <strong>X</strong> posts</li>
+</ol>
+<p><strong>1-</strong> The first step is pretty easy, just slice out the newest five posts:</p>
+<pre><code class="hljs language-js"><span class="hljs-comment">// /routes/mainRoute.js</span>
+
+<span class="hljs-comment">// Paginate all the posts. Set the first page to 1 and X posts per page. | Line 14</span>
+<span class="hljs-keyword">const</span> paginatedPosts = <span class="hljs-title function_">paginator</span>(posts, <span class="hljs-number">1</span>, settings.<span class="hljs-property">postsPerPage</span>)
+<span class="hljs-comment">// Get the first X posts. | Line 15</span>
+<span class="hljs-keyword">const</span> newestPosts = paginatedPosts.<span class="hljs-property">data</span>
+</code></pre><p>After acquiring those ones, we render them on the entry route <code>/</code> via <code>base.html</code> in the <strong>layouts</strong> folder under the <strong>views</strong> folder.<br>To know if the first page should be paginated or not, we pass a data object that will display the pagination component only if the length off all the posts is greater than <strong>X</strong>:</p>
+<pre><code class="hljs language-js"><span class="hljs-comment">// /routes/mainRoute.js</span>
+
+<span class="hljs-comment">// Get the total number of posts. | Line 17</span>
+<span class="hljs-keyword">const</span> postsLength = paginatedPosts.<span class="hljs-property">total</span>
+...
+
+<span class="hljs-comment">// To display or not the pagination component on the main route. | Line 34</span>
+<span class="hljs-attr">paginated</span>: postsLength &gt; settings.<span class="hljs-property">postsPerPage</span> ? <span class="hljs-literal">true</span> : <span class="hljs-literal">false</span>,
+</code></pre><p><strong>2-</strong> The second step is a little bit trickier because it&#39;s not only a matter of slicing out the rest of the posts. We have to slice them out, <em>dynamically</em> define the current page for each set once paginated, paginate them by a maximum of <strong>X</strong> posts per page. This is where the <code>paginator</code> function steps in to achieve this goal and returns the actual page, the previous page, the next page, the sliced posts&#39; total, the total of the pages and the sliced posts themselves. We use this function in <code>mainRoute.js</code> to accomplish this task on line 60:</p>
+<pre><code class="hljs language-js"><span class="hljs-comment">// Paginated array from the list of posts without the newest X posts</span>
+<span class="hljs-keyword">const</span> paginatedPostsList = <span class="hljs-title function_">paginator</span>(posts.<span class="hljs-title function_">slice</span>(settings.<span class="hljs-property">postsPerPage</span>), actualBlogPage, settings.<span class="hljs-property">postsPerPage</span>)
+</code></pre><p><code>actualBlogPage</code> is a parameter in the dynamic route <code>&quot;/page/:actualBlogPage&quot;</code> defined on line 58:</p>
+<pre><code class="hljs language-js"><span class="hljs-comment">// Dynamic page number</span>
+<span class="hljs-keyword">const</span> actualBlogPage = c.<span class="hljs-property">req</span>.<span class="hljs-title function_">param</span>(<span class="hljs-string">&quot;actualBlogPage&quot;</span>)
+</code></pre><p>With this in place, the rest of the posts are now paginated in sets of <strong>X</strong>, we use <code>index.html</code> to render them on the dynamic route mentioned above and make sure to display the pagination component on each page coming after the homepage by passing a paginated data object on line 71:</p>
+<pre><code class="hljs language-js"><span class="hljs-attr">paginated</span>: <span class="hljs-literal">true</span>
+</code></pre><p><strong>3-</strong> The third step is taken care off in the first step for the homepage and in the second step for each page after the homepage.</p>
+<p>That&#39;s how the blog is getting displayed from behind the curtains to the stage, see you in the next one.</p>
+</div>
+<!--Start posts pagination-->
+<style>
+	nav {
+		display: flex;
+		justify-content: center;
+		margin-top: 50px;
+	}
+
+	.pagination {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+	}
+
+	.pagination li {
+		margin: 10px;
+	}
+
+	.default {
+		border-color: #e7e7e7;
+		color: black;
+		text-decoration: none;
+	}
+
+	.default:hover,
+	.default:focus {
+		background: #e7e7e7;
+		text-decoration: underline;
+	}
+
+	.post-link {
+		background-color: #ffc10d;
+		color: #000000;
+		padding: 0.5rem 1rem 0.75rem;
+		border: 5px solid #000000;
+		border-radius: 5px;
+		font-size: 1em;
+		text-decoration: none;
+		display: inline-grid;
+		font-family: "Open Sans", sans-serif;
+	}
+
+	.post-link:hover,
+	.post-link:focus,
+	.post-link:active {
+		text-decoration: underline;
+		background: #000000;
+		color: #ffffff;
+		cursor: pointer;
+	}
+
+	@media (max-width: 48em) {
+		.pagination {
+			flex-direction: column-reverse;
+		}
+		.pagination li {
+			margin: 5px;
+		}
+	}
+</style>
+
+<nav aria-label="pagination">
+	<ul class="pagination">
+				<li>
+			<a
+				class="post-link prev"
+				role="button"
+				href="/posts/archive-and-tags"
+				aria-label="Go to the previous post"
+			>
+				<span aria-hidden="true">Previous: Archive and tags</span>
+				<span class="hidden">Go to the previous post</span>
+			</a>
+		</li>
+		  		<li>
+			<a class="post-link next" role="button" href="/posts/the-pagination-component" aria-label="Go to the next post">
+				<span aria-hidden="true">Next: The pagination component</span>
+				<span class="hidden">Go to the next post</span>
+			</a>
+		</li>
+			</ul>
+</nav>
+<!--End posts pagination-->
+					<!-- End Markdown file content -->
+					      				</div>
+			</div>
+		</div>
+		<!--Start footer-->
+		<div class="footer">
+	<div class="pure-g">
+		<div class="pure-u-1">
+			<p class="copyright">App built with ❤️ by <a href='https://lebcit.github.io/'>LebCit</a></p>
+		</div>
+	</div>
+</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<script src="/static/scripts/main.js"></script>
+		<!--End footer-->
+	</body>
+</html>
