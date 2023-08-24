@@ -1,75 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 		<url>
-		<loc>https://blocdoc-1-v3476171.deta.app/</loc>
-		<lastmod>2023-07-25</lastmod>
+		<loc>https://blogdoc.github.io/</loc>
+		<lastmod>2023-08-21</lastmod>
 	</url>
 		<url>
-		<loc>https://blocdoc-1-v3476171.deta.app/archive</loc>
-		<lastmod>2023-07-25</lastmod>
+		<loc>https://blogdoc.github.io/archive</loc>
+		<lastmod>2023-08-22</lastmod>
 	</url>
 		<url>
-		<loc>https://blocdoc-1-v3476171.deta.app/tags</loc>
-		<lastmod>2023-07-25</lastmod>
+		<loc>https://blogdoc.github.io/tags</loc>
+		<lastmod>2023-08-22</lastmod>
 	</url>
 		<url>
-		<loc>https://blocdoc-1-v3476171.deta.app/page/1</loc>
-		<lastmod>2023-07-25</lastmod>
+		<loc>https://blogdoc.github.io/page/1</loc>
+		<lastmod>2023-08-21</lastmod>
 	</url>
 		<url>
-		<loc>https://blocdoc-1-v3476171.deta.app/page/2</loc>
-		<lastmod>2023-07-25</lastmod>
+		<loc>https://blogdoc.github.io/page/2</loc>
+		<lastmod>2023-08-21</lastmod>
 	</url>
 		<url>
-		<loc>https://blocdoc-1-v3476171.deta.app/documentation</loc>
-		<lastmod>2023-07-24</lastmod>
+		<loc>https://blogdoc.github.io/page/3</loc>
+		<lastmod>2023-08-22</lastmod>
 	</url>
 		<url>
-		<loc>https://blocdoc-1-v3476171.deta.app/archive-and-tags</loc>
-		<lastmod>2023-07-25</lastmod>
+		<loc>https://blogdoc.github.io/documentation</loc>
+		<lastmod>2023-08-24</lastmod>
 	</url>
 		<url>
-		<loc>https://blocdoc-1-v3476171.deta.app/excerpt-length</loc>
-		<lastmod>2023-07-24</lastmod>
+		<loc>https://blogdoc.github.io/archive-and-tags</loc>
+		<lastmod>2023-08-21</lastmod>
 	</url>
 		<url>
-		<loc>https://blocdoc-1-v3476171.deta.app/my-first-article</loc>
-		<lastmod>2023-07-25</lastmod>
+		<loc>https://blogdoc.github.io/excerpt-length</loc>
+		<lastmod>2023-08-21</lastmod>
 	</url>
 		<url>
-		<loc>https://blocdoc-1-v3476171.deta.app/no-description-or-tags</loc>
-		<lastmod>2023-07-24</lastmod>
+		<loc>https://blogdoc.github.io/my-first-article</loc>
+		<lastmod>2023-08-21</lastmod>
 	</url>
 		<url>
-		<loc>https://blocdoc-1-v3476171.deta.app/posts-and-pages</loc>
-		<lastmod>2023-07-25</lastmod>
+		<loc>https://blogdoc.github.io/no-description-or-tags</loc>
+		<lastmod>2023-08-22</lastmod>
 	</url>
 		<url>
-		<loc>https://blocdoc-1-v3476171.deta.app/templates</loc>
-		<lastmod>2023-07-25</lastmod>
+		<loc>https://blogdoc.github.io/posts-and-pages</loc>
+		<lastmod>2023-08-21</lastmod>
 	</url>
 		<url>
-		<loc>https://blocdoc-1-v3476171.deta.app/the-blog</loc>
-		<lastmod>2023-07-25</lastmod>
+		<loc>https://blogdoc.github.io/templates</loc>
+		<lastmod>2023-08-21</lastmod>
 	</url>
 		<url>
-		<loc>https://blocdoc-1-v3476171.deta.app/the-main-route</loc>
-		<lastmod>2023-07-25</lastmod>
+		<loc>https://blogdoc.github.io/the-blog</loc>
+		<lastmod>2023-08-21</lastmod>
 	</url>
 		<url>
-		<loc>https://blocdoc-1-v3476171.deta.app/the-markdown-route</loc>
-		<lastmod>2023-07-25</lastmod>
+		<loc>https://blogdoc.github.io/the-main-route</loc>
+		<lastmod>2023-08-21</lastmod>
 	</url>
 		<url>
-		<loc>https://blocdoc-1-v3476171.deta.app/the-new-blog-doc</loc>
-		<lastmod>2023-07-25</lastmod>
+		<loc>https://blogdoc.github.io/the-markdown-route</loc>
+		<lastmod>2023-08-21</lastmod>
 	</url>
 		<url>
-		<loc>https://blocdoc-1-v3476171.deta.app/the-pagination-component</loc>
-		<lastmod>2023-07-25</lastmod>
+		<loc>https://blogdoc.github.io/the-new-blog-doc</loc>
+		<lastmod>2023-08-21</lastmod>
 	</url>
 		<url>
-		<loc>https://blocdoc-1-v3476171.deta.app/what-is-blog-doc</loc>
+		<loc>https://blogdoc.github.io/the-pagination-component</loc>
+		<lastmod>2023-08-21</lastmod>
+	</url>
+		<url>
+		<loc>https://blogdoc.github.io/what-is-blog-doc</loc>
 		<lastmod>2023-07-25</lastmod>
 	</url>
 	</urlset>

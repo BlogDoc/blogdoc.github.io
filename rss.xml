@@ -2,7 +2,7 @@
 <rss version="2.0">
 	<channel>
 		<title>Blog-Doc</title>
-		<link>https://blocdoc-1-v3476171.deta.app/</link>
+		<link>https://blogdoc.github.io/</link>
 		<description>The simplest Node.js CMS and SSG!</description>
 		<language>en-US</language>
 		<copyright>Copyright (c) 2022 - Present, LebCit under the MIT License</copyright>
@@ -11,106 +11,106 @@
 		<docs>https://www.rssboard.org/rss-specification</docs>
 					<item>
 				<title>The New Blog-Doc</title>
-				<link>https://blocdoc-1-v3476171.deta.app/the-new-blog-doc</link>
+				<link>https://blogdoc.github.io/posts/the-new-blog-doc</link>
 								<description>A tiny flame in the darkness of error</description>
-																<category domain="https://blocdoc-1-v3476171.deta.app/tags/Blog-Doc">Blog-Doc</category>
-								<category domain="https://blocdoc-1-v3476171.deta.app/tags/Hono">Hono</category>
-								<category domain="https://blocdoc-1-v3476171.deta.app/tags/Eta">Eta</category>
-								<category domain="https://blocdoc-1-v3476171.deta.app/tags/Marked">Marked</category>
+																<category domain="https://blogdoc.github.io/tags/Blog-Doc">Blog-Doc</category>
+								<category domain="https://blogdoc.github.io/tags/Hono">Hono</category>
+								<category domain="https://blogdoc.github.io/tags/Eta">Eta</category>
+								<category domain="https://blogdoc.github.io/tags/Marked">Marked</category>
 												<pubDate>Sat, 22 Jul 2023 21:00:00 GMT</pubDate>
 			</item>
 					<item>
 				<title>Templates</title>
-				<link>https://blocdoc-1-v3476171.deta.app/templates</link>
+				<link>https://blogdoc.github.io/posts/templates</link>
 								<description>Using EJS for specific pages</description>
-																<category domain="https://blocdoc-1-v3476171.deta.app/tags/Blog-Doc">Blog-Doc</category>
-								<category domain="https://blocdoc-1-v3476171.deta.app/tags/Templates">Templates</category>
-								<category domain="https://blocdoc-1-v3476171.deta.app/tags/Server-Side">Server-Side</category>
+																<category domain="https://blogdoc.github.io/tags/Blog-Doc">Blog-Doc</category>
+								<category domain="https://blogdoc.github.io/tags/Templates">Templates</category>
+								<category domain="https://blogdoc.github.io/tags/Server-Side">Server-Side</category>
 												<pubDate>Sat, 12 Nov 2022 22:00:00 GMT</pubDate>
 			</item>
 					<item>
 				<title>Posts and Pages</title>
-				<link>https://blocdoc-1-v3476171.deta.app/posts-and-pages</link>
+				<link>https://blogdoc.github.io/posts/posts-and-pages</link>
 								<description>Writing with Markdown</description>
-																<category domain="https://blocdoc-1-v3476171.deta.app/tags/Blog-Doc">Blog-Doc</category>
-								<category domain="https://blocdoc-1-v3476171.deta.app/tags/Posts">Posts</category>
-								<category domain="https://blocdoc-1-v3476171.deta.app/tags/Pages">Pages</category>
-								<category domain="https://blocdoc-1-v3476171.deta.app/tags/Server-Side">Server-Side</category>
+																<category domain="https://blogdoc.github.io/tags/Blog-Doc">Blog-Doc</category>
+								<category domain="https://blogdoc.github.io/tags/Posts">Posts</category>
+								<category domain="https://blogdoc.github.io/tags/Pages">Pages</category>
+								<category domain="https://blogdoc.github.io/tags/Server-Side">Server-Side</category>
 												<pubDate>Fri, 11 Nov 2022 22:00:00 GMT</pubDate>
 			</item>
 					<item>
 				<title>The Markdown route</title>
-				<link>https://blocdoc-1-v3476171.deta.app/the-markdown-route</link>
+				<link>https://blogdoc.github.io/posts/the-markdown-route</link>
 								<description>Rendering posts and pages</description>
-																<category domain="https://blocdoc-1-v3476171.deta.app/tags/Blog-Doc">Blog-Doc</category>
-								<category domain="https://blocdoc-1-v3476171.deta.app/tags/Server-Side">Server-Side</category>
+																<category domain="https://blogdoc.github.io/tags/Blog-Doc">Blog-Doc</category>
+								<category domain="https://blogdoc.github.io/tags/Server-Side">Server-Side</category>
 												<pubDate>Thu, 10 Nov 2022 22:00:00 GMT</pubDate>
 			</item>
 					<item>
 				<title>The pagination component</title>
-				<link>https://blocdoc-1-v3476171.deta.app/the-pagination-component</link>
+				<link>https://blogdoc.github.io/posts/the-pagination-component</link>
 								<description>Navigating between blog&#39;s pages</description>
-																<category domain="https://blocdoc-1-v3476171.deta.app/tags/Blog-Doc">Blog-Doc</category>
-								<category domain="https://blocdoc-1-v3476171.deta.app/tags/Blog">Blog</category>
-								<category domain="https://blocdoc-1-v3476171.deta.app/tags/Pagination">Pagination</category>
+																<category domain="https://blogdoc.github.io/tags/Blog-Doc">Blog-Doc</category>
+								<category domain="https://blogdoc.github.io/tags/Blog">Blog</category>
+								<category domain="https://blogdoc.github.io/tags/Pagination">Pagination</category>
 												<pubDate>Wed, 09 Nov 2022 22:00:00 GMT</pubDate>
 			</item>
 					<item>
 				<title>The Main Route</title>
-				<link>https://blocdoc-1-v3476171.deta.app/the-main-route</link>
+				<link>https://blogdoc.github.io/posts/the-main-route</link>
 								<description>The blog behind the curtains</description>
-																<category domain="https://blocdoc-1-v3476171.deta.app/tags/Blog-Doc">Blog-Doc</category>
-								<category domain="https://blocdoc-1-v3476171.deta.app/tags/Blog">Blog</category>
-								<category domain="https://blocdoc-1-v3476171.deta.app/tags/Server-Side">Server-Side</category>
+																<category domain="https://blogdoc.github.io/tags/Blog-Doc">Blog-Doc</category>
+								<category domain="https://blogdoc.github.io/tags/Blog">Blog</category>
+								<category domain="https://blogdoc.github.io/tags/Server-Side">Server-Side</category>
 												<pubDate>Sun, 06 Nov 2022 22:00:00 GMT</pubDate>
 			</item>
 					<item>
 				<title>Archive and tags</title>
-				<link>https://blocdoc-1-v3476171.deta.app/archive-and-tags</link>
+				<link>https://blogdoc.github.io/posts/archive-and-tags</link>
 								<description>Archive and tags pages</description>
-																<category domain="https://blocdoc-1-v3476171.deta.app/tags/Archive">Archive</category>
-								<category domain="https://blocdoc-1-v3476171.deta.app/tags/Tags">Tags</category>
-								<category domain="https://blocdoc-1-v3476171.deta.app/tags/Blog-Doc">Blog-Doc</category>
+																<category domain="https://blogdoc.github.io/tags/Archive">Archive</category>
+								<category domain="https://blogdoc.github.io/tags/Tags">Tags</category>
+								<category domain="https://blogdoc.github.io/tags/Blog-Doc">Blog-Doc</category>
 												<pubDate>Wed, 19 Oct 2022 21:00:00 GMT</pubDate>
 			</item>
 					<item>
 				<title>The blog</title>
-				<link>https://blocdoc-1-v3476171.deta.app/the-blog</link>
+				<link>https://blogdoc.github.io/posts/the-blog</link>
 								<description>How the blog works ?</description>
-																<category domain="https://blocdoc-1-v3476171.deta.app/tags/Blog-Doc">Blog-Doc</category>
-								<category domain="https://blocdoc-1-v3476171.deta.app/tags/Blog">Blog</category>
+																<category domain="https://blogdoc.github.io/tags/Blog-Doc">Blog-Doc</category>
+								<category domain="https://blogdoc.github.io/tags/Blog">Blog</category>
 												<pubDate>Tue, 04 Oct 2022 21:00:00 GMT</pubDate>
 			</item>
 					<item>
 				<title>What is Blog-Doc ?</title>
-				<link>https://blocdoc-1-v3476171.deta.app/what-is-blog-doc</link>
+				<link>https://blogdoc.github.io/posts/what-is-blog-doc</link>
 								<description>A brief introduction to Blog-Doc.</description>
-																<category domain="https://blocdoc-1-v3476171.deta.app/tags/Blog-Doc">Blog-Doc</category>
+																<category domain="https://blogdoc.github.io/tags/Blog-Doc">Blog-Doc</category>
 												<pubDate>Thu, 29 Sep 2022 21:00:00 GMT</pubDate>
 			</item>
 					<item>
 				<title>No description or tags</title>
-				<link>https://blocdoc-1-v3476171.deta.app/no-description-or-tags</link>
+				<link>https://blogdoc.github.io/posts/no-description-or-tags</link>
 																				<pubDate>Thu, 25 Aug 2022 21:00:00 GMT</pubDate>
 			</item>
 					<item>
 				<title>Excerpt length</title>
-				<link>https://blocdoc-1-v3476171.deta.app/excerpt-length</link>
+				<link>https://blogdoc.github.io/posts/excerpt-length</link>
 								<description>Testing the excerpt of posts</description>
-																<category domain="https://blocdoc-1-v3476171.deta.app/tags/Excerpt">Excerpt</category>
+																<category domain="https://blogdoc.github.io/tags/Excerpt">Excerpt</category>
 												<pubDate>Thu, 11 Aug 2022 21:00:00 GMT</pubDate>
 			</item>
 					<item>
 				<title>My first article</title>
-				<link>https://blocdoc-1-v3476171.deta.app/my-first-article</link>
+				<link>https://blogdoc.github.io/posts/my-first-article</link>
 								<description>This is the description of my first article</description>
-																<category domain="https://blocdoc-1-v3476171.deta.app/tags/HTML">HTML</category>
-								<category domain="https://blocdoc-1-v3476171.deta.app/tags/CSS">CSS</category>
-								<category domain="https://blocdoc-1-v3476171.deta.app/tags/JS">JS</category>
-								<category domain="https://blocdoc-1-v3476171.deta.app/tags/Node.js">Node.js</category>
-								<category domain="https://blocdoc-1-v3476171.deta.app/tags/Hono">Hono</category>
-								<category domain="https://blocdoc-1-v3476171.deta.app/tags/Eta">Eta</category>
-								<category domain="https://blocdoc-1-v3476171.deta.app/tags/Markdown">Markdown</category>
+																<category domain="https://blogdoc.github.io/tags/HTML">HTML</category>
+								<category domain="https://blogdoc.github.io/tags/CSS">CSS</category>
+								<category domain="https://blogdoc.github.io/tags/JS">JS</category>
+								<category domain="https://blogdoc.github.io/tags/Node.js">Node.js</category>
+								<category domain="https://blogdoc.github.io/tags/Hono">Hono</category>
+								<category domain="https://blogdoc.github.io/tags/Eta">Eta</category>
+								<category domain="https://blogdoc.github.io/tags/Markdown">Markdown</category>
 												<pubDate>Fri, 22 Jul 2022 21:00:00 GMT</pubDate>
 			</item>
 			</channel>

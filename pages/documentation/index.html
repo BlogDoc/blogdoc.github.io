@@ -94,6 +94,7 @@ A tiny flame in the darkness of error...</p>
 <h2>Features ⚡</h2>
 <ul>
 <li>Administrate your app from the front-end! <img src="/static/icons/settings.svg" alt="Settings icon"></li>
+<li><a href="#themes">Themes</a> to change the look and feel of your site! <img src="/static/icons/brush.svg" alt="Brush icon"></li>
 <li><a href="#the-gallery">Gallery</a> to upload your images <img src="/static/icons/photo-up.svg" alt="Image upload icon"></li>
 <li>Create, Read, Update &amp; Delete your pages and posts <img src="/static/icons/pencil.svg" alt="Pencil icon"></li>
 <li>Paginated blog with chosen number of posts per page <img src="/static/icons/arrows-left-right.svg" alt="Left and right arrows icon"></li>
@@ -270,6 +271,43 @@ You&#39;ll find a drop zone where you can drop your image(s) or click on it and 
 ⚠️ Once an image added, it will be directly uploaded to the <strong>images</strong> folder but will not be available yet in the gallery, you <strong>MUST</strong> click on the <strong>Add image(s) ✅</strong> button to add the image(s) to the gallery!</p>
 <p>You can also delete an image from the gallery by clicking on it&#39;s <strong>&#10008; DELETE</strong> button.</p>
 <p>Finally, to assign an image to a page or a post, you can, while creating or updating, choose an image from the gallery by selecting it directly from the page or post.</p>
+<h2 id="themes">Themes</h2>
+<p>You can switch between themes and choose the design that suites your needs.</p>
+<p>Blog-Doc comes with:</p>
+<ul>
+<li>A default theme based on the <a href="https://purecss.io/layouts/side-menu/">Responsive Side Menu Layout of Pure.css</a></li>
+<li>A clean-blog theme based on <a href="https://startbootstrap.com/theme/clean-blog">Clean Blog</a> from <a href="https://startbootstrap.com/">Start Bootstrap</a></li>
+</ul>
+<p>If a picture is worth a thousand words, a video is worth a million!<br />
+A 30 seconds video showing the ability to instantly change the look and feel of your site with Blog-Doc.</p>
+<style>
+  .container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+/* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+</style>
+
+<div class="container">
+<iframe class="responsive-iframe" src="https://www.youtube.com/embed/qaulkcZ-yu8?si=Ptq9mGrwU0hj9Uo1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</div>
+
+<p><strong>I&#39;ll be adding more themes to Blog-Doc over time.</strong><br />
+If you&#39;ve coded a theme for Blog-Doc and wish to list it among the available themes, you can let me know in the Discussions of Blog-Doc&#39;s repository under the <a href="https://github.com/LebCit/blog-doc/discussions/categories/ideas">Ideas</a> category.<br />
+Please keep in mind that Blog-Doc themes <strong>MUST</strong> only use plain JavaScript and cannot contain any code or image(s) that have publishing and/or distribution restrictions!</p>
 <h2>What&#39;s next?</h2>
 <p>I intend to make a lot of improvements to this app in my short free time.</p>
 <p>You can take Blog-Doc as a prototype and modify it totally to use it with another design and/or another template language.</p>
@@ -287,7 +325,7 @@ LebCit</p>
 		<div class="footer">
 	<div class="pure-g">
 		<div class="pure-u-1">
-			<p class="copyright">App built with ❤️ by <a href='https://lebcit.github.io/'>LebCit</a></p>
+			<p class="copyright">App built with ❤️ by <a href='https://lebcit.github.io/'>LebCit</a><br />Static Site <a href='https://blogdoc.github.io/'>Demo</a></p>
 		</div>
 	</div>
 </div>

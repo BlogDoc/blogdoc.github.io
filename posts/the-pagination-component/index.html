@@ -124,7 +124,7 @@
 </code></pre><p>After that, always in the <code>mainRoute.js</code> file, we pass those data objects to the entry route <code>/</code>:</p>
 <pre><code class="hljs language-js"><span class="hljs-comment">// /routes/mainRoute.js</span>
 
-<span class="hljs-keyword">const</span> res = eta.<span class="hljs-title function_">render</span>(<span class="hljs-string">&quot;layouts/base.html&quot;</span>, {
+<span class="hljs-keyword">const</span> res = eta.<span class="hljs-title function_">render</span>(<span class="hljs-string">`themes/<span class="hljs-subst">${settings.currentTheme}</span>/layouts/base.html`</span>, {
     <span class="hljs-comment">// Passing Route data</span>
     <span class="hljs-attr">mainRoute</span>: <span class="hljs-literal">true</span>,
     <span class="hljs-attr">firstPage</span>: <span class="hljs-literal">true</span>,
@@ -259,7 +259,7 @@
 		<div class="footer">
 	<div class="pure-g">
 		<div class="pure-u-1">
-			<p class="copyright">App built with ❤️ by <a href='https://lebcit.github.io/'>LebCit</a></p>
+			<p class="copyright">App built with ❤️ by <a href='https://lebcit.github.io/'>LebCit</a><br />Static Site <a href='https://blogdoc.github.io/'>Demo</a></p>
 		</div>
 	</div>
 </div>
