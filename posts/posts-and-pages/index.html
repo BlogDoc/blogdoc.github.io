@@ -94,26 +94,28 @@ The bellow instructions are applicable if you want to create a post or a page  b
 <p>The most important tool for this task is the IDE, Integrated Development Environment, that you&#39;re using. I&#39;m using the one and only <a href="https://code.visualstudio.com/">VS Code</a>, the best IDE in my opinion, with <a href="https://prettier.io/">Prettier</a> as a well known extension for VS Code <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode">Prettier - Code formatter</a>. Another great VS Code extension to write in Markdown with ease is <a href="https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one">Markdown All in One</a>. If you are using another IDE, look for an addon/plugin/extension to format your Markdown files while writing a post or a page.</p>
 <h2>Posts</h2>
 <p>To write a post, head to the <strong>posts</strong> folder under the <strong>views</strong> folder and create a new Markdown file. A Markdown file ends with <code>.md</code>. If you are using VS Code, I&#39;ve already setup snippets to generate Markdown front matter in the <code>.vscode</code> folder, all you have to do is press <code>Ctrl+spacebar</code> and choose the <code>Blog-Doc Post Frontmatter</code>, you&#39;ll be served with the following block:</p>
-<pre><code class="hljs language-yaml"><span class="hljs-meta">---</span>
-<span class="hljs-attr">title:</span>
-<span class="hljs-attr">date:</span> <span class="hljs-number">2022</span><span class="hljs-string">/11/12</span>
-<span class="hljs-attr">description:</span>
-<span class="hljs-attr">featuredImage:</span> <span class="hljs-string">/static/images/</span>
-<span class="hljs-attr">tags:</span> []
-<span class="hljs-meta">---</span>
-</code></pre><p>Type the title of your post, the date is automatically generated, give it a short description, put its featured image in the <strong>images</strong> folder under the <strong>static</strong> folder and add the filename after <code>/static/images/</code> like <code>/static/images/an_image.png</code> or simply link to any image out there like <code>featuredImage: https://link_to_an_image.com</code>, and finally tag it with the appropriate keywords in the array of <code>tags</code> like <code>[Development, Node.js, Markdown]</code>.<br>You should now be able to see your post on the blog and click on it&#39;s title or it&#39;s <em>Read the post</em> button to access it !</p>
+<pre><code class="language-yaml">---
+title:
+date: 2022/11/12
+description:
+featuredImage: /static/images/
+tags: []
+---
+</code></pre>
+<p>Type the title of your post, the date is automatically generated, give it a short description, put its featured image in the <strong>images</strong> folder under the <strong>static</strong> folder and add the filename after <code>/static/images/</code> like <code>/static/images/an_image.png</code> or simply link to any image out there like <code>featuredImage: https://link_to_an_image.com</code>, and finally tag it with the appropriate keywords in the array of <code>tags</code> like <code>[Development, Node.js, Markdown]</code>.<br>You should now be able to see your post on the blog and click on it&#39;s title or it&#39;s <em>Read the post</em> button to access it !</p>
 <blockquote>
 <p><em>Nota Bene: it&#39;s always a good idea to give your post the same file name as it&#39;s title for SEO !</em></p>
 </blockquote>
 <p>So if the title of your post will be <strong><em>Just another dev journey story</em></strong>, the filename should be <code>just-another-dev-journey-story.md</code>.</p>
 <h2>Pages</h2>
 <p>The same logic applies to write a page. Create a Markdown file in the <strong>pages</strong> folder under the <strong>views</strong> folder. Press <code>Ctrl+spacebar</code> and choose the <code>Blog-Doc Page Frontmatter</code> to get the following snippet:</p>
-<pre><code class="hljs language-yaml"><span class="hljs-meta">---</span>
-<span class="hljs-attr">title:</span>
-<span class="hljs-attr">description:</span>
-<span class="hljs-attr">featuredImage:</span> <span class="hljs-string">/static/images/</span>
-<span class="hljs-meta">---</span>
-</code></pre><p>Also, give your page the same file name as it&#39;s title for SEO.</p>
+<pre><code class="language-yaml">---
+title:
+description:
+featuredImage: /static/images/
+---
+</code></pre>
+<p>Also, give your page the same file name as it&#39;s title for SEO.</p>
 <p>The page will be rendered on a route matching its file name. As an example, if your page filename is <code>contact-me.md</code>, this page would be accessible on a route like <code>https://domain-name/pages/contact-me</code>. Then, you&#39;ll be able to add a link to your page in the menu or anywhere else that suits your needs.</p>
 <p>A page is generally informational, which is why I didn&#39;t add a date or a tags&#39; array to the pages.<br>Keep in mind that <strong>everything in Blog-Doc can be modified, adapted or improved</strong>.</p>
 <h2>Notes</h2>
@@ -217,7 +219,11 @@ The bellow instructions are applicable if you want to create a post or a page  b
 	</div>
 </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script type="module">
+	import hljs from "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/es/highlight.min.js"
+
+	hljs.highlightAll()
+</script>
 
 <script src="/static/scripts/main.js"></script>
 		<!--End footer-->

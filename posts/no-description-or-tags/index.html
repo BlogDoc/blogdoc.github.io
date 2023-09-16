@@ -83,7 +83,17 @@
 	</p>
 <div><p>This post is for testing the output of an article that doesn&#39;t have a description or even a tag. Everything seems to be okay since the display of the tags and their respective numbers are not affected by the absence of tags in a post on the <a href="/tags">Tags</a> route.</p>
 <h2>Note</h2>
-<p>I&#39;ve completely removed the <code>description</code> and the <code>tags</code> from the front matter of the Markdown file of this post. It was also possible to just leave them empty, the result would exactly be the same.</p>
+<p>While creating a post, you can leave the <code>description</code> and/or the <code>tags</code> empty, they will not be render.<vr />
+Please keep in mind that if you are creating a post manually, you <strong>must</strong> add those properties to the front matter of the file and leave them empty like so:</p>
+<pre><code>---
+title: The post title
+date: 2023/09/16
+description: 
+featuredImage: The path or URL to the post&#39;s image
+tags: []
+---
+</code></pre>
+<p>You can read more about it under <a href="/posts/posts-and-pages">Posts and Pages</a>.</p>
 </div>
 <!--Start posts pagination-->
 <style>
@@ -182,7 +192,11 @@
 	</div>
 </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script type="module">
+	import hljs from "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/es/highlight.min.js"
+
+	hljs.highlightAll()
+</script>
 
 <script src="/static/scripts/main.js"></script>
 		<!--End footer-->

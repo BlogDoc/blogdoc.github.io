@@ -198,7 +198,11 @@
 	</div>
 </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script type="module">
+	import hljs from "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/es/highlight.min.js"
+
+	hljs.highlightAll()
+</script>
 
 <script src="/static/scripts/main.js"></script>
 		<!--End footer-->

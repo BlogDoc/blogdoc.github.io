@@ -100,47 +100,48 @@ I intend to make templates editable from the front-end like pages and posts, but
 <h2>How to use a template?</h2>
 <p>To use a template file, head over to the <strong>templates</strong> folder under the <strong>views</strong> folder and create in there an <code>.ejs</code> file.<br>You can name it whatever you like. As an example : <code>my-template.ejs</code>
 Now paste the following block of code:</p>
-<pre><code class="hljs language-html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
         &lt;%# Metadata %&gt;
-        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span> /&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;IE=edge&quot;</span> /&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span> /&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;description&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;A DESCRIPTION OF YOUR EJS TEMPLATE&quot;</span> /&gt;</span>
+        &lt;meta charset=&quot;UTF-8&quot; /&gt;
+        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+        &lt;meta name=&quot;description&quot; content=&quot;A DESCRIPTION OF YOUR EJS TEMPLATE&quot; /&gt;
 
         &lt;%# Title %&gt;
-        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Blog-Doc | THE TITLE OF YOUR EJS TEMPLATE<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+        &lt;title&gt;Blog-Doc | THE TITLE OF YOUR EJS TEMPLATE&lt;/title&gt;
 
         &lt;%# Pure.css %&gt;
-        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css&quot;</span> /&gt;</span>
-        &lt;%# Pure.css grids. Not necessary if you don&#x27;t want to use it ! %&gt;
-        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css&quot;</span> /&gt;</span>
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css&quot; /&gt;
+        &lt;%# Pure.css grids. Not necessary if you don&#39;t want to use it ! %&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css&quot; /&gt;
 
-        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;shortcut icon&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/icons/favicon.ico&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;image/x-icon&quot;</span> /&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/css/styles.min.css&quot;</span> /&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;layout&quot;</span>&gt;</span>
-            &lt;%- include(&#x27;../components/menu&#x27;) %&gt;
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;main&quot;</span>&gt;</span>
+        &lt;link rel=&quot;shortcut icon&quot; href=&quot;/icons/favicon.ico&quot; type=&quot;image/x-icon&quot; /&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/styles.min.css&quot; /&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id=&quot;layout&quot;&gt;
+            &lt;%- include(&#39;../components/menu&#39;) %&gt;
+            &lt;div id=&quot;main&quot;&gt;
                 &lt;%# Page header %&gt;
-                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;header&quot;</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>THE TITLE OF YOUR EJS TEMPLATE<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>A DESCRIPTION OF YOUR EJS TEMPLATE<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
-                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                &lt;div class=&quot;header&quot;&gt;
+                    &lt;h1&gt;THE TITLE OF YOUR EJS TEMPLATE&lt;/h1&gt;
+                    &lt;h2&gt;A DESCRIPTION OF YOUR EJS TEMPLATE&lt;/h2&gt;
+                &lt;/div&gt;
                 &lt;%# Page content %&gt;
-                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span>
+                &lt;div class=&quot;content&quot;&gt;
                     THE CONTENT OF YOUR EJS TEMPLATE
-                    <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+                    &lt;br /&gt;
                     YOU CAN USE PLAIN HTML INSIDE AN EJS FILE
-                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-        &lt;%- include(&#x27;../components/footer&#x27;) %&gt;
-    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
-</code></pre><p>Replace the values of the description <code>&lt;meta&gt;</code> tag, the <code>&lt;title&gt;</code> tag and the headers inside <code>&lt;div class=&quot;header&quot;&gt;</code> by the appropriate ones for your template.<br>Create the desired content Inside the <code>&lt;div class=&quot;content&quot;&gt;</code>.<br>Remember that an <code>.ejs</code> file is an <code>HTML</code> file supercharged with <code>JavaScript</code> powers, meaning that you can use both of them inside it !</p>
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;%- include(&#39;../components/footer&#39;) %&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Replace the values of the description <code>&lt;meta&gt;</code> tag, the <code>&lt;title&gt;</code> tag and the headers inside <code>&lt;div class=&quot;header&quot;&gt;</code> by the appropriate ones for your template.<br>Create the desired content Inside the <code>&lt;div class=&quot;content&quot;&gt;</code>.<br>Remember that an <code>.ejs</code> file is an <code>HTML</code> file supercharged with <code>JavaScript</code> powers, meaning that you can use both of them inside it !</p>
 <p>If your new to EJS, please take the time to read the following articles on my personal blog :</p>
 <ol>
 <li><a href="https://lebcit.github.io/posts/templating-a-nodejs-app-with-ejs/">Templating a Node.js app with EJS</a></li>
@@ -249,7 +250,11 @@ Now paste the following block of code:</p>
 	</div>
 </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script type="module">
+	import hljs from "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/es/highlight.min.js"
+
+	hljs.highlightAll()
+</script>
 
 <script src="/static/scripts/main.js"></script>
 		<!--End footer-->

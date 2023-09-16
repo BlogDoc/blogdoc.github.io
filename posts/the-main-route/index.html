@@ -102,30 +102,35 @@
 <li>make the pagination available only if the blog have more than <strong>X</strong> posts</li>
 </ol>
 <p><strong>1-</strong> The first step is pretty easy, just slice out the newest five posts:</p>
-<pre><code class="hljs language-js"><span class="hljs-comment">// /routes/mainRoute.js</span>
+<pre><code class="language-javascript">// /routes/mainRoute.js
 
-<span class="hljs-comment">// Paginate all the posts. Set the first page to 1 and X posts per page. | Line 14</span>
-<span class="hljs-keyword">const</span> paginatedPosts = <span class="hljs-title function_">paginator</span>(posts, <span class="hljs-number">1</span>, settings.<span class="hljs-property">postsPerPage</span>)
-<span class="hljs-comment">// Get the first X posts. | Line 15</span>
-<span class="hljs-keyword">const</span> newestPosts = paginatedPosts.<span class="hljs-property">data</span>
-</code></pre><p>After acquiring those ones, we render them on the entry route <code>/</code> via <code>base.html</code> in the <strong>layouts</strong> folder under the <strong>views</strong> folder.<br>To know if the first page should be paginated or not, we pass a data object that will display the pagination component only if the length off all the posts is greater than <strong>X</strong>:</p>
-<pre><code class="hljs language-js"><span class="hljs-comment">// /routes/mainRoute.js</span>
+// Paginate all the posts. Set the first page to 1 and X posts per page. | Line 14
+const paginatedPosts = paginator(posts, 1, settings.postsPerPage)
+// Get the first X posts. | Line 15
+const newestPosts = paginatedPosts.data
+</code></pre>
+<p>After acquiring those ones, we render them on the entry route <code>/</code> via <code>base.html</code> in the <strong>layouts</strong> folder under the <strong>views</strong> folder.<br>To know if the first page should be paginated or not, we pass a data object that will display the pagination component only if the length off all the posts is greater than <strong>X</strong>:</p>
+<pre><code class="language-javascript">// /routes/mainRoute.js
 
-<span class="hljs-comment">// Get the total number of posts. | Line 17</span>
-<span class="hljs-keyword">const</span> postsLength = paginatedPosts.<span class="hljs-property">total</span>
+// Get the total number of posts. | Line 17
+const postsLength = paginatedPosts.total
 ...
 
-<span class="hljs-comment">// To display or not the pagination component on the main route. | Line 34</span>
-<span class="hljs-attr">paginated</span>: postsLength &gt; settings.<span class="hljs-property">postsPerPage</span> ? <span class="hljs-literal">true</span> : <span class="hljs-literal">false</span>,
-</code></pre><p><strong>2-</strong> The second step is a little bit trickier because it&#39;s not only a matter of slicing out the rest of the posts. We have to slice them out, <em>dynamically</em> define the current page for each set once paginated, paginate them by a maximum of <strong>X</strong> posts per page. This is where the <code>paginator</code> function steps in to achieve this goal and returns the actual page, the previous page, the next page, the sliced posts&#39; total, the total of the pages and the sliced posts themselves. We use this function in <code>mainRoute.js</code> to accomplish this task on line 60:</p>
-<pre><code class="hljs language-js"><span class="hljs-comment">// Paginated array from the list of posts without the newest X posts</span>
-<span class="hljs-keyword">const</span> paginatedPostsList = <span class="hljs-title function_">paginator</span>(posts.<span class="hljs-title function_">slice</span>(settings.<span class="hljs-property">postsPerPage</span>), actualBlogPage, settings.<span class="hljs-property">postsPerPage</span>)
-</code></pre><p><code>actualBlogPage</code> is a parameter in the dynamic route <code>&quot;/page/:actualBlogPage&quot;</code> defined on line 58:</p>
-<pre><code class="hljs language-js"><span class="hljs-comment">// Dynamic page number</span>
-<span class="hljs-keyword">const</span> actualBlogPage = c.<span class="hljs-property">req</span>.<span class="hljs-title function_">param</span>(<span class="hljs-string">&quot;actualBlogPage&quot;</span>)
-</code></pre><p>With this in place, the rest of the posts are now paginated in sets of <strong>X</strong>, we use <code>index.html</code> to render them on the dynamic route mentioned above and make sure to display the pagination component on each page coming after the homepage by passing a paginated data object on line 71:</p>
-<pre><code class="hljs language-js"><span class="hljs-attr">paginated</span>: <span class="hljs-literal">true</span>
-</code></pre><p><strong>3-</strong> The third step is taken care off in the first step for the homepage and in the second step for each page after the homepage.</p>
+// To display or not the pagination component on the main route. | Line 34
+paginated: postsLength &gt; settings.postsPerPage ? true : false,
+</code></pre>
+<p><strong>2-</strong> The second step is a little bit trickier because it&#39;s not only a matter of slicing out the rest of the posts. We have to slice them out, <em>dynamically</em> define the current page for each set once paginated, paginate them by a maximum of <strong>X</strong> posts per page. This is where the <code>paginator</code> function steps in to achieve this goal and returns the actual page, the previous page, the next page, the sliced posts&#39; total, the total of the pages and the sliced posts themselves. We use this function in <code>mainRoute.js</code> to accomplish this task on line 60:</p>
+<pre><code class="language-javascript">// Paginated array from the list of posts without the newest X posts
+const paginatedPostsList = paginator(posts.slice(settings.postsPerPage), actualBlogPage, settings.postsPerPage)
+</code></pre>
+<p><code>actualBlogPage</code> is a parameter in the dynamic route <code>&quot;/page/:actualBlogPage&quot;</code> defined on line 58:</p>
+<pre><code class="language-javascript">// Dynamic page number
+const actualBlogPage = c.req.param(&quot;actualBlogPage&quot;)
+</code></pre>
+<p>With this in place, the rest of the posts are now paginated in sets of <strong>X</strong>, we use <code>index.html</code> to render them on the dynamic route mentioned above and make sure to display the pagination component on each page coming after the homepage by passing a paginated data object on line 71:</p>
+<pre><code class="language-javascript">paginated: true
+</code></pre>
+<p><strong>3-</strong> The third step is taken care off in the first step for the homepage and in the second step for each page after the homepage.</p>
 <p>That&#39;s how the blog is getting displayed from behind the curtains to the stage, see you in the next one.</p>
 </div>
 <!--Start posts pagination-->
@@ -225,7 +230,11 @@
 	</div>
 </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script type="module">
+	import hljs from "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/es/highlight.min.js"
+
+	hljs.highlightAll()
+</script>
 
 <script src="/static/scripts/main.js"></script>
 		<!--End footer-->

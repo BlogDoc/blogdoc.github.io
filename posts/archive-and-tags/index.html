@@ -109,23 +109,30 @@
 <li>Display all the posts for a particular tag</li>
 </ol>
 <p>The first task is accomplished by a function defined in <code>blog-doc.js</code> under the <strong>functions</strong> folder, that creates an array of the tags from all the posts and sort them alphabetically then count the occurrence of each tag in this tags&#39; array and return the result as an object.<br>The function is imported to <code>tagsRoute.js</code> on line 2:</p>
-<pre><code class="hljs language-js"><span class="hljs-keyword">import</span> { postsByTagCount, ... } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../functions/blog-doc.js&quot;</span>
-</code></pre><p>The function is then passed to the <code>/tags</code> route, <code>posts: await postsByTagCount()</code>, where we loop through the resulting object in <code>postsByTagCount.html</code> on line 2 :</p>
-<pre><code class="hljs language-js"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> property <span class="hljs-keyword">in</span> it.<span class="hljs-property">posts</span>)
-</code></pre><p>Then we check inside the loop, on line 4, if each tag exists and it&#39;s value is greater than 0, to avoid displaying a null tag in the list of tags if one or more post have no tag(s) :</p>
-<pre><code class="hljs language-js"><span class="hljs-keyword">if</span> (property !== <span class="hljs-string">&quot;null&quot;</span> &amp;&amp; property !== <span class="hljs-string">&quot;undefined&quot;</span>)
-</code></pre><h3>Tag route</h3>
+<pre><code>import { postsByTagCount, ... } from &quot;../functions/blog-doc.js&quot;
+</code></pre>
+<p>The function is then passed to the <code>/tags</code> route, <code>posts: await postsByTagCount()</code>, where we loop through the resulting object in <code>postsByTagCount.html</code> on line 2 :</p>
+<pre><code>for (const property in it.posts)
+</code></pre>
+<p>Then we check inside the loop, on line 4, if each tag exists and it&#39;s value is greater than 0, to avoid displaying a null tag in the list of tags if one or more post have no tag(s) :</p>
+<pre><code>if (property !== &quot;null&quot; &amp;&amp; property !== &quot;undefined&quot;)
+</code></pre>
+<h3>Tag route</h3>
 <p>The second task, leading to the display of all the posts for a particular tag, begins with a simple function living in <code>blog-doc.js</code> under the <strong>functions</strong> folder. This function, with a <code>(tag)</code> parameter, filters the posts to retrieve an array of post(s) including the requested tag, otherwise it returns an empty array.<br>The function is imported in <code>tagsRoute.js</code> on line 5 :</p>
-<pre><code class="hljs language-js"><span class="hljs-keyword">import</span> { ..., postsByTagList } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../functions/blog-doc.js&quot;</span>
-</code></pre><p>This function is used with the requested parameter (the requested tag) on line 31 inside the dynamic route <code>&quot;/tags/:tag&quot;</code> :</p>
-<pre><code class="hljs language-js"><span class="hljs-keyword">const</span> tag = c.<span class="hljs-property">req</span>.<span class="hljs-title function_">param</span>(<span class="hljs-string">&quot;tag&quot;</span>)
-<span class="hljs-keyword">const</span> postsByTag = <span class="hljs-keyword">await</span> <span class="hljs-title function_">postsByTagList</span>(tag)
-</code></pre><p>Finally <code>postsByTag</code> is passed through the dynamic route as a data object :</p>
-<pre><code class="hljs language-js"><span class="hljs-attr">posts</span>: postsByTag
-</code></pre><p>This data object, the array of post(s) related to a single tag, is sent to the <code>base.html</code> file in the <strong>layout</strong> folder under the <strong>views</strong> folder, where it will be used by the <code>index.html</code> file living in the same folder :</p>
-<pre><code class="hljs language-js"><span class="hljs-comment">// index.html | line 3</span>
-it.<span class="hljs-property">posts</span>.<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">post, index</span>) =&gt;</span> {...})
-</code></pre><p>The file <code>index.html</code> is responsible of the look and feel of each and every post&#39;s preview. I&#39;ll be talking later on about this file in details.</p>
+<pre><code>import { ..., postsByTagList } from &quot;../functions/blog-doc.js&quot;
+</code></pre>
+<p>This function is used with the requested parameter (the requested tag) on line 31 inside the dynamic route <code>&quot;/tags/:tag&quot;</code> :</p>
+<pre><code>const tag = c.req.param(&quot;tag&quot;)
+const postsByTag = await postsByTagList(tag)
+</code></pre>
+<p>Finally <code>postsByTag</code> is passed through the dynamic route as a data object :</p>
+<pre><code class="language-javascript">posts: postsByTag
+</code></pre>
+<p>This data object, the array of post(s) related to a single tag, is sent to the <code>base.html</code> file in the <strong>layout</strong> folder under the <strong>views</strong> folder, where it will be used by the <code>index.html</code> file living in the same folder :</p>
+<pre><code class="language-xml">// index.html | line 3
+it.posts.forEach((post, index) =&gt; {...})
+</code></pre>
+<p>The file <code>index.html</code> is responsible of the look and feel of each and every post&#39;s preview. I&#39;ll be talking later on about this file in details.</p>
 <p>A last thing to mention in the dynamic route is that if the returned array is empty, not even one post is related to the requested tag, the 404 error page is rendered.<br>Try to hit a tag route that doesn&#39;t exists, as an example : <a href="/tags/INEXISTENTTAG">inexistent tag</a>.</p>
 <h3>Modifying the tags route</h3>
 <p>Modifying the tags route is quite simple, all you have to do is to change the path <code>/tags</code> in <code>tagsRoute.js</code> on line 11 to whatever you desire.<br>If you change it to <code>/hashtags</code>, the list of all available tags will now be displayed on this route instead of the previous one.</p>
@@ -233,7 +240,11 @@ it.<span class="hljs-property">posts</span>.<span class="hljs-title function_">f
 	</div>
 </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script type="module">
+	import hljs from "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/es/highlight.min.js"
+
+	hljs.highlightAll()
+</script>
 
 <script src="/static/scripts/main.js"></script>
 		<!--End footer-->
