@@ -6,11 +6,10 @@
 	<meta name="description" content="How the blog works ?" />
 
 		<link rel="shortcut icon" href="/static/icons/favicon.ico" type="image/x-icon" />
-
 		<title>Blog-Doc | The blog</title>
 
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css" />
-	<link rel="stylesheet" href="/static/styles/styles.min.css" />
+	<link rel="stylesheet" href="/static/styles/themes/default/default-styles.min.css" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.8.0/styles/atom-one-dark.min.css" />
 	</head>
 	<body>
@@ -93,7 +92,7 @@
 <p>The blog sorts your posts by their publication&#39;s dates in descending order, newest to oldest, and displays the <a href="/admin-config-site#posts-per-page">defined number of posts</a> in the settings on each page. <strong>The blog will not be paginated if the number of posts is less than the defined number of posts !</strong></p>
 <h2>Single post preview</h2>
 <p>Each post in the blog is represented by a card like the following one :</p>
-<img class="pure-img-responsive" alt="Screenshot of a single post card in the blog" src="/static/images/screenshot-card-blog.png">
+<img alt="Screenshot of a single post card in the blog" src="/static/images/screenshot-card-blog.png">
 
 <p>First things first, the design of this card is the work of <a href="https://codepen.io/ChynoDeluxe">Chyno Deluxe</a> that you can find on his <a href="https://codepen.io/ChynoDeluxe/pen/bdXeqQ">Blog Cards</a> pen.<br>The card is composed of two parts:</p>
 <ol>
@@ -108,11 +107,11 @@
 <h3>Publishing date &amp; tag(s)</h3>
 <p>When the preview of a single post is hovered, a zoom in with a little rotation is applied to the featured image while it gets covered by an overlay.<br>The overlay reveals the publishing date of the post and the tag(s) associated to this post <strong>if any</strong>. Yes, <strong>if any means that you can choose to tag or not any post</strong>, tagging a post is an optional feature while giving it a <strong>publishing date is mandatory</strong>, some logic please!</p>
 <p>The hovered card will look like the following image:</p>
-<img class="pure-img-responsive" alt="Screenshot of a hovered single post card in the blog" src="/static/images/screenshot-card-blog-hovered.png">
+<img alt="Screenshot of a hovered single post card in the blog" src="/static/images/screenshot-card-blog-hovered.png">
 
 <h3>Brief preview</h3>
 <p>The right section of the card contains the post&#39;s <strong>title</strong>, <strong>description</strong>, first <strong>180 characters</strong>, and a <strong>Read the post</strong> button linking to the post itself, just like it&#39;s title.<br>When this button is hovered, the previous effects are applied and the button expands a little bit to the left, gets a blue background while it&#39;s label becomes white and an arrow takes the available space to the right, like the following image:</p>
-<img class="pure-img-responsive" alt="Screenshot of a hovered button of a single post card in the blog" src="/static/images/screenshot-card-blog-read-hovered.png">
+<img alt="Screenshot of a hovered button of a single post card in the blog" src="/static/images/screenshot-card-blog-read-hovered.png">
 
 <h2>Pagination</h2>
 <p>Like explained previously, the pagination will only work if your blog contains more than the defined number of posts. Once this number exceeded, a pagination will be displayed at the bottom of each blog&#39;s page.</p>
@@ -223,7 +222,8 @@
 	hljs.highlightAll()
 </script>
 
-<script src="/static/scripts/main.js"></script>
+<script type="module" src="/static/scripts/handle-external-links.js"></script>
+<script type="module" src="/static/scripts/themes/default/default-scripts.js"></script>
 		<!--End footer-->
 	</body>
 </html>

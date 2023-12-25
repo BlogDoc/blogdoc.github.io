@@ -6,11 +6,10 @@
 	<meta name="description" content="Navigating between blog&#39;s pages" />
 
 		<link rel="shortcut icon" href="/static/icons/favicon.ico" type="image/x-icon" />
-
 		<title>Blog-Doc | The pagination component</title>
 
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css" />
-	<link rel="stylesheet" href="/static/styles/styles.min.css" />
+	<link rel="stylesheet" href="/static/styles/themes/default/default-styles.min.css" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.8.0/styles/atom-one-dark.min.css" />
 	</head>
 	<body>
@@ -106,7 +105,7 @@
 <p>Using Eta as a template engine allows us to write plain <code>JavaScript</code> inside an <code>HTML</code> file!</p>
 <p>The <code>paginated</code> condition is a passed data object to display or not the pagination component.</p>
 <p>At the top of the <code>pagination.html</code> file, you can find a link to the stylesheet related to this component.</p>
-<pre><code class="language-xml">&lt;link rel=&quot;stylesheet&quot; href=&quot;/static/styles/pagination.css&quot; /&gt;
+<pre><code class="language-xml">&lt;link rel=&quot;stylesheet&quot; href=&quot;/static/styles/themes/default/default-pagination.css&quot; /&gt;
 </code></pre>
 <p>Those styles will only be available when the pagination component is displayed. This is very useful to avoid loading unnecessary styles in the app.</p>
 <p>In <a href="/posts/the-main-route">The Main Route</a> we have seen that the pagination component will only be displayed for the homepage if the length off all the posts is greater than the <a href="http://localhost:3000/admin-config-site#posts-per-page">defined number of posts per page</a> for the blog in the settings.</p>
@@ -279,7 +278,8 @@ paginatedPostsList: paginatedPostsList // line 69
 	hljs.highlightAll()
 </script>
 
-<script src="/static/scripts/main.js"></script>
+<script type="module" src="/static/scripts/handle-external-links.js"></script>
+<script type="module" src="/static/scripts/themes/default/default-scripts.js"></script>
 		<!--End footer-->
 	</body>
 </html>

@@ -6,11 +6,10 @@
 	<meta name="description" content="Why and how to use Blog-Doc?" />
 
 		<link rel="shortcut icon" href="/static/icons/favicon.ico" type="image/x-icon" />
-
 		<title>Blog-Doc | Blog-Doc&#39;s documentation</title>
 
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css" />
-	<link rel="stylesheet" href="/static/styles/styles.min.css" />
+	<link rel="stylesheet" href="/static/styles/themes/default/default-styles.min.css" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.8.0/styles/atom-one-dark.min.css" />
 	</head>
 	<body>
@@ -52,10 +51,68 @@
 					<div><h1>Blog-Doc</h1>
 <p>The Simplest Node.js CMS &amp; SSG!<br />
 A tiny flame in the darkness of error...</p>
+<style>
+alert {
+        display: grid;
+    grid-template-columns: auto 1fr !important;
+    border-radius: 12px;
+    background: #ab1236; /*#b01238*/
+        gap: calc(8px + 1.5625vw);
+        padding: 20px;
+}
+alert-icon {
+    line-height: 1px;
+        text-align: center;
+        align-self: center;
+}
+alert-icon img {
+    filter: invert();
+    width: 2.5rem;
+}
+alert-text {
+    color: #fff;
+        text-align: left;
+        align-self: center;
+}
+alert-text a,
+alert-text a:visited,
+alert-text a:active {
+    color: #fdffcb;
+    text-decoration: underline dotted;
+}
+alert-text a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+</style>
+
+<alert>
+    <alert-icon>
+        <img src="https://cdn.jsdelivr.net/npm/@tabler/icons@2.44.0/icons/info-hexagon.svg" alt="Information SVG" />
+    </alert-icon>
+    <alert-text>
+    This documentation page is retained solely for demonstration purposes and no longer represents the diverse features of Blog-Doc. Kindly consult the comprehensive <a href="https://blog-doc.pages.dev/">documentation</a> for up-to-date information on Blog-Doc's functionalities. 
+    </alert-text>
+</alert>
+
+<br />
+
+<table>
+<thead>
+<tr>
+<th align="left">👀 PREVIEW</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="https://blogdoc.github.io/">Blog-Doc&#39;s static site demo</a></td>
+</tr>
+</tbody></table>
+<br />
+
 <h2>Motivation &amp; Purpose</h2>
 <p><em>With all due respect to the time and hard work of every developer who made a Static Site Generator with Node.js, <strong>including the previous versions of Blog-Doc</strong>, those are gasworks!</em><br />
 <em>I offer my sincerest apologies in advance to each one of these developers, but an app is not supposed to be a gasworks...</em><br />
-<strong>Please read</strong> <a href="https://lebcit.github.io/posts/from-145-to-7/">From 145 to 7 💪</a><br /> 
+<strong>Please read</strong> <a href="https://lebcit.github.io/posts/from-145-to-7/">From 145 to 7 💪</a><br />
 <strong>Also read</strong> <a href="/posts/the-new-blog-doc">The New Blog-Doc</a></p>
 <h2>Requirements</h2>
 <ol>
@@ -130,7 +187,7 @@ You can also download it&#39;s zip by clicking on the following link: <a href="h
 <p>After the install, to see what Blog-Doc looks like, type in the terminal the following command:</p>
 <pre><code class="language-bash">npm run fire
 </code></pre>
-<p>This command will allow you to explore the app in the browser of your choice by visiting <a href="http://localhost:3000">localhost on port 3000</a>.</p>
+<p>This command will allow you to explore the app in the browser of your choice by visiting <a href="http://localhost:8080">localhost on port 8080</a>.</p>
 <p>Blog-Doc comes with some posts and pages. You can now begin to create your own pages and posts from the administration, then remove the existing ones also from the administration.</p>
 <p>I wish you an enjoyable trip with Blog-Doc 🚀</p>
 <h2>Generate a static site</h2>
@@ -177,11 +234,11 @@ You <strong>MAY</strong> replace the <code>rssSiteLanguage</code> value with the
 A list of available language codes can be found on the <a href="https://www.rssboard.org/rss-language-codes">RSS language codes page</a>.</p>
 <p>Bellow is a screenshot of the old RSS feed of Blog-Doc in <a href="https://vivaldi.com/">Vivaldi browser</a></p>
 <style>
-.pure-img-responsive {
+.rss {
   border-style: dashed;
 }
 </style>
-<img class="pure-img-responsive" src="/static/images/blog-doc-rss.xml.png">
+<img class="rss" src="/static/images/blog-doc-rss.xml.png">
 
 <h2 id="sitemap">Sitemap</h2>
 <p>Like the RSS feed, you <strong>MUST</strong> provide the <strong>live URL</strong> of your site in the Settings page by modifying the <code>siteURL</code> value to generate the correct links for each page, post, tag and template as well as for the blog routes.<br />
@@ -324,7 +381,8 @@ LebCit</p>
 	hljs.highlightAll()
 </script>
 
-<script src="/static/scripts/main.js"></script>
+<script type="module" src="/static/scripts/handle-external-links.js"></script>
+<script type="module" src="/static/scripts/themes/default/default-scripts.js"></script>
 		<!--End footer-->
 	</body>
 </html>
