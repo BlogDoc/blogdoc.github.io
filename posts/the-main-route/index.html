@@ -5,12 +5,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="The blog behind the curtains" />
 
-		<link rel="shortcut icon" href="/static/icons/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="/static/images/favicon.svg" type="image/svg+xml" />
 		<title>Blog-Doc | The Main Route</title>
 
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css" />
+		<link rel="stylesheet" href="/static/vendors/themes/default/purecss/pure-min.min.css" />
 	<link rel="stylesheet" href="/static/styles/themes/default/default-styles.min.css" />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.8.0/styles/atom-one-dark.min.css" />
+		<link rel="stylesheet" href="/static/vendors/highlight/atom-one-dark.min.css" />
 	</head>
 	<body>
 		<div id="layout">
@@ -28,9 +28,6 @@
 			</li>
 						<li class="pure-menu-item">
 				<a href="/tags" class="pure-menu-link">Tags</a>
-			</li>
-						<li class="pure-menu-item">
-				<a href="/search" class="pure-menu-link">Search</a>
 			</li>
 						<li class="pure-menu-item">
 				<a href="/pages/documentation" class="pure-menu-link">Documentation</a>
@@ -78,59 +75,43 @@
 				<div  class="content">    					<!-- Start Markdown file content -->
 					<p class="post-meta">
 	<span>Posted on</span>
-	<span class="posted-on"><time class="post-date">2022/11/07</time></span>
+	<span class="posted-on"><time class="post-date">2022-11-07</time></span>
 		<br />
 	<span>Tagged</span>
 	<!--Start tag(s)-->
-		<a href="/tags/Blog-Doc" class="post-tag">Blog-Doc</a>
 		<a href="/tags/Blog" class="post-tag">Blog</a>
 		<a href="/tags/Server-Side" class="post-tag">Server-Side</a>
 		<!--End tag(s)-->
 	</p>
-<div><p>The<code> mainRoute.js</code> file, under the <strong>routes</strong> folder, is where all the functionalities of the blog are defined. It collects, paginates and displays, all the Markdown files in the <strong>posts</strong> folder under the <strong>views</strong> folder.</p>
-<p>This file uses two functions to get the posts and paginate them :</p>
+<div><p>The <code>mainRoute.js</code> file, found in the <strong>default</strong> folder within the <strong>routes</strong> directory, is where all the magic happens for the blog. It takes care of gathering, organizing, and showing the blog posts from the <strong>posts</strong> folder within the <strong>views</strong> directory.</p>
+<p>Here’s a quick breakdown of how it works:</p>
 <ol>
-<li><code>import { getPosts } from &quot;../functions/blog-doc.js&quot;</code></li>
-<li><code>import { paginator } from &quot;../functions/helpers.js&quot;</code></li>
+<li><strong>Getting and Paginating Posts</strong>: The file uses two main functions to handle posts:<ul>
+<li>One function fetches the posts.</li>
+<li>Another function handles pagination (dividing posts into pages).</li>
+</ul>
+</li>
 </ol>
-<p>To understand how <code>getPosts</code> works, you should read <a href="https://lebcit.github.io/posts/markdown-blog-with-ejs/">Markdown blog with EJS</a> who’s very important to understand the logic behind the process of writing in Markdown and rendering it on the front-end.<br>On the other hand, the second one is a pagination function. There are a lot of modules to accomplish the desired output, one of the most popular is <a href="https://www.npmjs.com/package/paginator">Paginator</a> but I didn&#39;t want to add another module to this app for a simple task nor reinvent the wheel, so I did a little research to find a ready made pagination that suits my needs and found it while reading the <a href="https://shouts.dev/articles/easiest-way-to-paginate-an-array-in-javascript">Easiest Way to Paginate an Array in JavaScript</a>.</p>
-<p>With both functions ready to spin, the only task left was some logic.<br>Since I decided to have the blog on the entry route <code>/</code>, and paginate it with a maximum of the <a href="/admin-config-site#posts-per-page">defined number of posts per page</a>, I just had to do the following steps :</p>
+<p>To understand how these functions work, you might want to check out <a href="https://lebcit.github.io/posts/markdown-blog-with-ejs/">Markdown blog with EJS</a> for the basics of writing and displaying posts, and <a href="https://shouts.dev/articles/easiest-way-to-paginate-an-array-in-javascript">Easiest Way to Paginate an Array in JavaScript</a> for a simple pagination method.</p>
+<p>With these functions ready, the main tasks are straightforward:</p>
 <ol>
-<li>get the newest <strong>X</strong> posts from the array of posts and display them on the homepage</li>
-<li>get the rest of them and display them with a pagination of <strong>X</strong> posts per page</li>
-<li>make the pagination available only if the blog have more than <strong>X</strong> posts</li>
+<li><p><strong>Display the Newest Posts</strong>: The homepage shows the latest posts. We pull out the most recent posts and display them right on the homepage.</p>
+</li>
+<li><p><strong>Paginate the Rest</strong>: For the remaining posts, we divide them into pages. This means we set up a system to show a specific number of posts per page and create links to navigate through them.</p>
+</li>
+<li><p><strong>Enable Pagination</strong>: Pagination only shows up if there are more posts than fit on one page. So, if you have enough posts, you&#39;ll see page numbers to navigate through the older posts.</p>
+</li>
 </ol>
-<p><strong>1-</strong> The first step is pretty easy, just slice out the newest five posts:</p>
-<pre><code class="language-javascript">// /routes/mainRoute.js
-
-// Paginate all the posts. Set the first page to 1 and X posts per page. | Line 14
-const paginatedPosts = paginator(posts, 1, settings.postsPerPage)
-// Get the first X posts. | Line 15
-const newestPosts = paginatedPosts.data
-</code></pre>
-<p>After acquiring those ones, we render them on the entry route <code>/</code> via <code>base.html</code> in the <strong>layouts</strong> folder under the <strong>views</strong> folder.<br>To know if the first page should be paginated or not, we pass a data object that will display the pagination component only if the length off all the posts is greater than <strong>X</strong>:</p>
-<pre><code class="language-javascript">// /routes/mainRoute.js
-
-// Get the total number of posts. | Line 17
-const postsLength = paginatedPosts.total
-...
-
-// To display or not the pagination component on the main route. | Line 34
-paginated: postsLength &gt; settings.postsPerPage ? true : false,
-</code></pre>
-<p><strong>2-</strong> The second step is a little bit trickier because it&#39;s not only a matter of slicing out the rest of the posts. We have to slice them out, <em>dynamically</em> define the current page for each set once paginated, paginate them by a maximum of <strong>X</strong> posts per page. This is where the <code>paginator</code> function steps in to achieve this goal and returns the actual page, the previous page, the next page, the sliced posts&#39; total, the total of the pages and the sliced posts themselves. We use this function in <code>mainRoute.js</code> to accomplish this task on line 60:</p>
-<pre><code class="language-javascript">// Paginated array from the list of posts without the newest X posts
-const paginatedPostsList = paginator(posts.slice(settings.postsPerPage), actualBlogPage, settings.postsPerPage)
-</code></pre>
-<p><code>actualBlogPage</code> is a parameter in the dynamic route <code>&quot;/page/:actualBlogPage&quot;</code> defined on line 58:</p>
-<pre><code class="language-javascript">// Dynamic page number
-const actualBlogPage = c.req.param(&quot;actualBlogPage&quot;)
-</code></pre>
-<p>With this in place, the rest of the posts are now paginated in sets of <strong>X</strong>, we use <code>index.html</code> to render them on the dynamic route mentioned above and make sure to display the pagination component on each page coming after the homepage by passing a paginated data object on line 71:</p>
-<pre><code class="language-javascript">paginated: true
-</code></pre>
-<p><strong>3-</strong> The third step is taken care off in the first step for the homepage and in the second step for each page after the homepage.</p>
-<p>That&#39;s how the blog is getting displayed from behind the curtains to the stage, see you in the next one.</p>
+<p>Here’s a simple rundown of the process:</p>
+<ol>
+<li><p><strong>Showing the Latest Posts</strong>: We grab the newest posts and show them on the homepage. If there are more posts, we add a pagination component to help navigate through them.</p>
+</li>
+<li><p><strong>Paginating the Remaining Posts</strong>: For posts beyond the latest batch, we organize them into pages. This way, you can view older posts by navigating through different pages.</p>
+</li>
+<li><p><strong>Pagination Logic</strong>: Pagination only kicks in if you have more posts than fit on one page. If so, you&#39;ll get pagination links to browse through older posts.</p>
+</li>
+</ol>
+<p>That’s a wrap on how the blog’s display and pagination work behind the scenes. Catch you in the next post!</p>
 </div>
 <!--Start posts pagination-->
 <style>
@@ -208,7 +189,12 @@ const actualBlogPage = c.req.param(&quot;actualBlogPage&quot;)
 			</a>
 		</li>
 		  		<li>
-			<a class="post-link next" role="button" href="/posts/the-pagination-component" aria-label="Go to the next post">
+			<a
+				class="post-link next"
+				role="button"
+				href="/posts/the-pagination-component"
+				aria-label="Go to the next post"
+			>
 				<span aria-hidden="true">Next: The pagination component</span>
 				<span class="hidden">Go to the next post</span>
 			</a>
@@ -224,18 +210,16 @@ const actualBlogPage = c.req.param(&quot;actualBlogPage&quot;)
 		<div class="footer">
 	<div class="pure-g">
 		<div class="pure-u-1">
-			<p class="copyright">App built with ❤️ by <a href='https://lebcit.github.io/'>LebCit</a><br />Static Site <a href='https://blogdoc.github.io/'>Demo</a></p>
+			<p class="copyright">Proudly built with <a href='https://litenode.pages.dev/'>LiteNode</a> by <a href='https://lebcit.github.io/'>LebCit</a></p>
 		</div>
 	</div>
 </div>
 
-  <script type="module">
-	import hljs from "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/es/highlight.min.js"
-
+  <script src="/static/vendors/highlight/highlight.min.js"></script>
+<script>
 	hljs.highlightAll()
 </script>
 
-<script type="module" src="/static/scripts/handle-external-links.js"></script>
 <script type="module" src="/static/scripts/themes/default/default-scripts.js"></script>
 		<!--End footer-->
 	</body>

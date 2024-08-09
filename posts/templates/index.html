@@ -3,14 +3,14 @@
 	<head>
 		<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description" content="Using EJS for specific pages" />
+	<meta name="description" content="Using template engine for specific pages" />
 
-		<link rel="shortcut icon" href="/static/icons/favicon.ico" type="image/x-icon" />
-		<title>Blog-Doc | Templates</title>
+		<link rel="shortcut icon" href="/static/images/favicon.svg" type="image/svg+xml" />
+		<title>Blog-Doc | Why Templates Are a Game Changer</title>
 
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css" />
+		<link rel="stylesheet" href="/static/vendors/themes/default/purecss/pure-min.min.css" />
 	<link rel="stylesheet" href="/static/styles/themes/default/default-styles.min.css" />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.8.0/styles/atom-one-dark.min.css" />
+		<link rel="stylesheet" href="/static/vendors/highlight/atom-one-dark.min.css" />
 	</head>
 	<body>
 		<div id="layout">
@@ -28,9 +28,6 @@
 			</li>
 						<li class="pure-menu-item">
 				<a href="/tags" class="pure-menu-link">Tags</a>
-			</li>
-						<li class="pure-menu-item">
-				<a href="/search" class="pure-menu-link">Search</a>
 			</li>
 						<li class="pure-menu-item">
 				<a href="/pages/documentation" class="pure-menu-link">Documentation</a>
@@ -71,86 +68,35 @@
 
 <div class="header post-header">
 	<div class="overlay">
-		<h1>Templates</h1>
-		<h2>Using EJS for specific pages</h2>
+		<h1>Why Templates Are a Game Changer</h1>
+		<h2>Using template engine for specific pages</h2>
 	</div>
 </div>
 				<div  class="content">    					<!-- Start Markdown file content -->
 					<p class="post-meta">
 	<span>Posted on</span>
-	<span class="posted-on"><time class="post-date">2022/11/13</time></span>
+	<span class="posted-on"><time class="post-date">2022-11-13</time></span>
 		<br />
 	<span>Tagged</span>
 	<!--Start tag(s)-->
-		<a href="/tags/Blog-Doc" class="post-tag">Blog-Doc</a>
 		<a href="/tags/Templates" class="post-tag">Templates</a>
 		<a href="/tags/Server-Side" class="post-tag">Server-Side</a>
 		<!--End tag(s)-->
 	</p>
-<div><p>You may ask yourself the reason for a third option of files since we already can create posts and pages in Markdown. Well the reason is that a template can do much more than a Markdown file...<br />
-A template file have more capabilities and can render a totally different architecture and design than the predefined ones for a Markdown file.<br />
-I intend to make templates editable from the front-end like pages and posts, but not in a near future...</p>
-<h2>Nota bene</h2>
-<p><strong>This post has been retained for demonstration purposes, but its content is no longer relevant to the <a href="/posts/the-new-blog-doc">new version of Blog-Doc</a>.</strong></p>
-<h2>Capabilities &amp; Security</h2>
-<p>A simple example would be to create a contact form, this would take a serious amount of data objects to be passed in the front-matter of a Markdown file as well as in the route where it would be rendered, all of this without forgetting the serious security risks of directly parsing sensitive data to HTML...</p>
-<h2>Architecture &amp; Design</h2>
-<p>Blog-Doc&#39;s architecture parses Markdown content to HTML which is injected into EJS templates that are rendered on routes matching the Markdown&#39;s file name.<br>The design is obviously at the templates&#39; level. We can pass personalized CSS for a post or a page directly from the Markdown file, but structuring a whole web page from Markdown would be a time killer...<br>This is why we use a templating language, EJS in Blog-Doc, to generate our final HTML markup with the power of plain JavaScript.<br>Another advantage is that we could completely change the design of a site for a particular page to whatever we like with a template, but this would result in a labyrinthine system if we try to achieve it from a Markdown file...</p>
-<h2>How to use a template?</h2>
-<p>To use a template file, head over to the <strong>templates</strong> folder under the <strong>views</strong> folder and create in there an <code>.ejs</code> file.<br>You can name it whatever you like. As an example : <code>my-template.ejs</code>
-Now paste the following block of code:</p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-    &lt;head&gt;
-        &lt;%# Metadata %&gt;
-        &lt;meta charset=&quot;UTF-8&quot; /&gt;
-        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;
-        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
-        &lt;meta name=&quot;description&quot; content=&quot;A DESCRIPTION OF YOUR EJS TEMPLATE&quot; /&gt;
+<div><p>You might be wondering why we need a third type of file when we already have Markdown files for creating posts and pages. The magic of templates lies in their extended capabilities—they offer much more than your standard Markdown file can.</p>
+<p>Templates allow for a unique design and structure, different from the fixed layouts of Markdown files. In the future, I plan to make templates editable directly from the admin interface, just like posts and pages, but that&#39;s a bit down the road.</p>
+<h3>Capabilities & Security</h3>
 
-        &lt;%# Title %&gt;
-        &lt;title&gt;Blog-Doc | THE TITLE OF YOUR EJS TEMPLATE&lt;/title&gt;
+<p>Let&#39;s start with a simple example: a contact form. Implementing a contact form with Markdown would require a lot of complex data handling in the front-matter and in the route where it&#39;s rendered. Not to mention, directly converting sensitive data to HTML poses significant security risks. Templates simplify this process and handle sensitive data more securely.</p>
+<h3>Architecture & Design</h3>
 
-        &lt;%# Pure.css %&gt;
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css&quot; /&gt;
-        &lt;%# Pure.css grids. Not necessary if you don&#39;t want to use it ! %&gt;
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css&quot; /&gt;
+<p>Blog-Doc processes Markdown content into HTML, which is then injected into templates for rendering. This means that the design and layout are controlled at the template level. While you can apply custom CSS for individual posts or pages directly in Markdown, creating a complete web page from Markdown alone would be cumbersome and inefficient.</p>
+<p>Templates let us leverage the full power of plain JavaScript to create dynamic and customized HTML markup. This approach also means we can easily switch up the design for specific pages using different templates. Trying to achieve this level of flexibility with Markdown alone would be a tangled mess.</p>
+<h3>Conclusion</h3>
 
-        &lt;link rel=&quot;shortcut icon&quot; href=&quot;/icons/favicon.ico&quot; type=&quot;image/x-icon&quot; /&gt;
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;/static/styles/themes/default/default-styles.min.css&quot; /&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;div id=&quot;layout&quot;&gt;
-            &lt;%- include(&#39;../components/menu&#39;) %&gt;
-            &lt;div id=&quot;main&quot;&gt;
-                &lt;%# Page header %&gt;
-                &lt;div class=&quot;header&quot;&gt;
-                    &lt;h1&gt;THE TITLE OF YOUR EJS TEMPLATE&lt;/h1&gt;
-                    &lt;h2&gt;A DESCRIPTION OF YOUR EJS TEMPLATE&lt;/h2&gt;
-                &lt;/div&gt;
-                &lt;%# Page content %&gt;
-                &lt;div class=&quot;content&quot;&gt;
-                    THE CONTENT OF YOUR EJS TEMPLATE
-                    &lt;br /&gt;
-                    YOU CAN USE PLAIN HTML INSIDE AN EJS FILE
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;%- include(&#39;../components/footer&#39;) %&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>Replace the values of the description <code>&lt;meta&gt;</code> tag, the <code>&lt;title&gt;</code> tag and the headers inside <code>&lt;div class=&quot;header&quot;&gt;</code> by the appropriate ones for your template.<br>Create the desired content Inside the <code>&lt;div class=&quot;content&quot;&gt;</code>.<br>Remember that an <code>.ejs</code> file is an <code>HTML</code> file supercharged with <code>JavaScript</code> powers, meaning that you can use both of them inside it !</p>
-<p>If your new to EJS, please take the time to read the following articles on my personal blog :</p>
-<ol>
-<li><a href="https://lebcit.github.io/posts/templating-a-nodejs-app-with-ejs/">Templating a Node.js app with EJS</a></li>
-<li><a href="https://lebcit.github.io/posts/improving-a-nodejs-app-built-with-express-and-ejs/">Improving a Node.js app built with Express and EJS</a></li>
-</ol>
-<p>After creating your content with a template, you&#39;ll be able to add a link to it in the menu or anywhere else that suits your needs.<br>The path of any template that you create will always be : <code>https://domaine.name/templates/the-template-file-name</code>.<br>If you created the previous template <code>my-template.ejs</code>, you can visit it by clicking on this <a href="/templates/my-template">link</a>.<br>Otherwise, Blog-Doc comes with an identical template to the previous code. You can visit <a href="/templates/template-file">template-file</a> to see it.</p>
-<h2>Conclusion</h2>
-<p>If you followed the articles related to <a href="/tags/Blog-Doc">Blog-Doc</a> from the beginning till this one, you now have a solid understanding of how everything works under the hood, how the components are displayed on the front-end, how the posts, pages and templates files are rendered on the front-end, and how to use them.</p>
-<p>You can take Blog-Doc as a prototype and modify it totally to use it with another design and/or another template language.<br><strong>As a proof of concept, I&#39;ve rebuild <a href="https://lebcit.github.io/">my own blog</a> with Blog-Doc</strong> ❤️</p>
-<p>I really hope that this app will be useful in any way for a lot of people out there, I&#39;m considering it as my personal contribution to the Node.js, Express, EJS and Markdown communities.</p>
+<p>If you&#39;ve been following along from the start, you should now have a solid grasp of how everything works under the hood—from the front-end display of components to the rendering of posts and pages. </p>
+<p>Feel free to use Blog-Doc as a starting point and customize it to fit your own design or template language. <strong>For a real-world example, I rebuilt <a href="https://lebcit.github.io/">my own blog</a> using Blog-Doc</strong> ❤️</p>
+<p>I genuinely hope this tool proves useful to many people out there. It’s my way of contributing to the Node.js and Markdown communities.</p>
 </div>
 <!--Start posts pagination-->
 <style>
@@ -228,7 +174,12 @@ Now paste the following block of code:</p>
 			</a>
 		</li>
 		  		<li>
-			<a class="post-link next" role="button" href="/posts/the-new-blog-doc" aria-label="Go to the next post">
+			<a
+				class="post-link next"
+				role="button"
+				href="/posts/the-new-blog-doc"
+				aria-label="Go to the next post"
+			>
 				<span aria-hidden="true">Next: The New Blog-Doc</span>
 				<span class="hidden">Go to the next post</span>
 			</a>
@@ -244,18 +195,16 @@ Now paste the following block of code:</p>
 		<div class="footer">
 	<div class="pure-g">
 		<div class="pure-u-1">
-			<p class="copyright">App built with ❤️ by <a href='https://lebcit.github.io/'>LebCit</a><br />Static Site <a href='https://blogdoc.github.io/'>Demo</a></p>
+			<p class="copyright">Proudly built with <a href='https://litenode.pages.dev/'>LiteNode</a> by <a href='https://lebcit.github.io/'>LebCit</a></p>
 		</div>
 	</div>
 </div>
 
-  <script type="module">
-	import hljs from "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/es/highlight.min.js"
-
+  <script src="/static/vendors/highlight/highlight.min.js"></script>
+<script>
 	hljs.highlightAll()
 </script>
 
-<script type="module" src="/static/scripts/handle-external-links.js"></script>
 <script type="module" src="/static/scripts/themes/default/default-scripts.js"></script>
 		<!--End footer-->
 	</body>

@@ -5,12 +5,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="Rendering posts and pages" />
 
-		<link rel="shortcut icon" href="/static/icons/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="/static/images/favicon.svg" type="image/svg+xml" />
 		<title>Blog-Doc | The Markdown route</title>
 
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css" />
+		<link rel="stylesheet" href="/static/vendors/themes/default/purecss/pure-min.min.css" />
 	<link rel="stylesheet" href="/static/styles/themes/default/default-styles.min.css" />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.8.0/styles/atom-one-dark.min.css" />
+		<link rel="stylesheet" href="/static/vendors/highlight/atom-one-dark.min.css" />
 	</head>
 	<body>
 		<div id="layout">
@@ -28,9 +28,6 @@
 			</li>
 						<li class="pure-menu-item">
 				<a href="/tags" class="pure-menu-link">Tags</a>
-			</li>
-						<li class="pure-menu-item">
-				<a href="/search" class="pure-menu-link">Search</a>
 			</li>
 						<li class="pure-menu-item">
 				<a href="/pages/documentation" class="pure-menu-link">Documentation</a>
@@ -78,7 +75,7 @@
 				<div  class="content">    					<!-- Start Markdown file content -->
 					<p class="post-meta">
 	<span>Posted on</span>
-	<span class="posted-on"><time class="post-date">2022/11/11</time></span>
+	<span class="posted-on"><time class="post-date">2022-11-11</time></span>
 		<br />
 	<span>Tagged</span>
 	<!--Start tag(s)-->
@@ -86,19 +83,19 @@
 		<a href="/tags/Server-Side" class="post-tag">Server-Side</a>
 		<!--End tag(s)-->
 	</p>
-<div><p>Under the routes folder lives the <code>markdownRoute.js</code> file, it&#39;s the most important file of the app, the heart and soul of <a href="/posts/what-is-blog-doc">Blog-Doc</a>. This file looks at two folders sitting under the <strong>views</strong> folder at the same time:</p>
+<div><p>In the <strong>default</strong> folder within the <strong>routes</strong> directory, you&#39;ll find the <code>markdownRoute.js</code> file—this is essentially the heart and soul of <a href="/posts/what-is-blog-doc">Blog-Doc</a>. It’s responsible for handling the content of two key folders under the <strong>views</strong> directory:</p>
 <ol>
-<li>The <strong>posts</strong> folder </li>
+<li>The <strong>posts</strong> folder</li>
 <li>The <strong>pages</strong> folder</li>
 </ol>
-<p>It converts the content of the Markdown files in the <strong>posts</strong> and <strong>pages</strong> folders to <code>HTML</code> and renders each post and page on a route matching it&#39;s filename. If the requested route doesn&#39;t match any file name inside those folders, the 404 error page will be displayed.</p>
-<p>To understand how this file works, please take a look at it, it&#39;s pretty well documented.<br>You can also read more about it on my personal blog:</p>
+<p>This file takes the Markdown files from these folders and converts them into HTML. It then serves each post and page on a route that matches its filename. If someone tries to access a route that doesn’t correspond to any file in these folders, they’ll see a 404 error page.</p>
+<p>To get a deeper understanding of how this works, I encourage you to check out the <code>markdownRoute.js</code> file itself—it’s well documented and should provide all the insights you need. You might also find these articles on my personal blog helpful:</p>
 <ol>
-<li><a href="https://lebcit.github.io/posts/markdown-blog-with-ejs/">Markdown blog with EJS</a></li>
-<li><a href="https://lebcit.github.io/posts/turn-a-markdown-blog-to-a-simple-ssg/">Turn a Markdown blog to a simple SSG</a></li>
+<li><a href="https://lebcit.github.io/posts/markdown-blog-with-ejs/">Markdown Blog with EJS</a></li>
+<li><a href="https://lebcit.github.io/posts/turn-a-markdown-blog-to-a-simple-ssg/">Turn a Markdown Blog into a Simple SSG</a></li>
 </ol>
-<p>Since everything is explained inside the file itself and in the two articles mentioned above, I&#39;m not going to elaborate further more about it here.</p>
-<p>That will be all for the rendering of Markdown and EJS files from one end to another, see you in the next one.</p>
+<p>Since the file and these articles cover everything in detail, there’s no need to go further here.</p>
+<p>That’s a wrap on how Markdown and template engine files are rendered from start to finish. See you in the next post!</p>
 </div>
 <!--Start posts pagination-->
 <style>
@@ -176,7 +173,12 @@
 			</a>
 		</li>
 		  		<li>
-			<a class="post-link next" role="button" href="/posts/posts-and-pages" aria-label="Go to the next post">
+			<a
+				class="post-link next"
+				role="button"
+				href="/posts/posts-and-pages"
+				aria-label="Go to the next post"
+			>
 				<span aria-hidden="true">Next: Posts and Pages</span>
 				<span class="hidden">Go to the next post</span>
 			</a>
@@ -192,18 +194,16 @@
 		<div class="footer">
 	<div class="pure-g">
 		<div class="pure-u-1">
-			<p class="copyright">App built with ❤️ by <a href='https://lebcit.github.io/'>LebCit</a><br />Static Site <a href='https://blogdoc.github.io/'>Demo</a></p>
+			<p class="copyright">Proudly built with <a href='https://litenode.pages.dev/'>LiteNode</a> by <a href='https://lebcit.github.io/'>LebCit</a></p>
 		</div>
 	</div>
 </div>
 
-  <script type="module">
-	import hljs from "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/es/highlight.min.js"
-
+  <script src="/static/vendors/highlight/highlight.min.js"></script>
+<script>
 	hljs.highlightAll()
 </script>
 
-<script type="module" src="/static/scripts/handle-external-links.js"></script>
 <script type="module" src="/static/scripts/themes/default/default-scripts.js"></script>
 		<!--End footer-->
 	</body>

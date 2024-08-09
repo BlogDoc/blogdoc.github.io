@@ -5,10 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="The simplest Node.js CMS and SSG!" />
 
-		<link rel="shortcut icon" href="/static/icons/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="/static/images/favicon.svg" type="image/svg+xml" />
 		<title>Blog-Doc | Home</title>
 
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css" />
+		<link rel="stylesheet" href="/static/vendors/themes/default/purecss/pure-min.min.css" />
 	<link rel="stylesheet" href="/static/styles/themes/default/default-styles.min.css" />
 	</head>
 	<body>
@@ -27,9 +27,6 @@
 			</li>
 						<li class="pure-menu-item">
 				<a href="/tags" class="pure-menu-link">Tags</a>
-			</li>
-						<li class="pure-menu-item">
-				<a href="/search" class="pure-menu-link">Search</a>
 			</li>
 						<li class="pure-menu-item">
 				<a href="/pages/documentation" class="pure-menu-link">Documentation</a>
@@ -85,7 +82,7 @@
 		></div>
 
 		<ul class="details">
-			<li class="date"><span>2022/11/11</span></li>
+			<li class="date"><span>2022-11-11</span></li>
 						<li class="tags">
 				<ul>
 										<li>
@@ -104,7 +101,7 @@
 			<a href="/posts/the-markdown-route" rel="bookmark">The Markdown route</a>
 		</h1>
 		<h2>Rendering posts and pages</h2>
-		<p>Under the routes folder lives the `markdownRoute.js` file, it&#39;s the most important file of the app, the heart and soul of [Blog-Doc](/posts/what-is-blog-doc). This file looks at tw...</p>
+		<p>In the **default** folder within the **routes** directory, you&#39;ll find the `markdownRoute.js` file—this is essentially the heart and soul of [Blog-Doc](/posts/what-is-blog-doc). It...</p>
 		<p class="read-more">
 			<a
 				href="/posts/the-markdown-route"
@@ -130,12 +127,9 @@
 		></div>
 
 		<ul class="details">
-			<li class="date"><span>2022/11/10</span></li>
+			<li class="date"><span>2022-11-10</span></li>
 						<li class="tags">
 				<ul>
-										<li>
-						<a href="/tags/Blog-Doc"><span>Blog-Doc</span></a>
-					</li>
 										<li>
 						<a href="/tags/Blog"><span>Blog</span></a>
 					</li>
@@ -152,7 +146,9 @@
 			<a href="/posts/the-pagination-component" rel="bookmark">The pagination component</a>
 		</h1>
 		<h2>Navigating between blog&#39;s pages</h2>
-		<p>One of the functionalities that we have seen in [The Main Route](/posts/the-main-route) is how the blog gets paginated under the hood. In this post, we will talk about the paginati...</p>
+		<p>In this post, we’ll dive into the pagination component of the blog and how it appears on the front end.
+
+The pagination component is managed by a file called `pagination.html`, w...</p>
 		<p class="read-more">
 			<a
 				href="/posts/the-pagination-component"
@@ -178,12 +174,9 @@
 		></div>
 
 		<ul class="details">
-			<li class="date"><span>2022/11/07</span></li>
+			<li class="date"><span>2022-11-07</span></li>
 						<li class="tags">
 				<ul>
-										<li>
-						<a href="/tags/Blog-Doc"><span>Blog-Doc</span></a>
-					</li>
 										<li>
 						<a href="/tags/Blog"><span>Blog</span></a>
 					</li>
@@ -200,7 +193,7 @@
 			<a href="/posts/the-main-route" rel="bookmark">The Main Route</a>
 		</h1>
 		<h2>The blog behind the curtains</h2>
-		<p>The` mainRoute.js` file, under the **routes** folder, is where all the functionalities of the blog are defined. It collects, paginates and displays, all the Markdown files in the *...</p>
+		<p>The `mainRoute.js` file, found in the **default** folder within the **routes** directory, is where all the magic happens for the blog. It takes care of gathering, organizing, and s...</p>
 		<p class="read-more">
 			<a
 				href="/posts/the-main-route"
@@ -227,7 +220,7 @@
 		 		<li>
 			<a href="/page/3" title="Last page" aria-label="Go to the last page of the blog">
 				<span aria-hidden="true">
-					<img src="/static/icons/chevron-left.svg" alt="Last page" />
+					<img src="/static/images/chevron-left.svg" alt="Last page" />
 				</span>
 				<span class="hidden">Go to the last page of the blog</span>
 			</a>
@@ -252,7 +245,7 @@
 		<li>
 			<a href="/" title="First page" aria-label="Go to the first page of the blog">
 				<span aria-hidden="true">
-					<img src="/static/icons/chevron-right.svg" alt="First page" />
+					<img src="/static/images/chevron-right.svg" alt="First page" />
 				</span>
 				<span class="hidden">Go to the first page of the blog</span>
 			</a>
@@ -274,13 +267,12 @@
 		<div class="footer">
 	<div class="pure-g">
 		<div class="pure-u-1">
-			<p class="copyright">App built with ❤️ by <a href='https://lebcit.github.io/'>LebCit</a><br />Static Site <a href='https://blogdoc.github.io/'>Demo</a></p>
+			<p class="copyright">Proudly built with <a href='https://litenode.pages.dev/'>LiteNode</a> by <a href='https://lebcit.github.io/'>LebCit</a></p>
 		</div>
 	</div>
 </div>
 
   
-<script type="module" src="/static/scripts/handle-external-links.js"></script>
 <script type="module" src="/static/scripts/themes/default/default-scripts.js"></script>
 		<!--End footer-->
 	</body>

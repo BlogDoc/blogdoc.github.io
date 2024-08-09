@@ -5,10 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="A list of all the posts" />
 
-		<link rel="shortcut icon" href="/static/icons/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="/static/images/favicon.svg" type="image/svg+xml" />
 		<title>Blog-Doc | Archive</title>
 
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css" />
+		<link rel="stylesheet" href="/static/vendors/themes/default/purecss/pure-min.min.css" />
 	<link rel="stylesheet" href="/static/styles/themes/default/default-styles.min.css" />
 	</head>
 	<body>
@@ -27,9 +27,6 @@
 			</li>
 						<li class="pure-menu-item">
 				<a href="/tags" class="pure-menu-link">Tags</a>
-			</li>
-						<li class="pure-menu-item">
-				<a href="/search" class="pure-menu-link">Search</a>
 			</li>
 						<li class="pure-menu-item">
 				<a href="/pages/documentation" class="pure-menu-link">Documentation</a>
@@ -85,17 +82,14 @@
 		></div>
 
 		<ul class="details">
-			<li class="date"><span>2023/07/23</span></li>
+			<li class="date"><span>2023-07-26</span></li>
 						<li class="tags">
 				<ul>
 										<li>
 						<a href="/tags/Blog-Doc"><span>Blog-Doc</span></a>
 					</li>
 										<li>
-						<a href="/tags/Hono"><span>Hono</span></a>
-					</li>
-										<li>
-						<a href="/tags/Eta"><span>Eta</span></a>
+						<a href="/tags/LiteNode"><span>LiteNode</span></a>
 					</li>
 										<li>
 						<a href="/tags/Marked"><span>Marked</span></a>
@@ -110,9 +104,8 @@
 			<a href="/posts/the-new-blog-doc" rel="bookmark">The New Blog-Doc</a>
 		</h1>
 		<h2>A tiny flame in the darkness of error</h2>
-		<p>
-In the vast landscape of Node.js apps, Blog-Doc shines as a tiny flame in the darkness of error.  
-It is a remarkable and unique combination of a Content Management System (CMS)...</p>
+		<p>In the vast landscape of Node.js apps, Blog-Doc shines as a tiny flame in the darkness of error.  
+It is a remarkable and unique combination of a Content Management System (CMS) a...</p>
 		<p class="read-more">
 			<a
 				href="/posts/the-new-blog-doc"
@@ -138,12 +131,9 @@ It is a remarkable and unique combination of a Content Management System (CMS)..
 		></div>
 
 		<ul class="details">
-			<li class="date"><span>2022/11/13</span></li>
+			<li class="date"><span>2022-11-13</span></li>
 						<li class="tags">
 				<ul>
-										<li>
-						<a href="/tags/Blog-Doc"><span>Blog-Doc</span></a>
-					</li>
 										<li>
 						<a href="/tags/Templates"><span>Templates</span></a>
 					</li>
@@ -157,14 +147,14 @@ It is a remarkable and unique combination of a Content Management System (CMS)..
 
 	<div class="description">
 		<h1>
-			<a href="/posts/templates" rel="bookmark">Templates</a>
+			<a href="/posts/templates" rel="bookmark">Why Templates Are a Game Changer</a>
 		</h1>
-		<h2>Using EJS for specific pages</h2>
-		<p>You may ask yourself the reason for a third option of files since we already can create posts and pages in Markdown. Well the reason is that a template can do much more than a Mark...</p>
+		<h2>Using template engine for specific pages</h2>
+		<p>You might be wondering why we need a third type of file when we already have Markdown files for creating posts and pages. The magic of templates lies in their extended capabilities...</p>
 		<p class="read-more">
 			<a
 				href="/posts/templates"
-				aria-label="Read more about Templates"
+				aria-label="Read more about Why Templates Are a Game Changer"
 				tabindex="0"
 				role="button"
 				class="btn info"
@@ -186,12 +176,9 @@ It is a remarkable and unique combination of a Content Management System (CMS)..
 		></div>
 
 		<ul class="details">
-			<li class="date"><span>2022/11/12</span></li>
+			<li class="date"><span>2022-11-12</span></li>
 						<li class="tags">
 				<ul>
-										<li>
-						<a href="/tags/Blog-Doc"><span>Blog-Doc</span></a>
-					</li>
 										<li>
 						<a href="/tags/Posts"><span>Posts</span></a>
 					</li>
@@ -211,8 +198,7 @@ It is a remarkable and unique combination of a Content Management System (CMS)..
 			<a href="/posts/posts-and-pages" rel="bookmark">Posts and Pages</a>
 		</h1>
 		<h2>Writing with Markdown</h2>
-		<p>This post intends to show you how to format a Markdown file to write a post or a page.&lt;br /&gt;
-The bellow instructions are applicable if you want to create a post or a page  by your...</p>
+		<p>Creating posts and pages manually in Blog-Doc is a breeze! Please keep in mind that creating posts and pages from the [administration interface](/bd-admin) is much easier and safer...</p>
 		<p class="read-more">
 			<a
 				href="/posts/posts-and-pages"
@@ -238,7 +224,7 @@ The bellow instructions are applicable if you want to create a post or a page  b
 		></div>
 
 		<ul class="details">
-			<li class="date"><span>2022/11/11</span></li>
+			<li class="date"><span>2022-11-11</span></li>
 						<li class="tags">
 				<ul>
 										<li>
@@ -257,7 +243,7 @@ The bellow instructions are applicable if you want to create a post or a page  b
 			<a href="/posts/the-markdown-route" rel="bookmark">The Markdown route</a>
 		</h1>
 		<h2>Rendering posts and pages</h2>
-		<p>Under the routes folder lives the `markdownRoute.js` file, it&#39;s the most important file of the app, the heart and soul of [Blog-Doc](/posts/what-is-blog-doc). This file looks at tw...</p>
+		<p>In the **default** folder within the **routes** directory, you&#39;ll find the `markdownRoute.js` file—this is essentially the heart and soul of [Blog-Doc](/posts/what-is-blog-doc). It...</p>
 		<p class="read-more">
 			<a
 				href="/posts/the-markdown-route"
@@ -283,12 +269,9 @@ The bellow instructions are applicable if you want to create a post or a page  b
 		></div>
 
 		<ul class="details">
-			<li class="date"><span>2022/11/10</span></li>
+			<li class="date"><span>2022-11-10</span></li>
 						<li class="tags">
 				<ul>
-										<li>
-						<a href="/tags/Blog-Doc"><span>Blog-Doc</span></a>
-					</li>
 										<li>
 						<a href="/tags/Blog"><span>Blog</span></a>
 					</li>
@@ -305,7 +288,9 @@ The bellow instructions are applicable if you want to create a post or a page  b
 			<a href="/posts/the-pagination-component" rel="bookmark">The pagination component</a>
 		</h1>
 		<h2>Navigating between blog&#39;s pages</h2>
-		<p>One of the functionalities that we have seen in [The Main Route](/posts/the-main-route) is how the blog gets paginated under the hood. In this post, we will talk about the paginati...</p>
+		<p>In this post, we’ll dive into the pagination component of the blog and how it appears on the front end.
+
+The pagination component is managed by a file called `pagination.html`, w...</p>
 		<p class="read-more">
 			<a
 				href="/posts/the-pagination-component"
@@ -331,12 +316,9 @@ The bellow instructions are applicable if you want to create a post or a page  b
 		></div>
 
 		<ul class="details">
-			<li class="date"><span>2022/11/07</span></li>
+			<li class="date"><span>2022-11-07</span></li>
 						<li class="tags">
 				<ul>
-										<li>
-						<a href="/tags/Blog-Doc"><span>Blog-Doc</span></a>
-					</li>
 										<li>
 						<a href="/tags/Blog"><span>Blog</span></a>
 					</li>
@@ -353,7 +335,7 @@ The bellow instructions are applicable if you want to create a post or a page  b
 			<a href="/posts/the-main-route" rel="bookmark">The Main Route</a>
 		</h1>
 		<h2>The blog behind the curtains</h2>
-		<p>The` mainRoute.js` file, under the **routes** folder, is where all the functionalities of the blog are defined. It collects, paginates and displays, all the Markdown files in the *...</p>
+		<p>The `mainRoute.js` file, found in the **default** folder within the **routes** directory, is where all the magic happens for the blog. It takes care of gathering, organizing, and s...</p>
 		<p class="read-more">
 			<a
 				href="/posts/the-main-route"
@@ -379,7 +361,7 @@ The bellow instructions are applicable if you want to create a post or a page  b
 		></div>
 
 		<ul class="details">
-			<li class="date"><span>2022/10/20</span></li>
+			<li class="date"><span>2022-10-20</span></li>
 						<li class="tags">
 				<ul>
 										<li>
@@ -387,9 +369,6 @@ The bellow instructions are applicable if you want to create a post or a page  b
 					</li>
 										<li>
 						<a href="/tags/Tags"><span>Tags</span></a>
-					</li>
-										<li>
-						<a href="/tags/Blog-Doc"><span>Blog-Doc</span></a>
 					</li>
 									</ul>
 			</li>
@@ -401,7 +380,9 @@ The bellow instructions are applicable if you want to create a post or a page  b
 			<a href="/posts/archive-and-tags" rel="bookmark">Archive and tags</a>
 		</h1>
 		<h2>Archive and tags pages</h2>
-		<p>The archive and tags pages are very similar to the blog as mentioned before, except that they have no pagination. The archive is a reversed chronological list of all the posts in t...</p>
+		<p>The [archive](/posts) and [tags](/tags) pages look a lot like the blog page, but with one key difference: they don’t have pagination.
+
+The archive page displays a reversed chronolo...</p>
 		<p class="read-more">
 			<a
 				href="/posts/archive-and-tags"
@@ -427,12 +408,9 @@ The bellow instructions are applicable if you want to create a post or a page  b
 		></div>
 
 		<ul class="details">
-			<li class="date"><span>2022/10/05</span></li>
+			<li class="date"><span>2022-10-05</span></li>
 						<li class="tags">
 				<ul>
-										<li>
-						<a href="/tags/Blog-Doc"><span>Blog-Doc</span></a>
-					</li>
 										<li>
 						<a href="/tags/Blog"><span>Blog</span></a>
 					</li>
@@ -445,9 +423,8 @@ The bellow instructions are applicable if you want to create a post or a page  b
 		<h1>
 			<a href="/posts/the-blog" rel="bookmark">The blog</a>
 		</h1>
-		<h2>How the blog works ?</h2>
-		<p>
-This post is an introduction to the blog design and functionalities. We&#39;ll explore how things are related and how they work together. We&#39;ll understand what&#39;s mandatory for the bl...</p>
+		<h2>How the blog works?</h2>
+		<p>This post will give you an overview of the blog&#39;s design and features. We’ll look at how different elements are connected and how they work together. We&#39;ll also break down what’s e...</p>
 		<p class="read-more">
 			<a
 				href="/posts/the-blog"
@@ -473,7 +450,7 @@ This post is an introduction to the blog design and functionalities. We&#39;ll e
 		></div>
 
 		<ul class="details">
-			<li class="date"><span>2022/09/30</span></li>
+			<li class="date"><span>2022-09-30</span></li>
 						<li class="tags">
 				<ul>
 										<li>
@@ -486,14 +463,14 @@ This post is an introduction to the blog design and functionalities. We&#39;ll e
 
 	<div class="description">
 		<h1>
-			<a href="/posts/what-is-blog-doc" rel="bookmark">What is Blog-Doc ?</a>
+			<a href="/posts/what-is-blog-doc" rel="bookmark">What is Blog-Doc?</a>
 		</h1>
-		<h2>A brief introduction to Blog-Doc.</h2>
-		<p>Blog-Doc is **The Simplest Node.js CMS &amp; SSG**. The CMS (Content Management System) allows the user to CRUD (Create, Read, Update, Delete) and control every aspect of the applicati...</p>
+		<h2>A brief introduction to Blog-Doc</h2>
+		<p>Blog-Doc is **the simplest Node.js CMS &amp; SSG** around! With Blog-Doc, you can easily Create, Read, Update, and Delete (CRUD) content through its intuitive [administration interface...</p>
 		<p class="read-more">
 			<a
 				href="/posts/what-is-blog-doc"
-				aria-label="Read more about What is Blog-Doc ?"
+				aria-label="Read more about What is Blog-Doc?"
 				tabindex="0"
 				role="button"
 				class="btn info"
@@ -515,11 +492,7 @@ This post is an introduction to the blog design and functionalities. We&#39;ll e
 		></div>
 
 		<ul class="details">
-			<li class="date"><span>2022/08/26</span></li>
-						<li class="tags">
-				<ul>
-									</ul>
-			</li>
+			<li class="date"><span>2022-08-26</span></li>
 					</ul>
 	</div>
 
@@ -528,8 +501,7 @@ This post is an introduction to the blog design and functionalities. We&#39;ll e
 			<a href="/posts/no-description-or-tags" rel="bookmark">No description or tags</a>
 		</h1>
 		<h2></h2>
-		<p>
-This post is for testing the output of an article that doesn&#39;t have a description or even a tag. Everything seems to be okay since the display of the tags and their respective nu...</p>
+		<p>This post is for testing the output of an article that doesn&#39;t have a description or even a tag. Everything seems to be okay since the display of the tags and their respective numb...</p>
 		<p class="read-more">
 			<a
 				href="/posts/no-description-or-tags"
@@ -555,7 +527,7 @@ This post is for testing the output of an article that doesn&#39;t have a descri
 		></div>
 
 		<ul class="details">
-			<li class="date"><span>2022/08/12</span></li>
+			<li class="date"><span>2022-08-12</span></li>
 						<li class="tags">
 				<ul>
 										<li>
@@ -571,8 +543,7 @@ This post is for testing the output of an article that doesn&#39;t have a descri
 			<a href="/posts/excerpt-length" rel="bookmark">Excerpt length</a>
 		</h1>
 		<h2>Testing the excerpt of posts</h2>
-		<p>
-In this post, I&#39;m just trying to type some random text to see if the excerpt length will stop when I reach 180 characters. I also want to see how it looks like when the post is r...</p>
+		<p>In this post, I&#39;m just trying to type some random text to see if the excerpt length will stop when I reach 180 characters. I also want to see how it looks like when the post is ren...</p>
 		<p class="read-more">
 			<a
 				href="/posts/excerpt-length"
@@ -594,11 +565,11 @@ In this post, I&#39;m just trying to type some random text to see if the excerpt
 	<div class="meta">
 				<div
 			class="photo"
-			style="background-image: url('/static/images/jorg-angeli-CAMwIxYk5Xg-unsplash.jpg')"
+			style="background-image: url('/static/images/sea-of-white-clouds.jpg')"
 		></div>
 
 		<ul class="details">
-			<li class="date"><span>2022/07/23</span></li>
+			<li class="date"><span>2022-07-23</span></li>
 						<li class="tags">
 				<ul>
 										<li>
@@ -614,10 +585,7 @@ In this post, I&#39;m just trying to type some random text to see if the excerpt
 						<a href="/tags/Node.js"><span>Node.js</span></a>
 					</li>
 										<li>
-						<a href="/tags/Hono"><span>Hono</span></a>
-					</li>
-										<li>
-						<a href="/tags/Eta"><span>Eta</span></a>
+						<a href="/tags/LiteNode"><span>LiteNode</span></a>
 					</li>
 										<li>
 						<a href="/tags/Markdown"><span>Markdown</span></a>
@@ -632,9 +600,7 @@ In this post, I&#39;m just trying to type some random text to see if the excerpt
 			<a href="/posts/my-first-article" rel="bookmark">My first article</a>
 		</h1>
 		<h2>This is the description of my first article</h2>
-		<p>
-This is the content of my first article
-...</p>
+		<p>This is the content of my first article...</p>
 		<p class="read-more">
 			<a
 				href="/posts/my-first-article"
@@ -663,13 +629,12 @@ This is the content of my first article
 		<div class="footer">
 	<div class="pure-g">
 		<div class="pure-u-1">
-			<p class="copyright">App built with ❤️ by <a href='https://lebcit.github.io/'>LebCit</a><br />Static Site <a href='https://blogdoc.github.io/'>Demo</a></p>
+			<p class="copyright">Proudly built with <a href='https://litenode.pages.dev/'>LiteNode</a> by <a href='https://lebcit.github.io/'>LebCit</a></p>
 		</div>
 	</div>
 </div>
 
   
-<script type="module" src="/static/scripts/handle-external-links.js"></script>
 <script type="module" src="/static/scripts/themes/default/default-scripts.js"></script>
 		<!--End footer-->
 	</body>

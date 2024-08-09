@@ -3,14 +3,14 @@
 	<head>
 		<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description" content="A brief introduction to Blog-Doc." />
+	<meta name="description" content="A brief introduction to Blog-Doc" />
 
-		<link rel="shortcut icon" href="/static/icons/favicon.ico" type="image/x-icon" />
-		<title>Blog-Doc | What is Blog-Doc ?</title>
+		<link rel="shortcut icon" href="/static/images/favicon.svg" type="image/svg+xml" />
+		<title>Blog-Doc | What is Blog-Doc?</title>
 
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css" />
+		<link rel="stylesheet" href="/static/vendors/themes/default/purecss/pure-min.min.css" />
 	<link rel="stylesheet" href="/static/styles/themes/default/default-styles.min.css" />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.8.0/styles/atom-one-dark.min.css" />
+		<link rel="stylesheet" href="/static/vendors/highlight/atom-one-dark.min.css" />
 	</head>
 	<body>
 		<div id="layout">
@@ -30,9 +30,6 @@
 				<a href="/tags" class="pure-menu-link">Tags</a>
 			</li>
 						<li class="pure-menu-item">
-				<a href="/search" class="pure-menu-link">Search</a>
-			</li>
-						<li class="pure-menu-item">
 				<a href="/pages/documentation" class="pure-menu-link">Documentation</a>
 			</li>
 						<li class="pure-menu-item">
@@ -44,37 +41,40 @@
 	</div>
 			<div id="main">
 				<div class="header">
-	<h1>What is Blog-Doc ?</h1>
-	<h2>A brief introduction to Blog-Doc.</h2>
+	<h1>What is Blog-Doc?</h1>
+	<h2>A brief introduction to Blog-Doc</h2>
 </div>
 				<div  class="content">    					<!-- Start Markdown file content -->
 					<p class="post-meta">
 	<span>Posted on</span>
-	<span class="posted-on"><time class="post-date">2022/09/30</time></span>
+	<span class="posted-on"><time class="post-date">2022-09-30</time></span>
 		<br />
 	<span>Tagged</span>
 	<!--Start tag(s)-->
 		<a href="/tags/Blog-Doc" class="post-tag">Blog-Doc</a>
 		<!--End tag(s)-->
 	</p>
-<div><p>Blog-Doc is <strong>The Simplest Node.js CMS &amp; SSG</strong>. The CMS (Content Management System) allows the user to CRUD (Create, Read, Update, Delete) and control every aspect of the application <strong>from the front-end</strong> while the SSG (Static Site Generator) build a static site out of the created content !<br>Blog-Doc is written in JavaScript ES6, using Eta as a templating language and Markdown to write and format the markup of the generated posts and pages.</p>
+<div><p>Blog-Doc is <strong>the simplest Node.js CMS &amp; SSG</strong> around! With Blog-Doc, you can easily Create, Read, Update, and Delete (CRUD) content through its intuitive <a href="/bd-admin">administration interface</a>. Plus, it transforms your content into a static site using its Static Site Generator (SSG) feature!</p>
+<p>Written in JavaScript ES6, Blog-Doc includes the <code>default</code> and <code>clean-blog</code> themes that use <a href="https://eta.js.org/">Eta</a> for templating and Markdown for formatting posts and pages.</p>
 <h2>Motivation</h2>
-<p>In July of this year (2022), I&#39;ve written some posts on <a href="https://lebcit.github.io/">my personal blog</a> showing how to create a Node.js app using EJS as a templating language and how to improve it. Then, taking the code a step further, I&#39;ve showed how to use Markdown to write the app&#39;s content, and finally how to turn it into a simple SSG. So I&#39;ve decided to leverage my own tutorials one more step by creating a super simple CMS &amp; SSG out of them.</p>
-<h2>Name, design &amp; architecture</h2>
-<p>I wanted from the beginning something extremely easy to maintain, modify and improve.<br>With this in mind, I asked myself two questions :</p>
+
+<p>In July 2022, I posted a series on <a href="https://lebcit.github.io/">my personal blog</a> about creating a Node.js app using <a href="https://ejs.co/">EJS</a> and improving it. I demonstrated how to use Markdown for content and eventually how to build a simple SSG. To build on that, I decided to create a super simple CMS &amp; SSG from my own tutorials.</p>
+<h2>Name, Design & Architecture</h2>
+
+<p>From the start, I aimed for something extremely easy to maintain and enhance. I asked myself two key questions:</p>
 <ul>
-<li>what would be the purpose of this application ?</li>
-<li>how it could be useful in the sea of CMS and SSG ?</li>
+<li>What’s the purpose of this application?</li>
+<li>How can it stand out in the crowded CMS and SSG landscape?</li>
 </ul>
-<p>The answer to both came by responding to a third one :</p>
+<p>The answers emerged from a third question:</p>
 <ul>
-<li>what do we use mostly the net for ?</li>
+<li>What do we use the internet for?</li>
 </ul>
-<p>Putting aside personal communication, entertainment of any kind and shopping, we use the net to get data ! We search, read, take notes... The web, in my modest opinion, is a place where people share experience and knowledge with each other. Blogging is the way to express ourselves and spread what we have learned, and documentation is the backbone of any decent application... Therefor, the name <strong>Blog-Doc</strong> was chosen.</p>
-<p>Once the purpose defined, I had to think about the look and feel of this app.<br>Again, simplicity was the keyword. <a href="https://purecss.io/">Pure.css</a> docs are a great example, they also provide an identical layout of their own website, lucky me !</p>
-<p>Finally, after acquiring the design, I had to carefully build the app&#39;s architecture.<br>As easy as it may sound, you have to think about <em>the future</em>! Possibilities are limitless, but by writing essential functionalities for the app and deciding how they should work together and what they should do, the path becomes less cloudy...</p>
-<p>This one ends here, I&#39;ll be talking about some aspects of the design and the architecture later on.</p>
-<p>See you in the next one 😉</p>
+<p>Aside from personal communication, entertainment, and shopping, the primary use of the web is to access information. We search, read, and take notes. The web is a platform for sharing knowledge, and blogging and documentation are crucial for that. That’s why I named it <strong>Blog-Doc</strong>.</p>
+<p>With the purpose clear, I focused on the app’s design. Simplicity was key. The <a href="https://purecss.io/">Pure.css</a> documentation was a great example of clean, straightforward design, which was a lucky find!</p>
+<p>Finally, designing the app’s architecture required careful planning for future growth. While the possibilities are endless, defining essential functionalities and how they interact helps clarify the development path.</p>
+<p>That’s all for now! I’ll dive deeper into the design and architecture in upcoming posts.</p>
+<p>See you next time 😉</p>
 </div>
 <!--Start posts pagination-->
 <style>
@@ -152,7 +152,12 @@
 			</a>
 		</li>
 		  		<li>
-			<a class="post-link next" role="button" href="/posts/the-blog" aria-label="Go to the next post">
+			<a
+				class="post-link next"
+				role="button"
+				href="/posts/the-blog"
+				aria-label="Go to the next post"
+			>
 				<span aria-hidden="true">Next: The blog</span>
 				<span class="hidden">Go to the next post</span>
 			</a>
@@ -168,18 +173,16 @@
 		<div class="footer">
 	<div class="pure-g">
 		<div class="pure-u-1">
-			<p class="copyright">App built with ❤️ by <a href='https://lebcit.github.io/'>LebCit</a><br />Static Site <a href='https://blogdoc.github.io/'>Demo</a></p>
+			<p class="copyright">Proudly built with <a href='https://litenode.pages.dev/'>LiteNode</a> by <a href='https://lebcit.github.io/'>LebCit</a></p>
 		</div>
 	</div>
 </div>
 
-  <script type="module">
-	import hljs from "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/es/highlight.min.js"
-
+  <script src="/static/vendors/highlight/highlight.min.js"></script>
+<script>
 	hljs.highlightAll()
 </script>
 
-<script type="module" src="/static/scripts/handle-external-links.js"></script>
 <script type="module" src="/static/scripts/themes/default/default-scripts.js"></script>
 		<!--End footer-->
 	</body>

@@ -5,12 +5,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="Testing the excerpt of posts" />
 
-		<link rel="shortcut icon" href="/static/icons/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="/static/images/favicon.svg" type="image/svg+xml" />
 		<title>Blog-Doc | Excerpt length</title>
 
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css" />
+		<link rel="stylesheet" href="/static/vendors/themes/default/purecss/pure-min.min.css" />
 	<link rel="stylesheet" href="/static/styles/themes/default/default-styles.min.css" />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.8.0/styles/atom-one-dark.min.css" />
+		<link rel="stylesheet" href="/static/vendors/highlight/atom-one-dark.min.css" />
 	</head>
 	<body>
 		<div id="layout">
@@ -28,9 +28,6 @@
 			</li>
 						<li class="pure-menu-item">
 				<a href="/tags" class="pure-menu-link">Tags</a>
-			</li>
-						<li class="pure-menu-item">
-				<a href="/search" class="pure-menu-link">Search</a>
 			</li>
 						<li class="pure-menu-item">
 				<a href="/pages/documentation" class="pure-menu-link">Documentation</a>
@@ -78,7 +75,7 @@
 				<div  class="content">    					<!-- Start Markdown file content -->
 					<p class="post-meta">
 	<span>Posted on</span>
-	<span class="posted-on"><time class="post-date">2022/08/12</time></span>
+	<span class="posted-on"><time class="post-date">2022-08-12</time></span>
 		<br />
 	<span>Tagged</span>
 	<!--Start tag(s)-->
@@ -87,6 +84,7 @@
 	</p>
 <div><p>In this post, I&#39;m just trying to type some random text to see if the excerpt length will stop when I reach 180 characters. I also want to see how it looks like when the post is rendered on the frontend.</p>
 <h2>Decision</h2>
+
 <p>I thought that 180 chars are maybe too much for an excerpt but after seeing the output on the post&#39;s card in the blog, I now think that I&#39;ll keep it the way it is.</p>
 </div>
 <!--Start posts pagination-->
@@ -165,7 +163,12 @@
 			</a>
 		</li>
 		  		<li>
-			<a class="post-link next" role="button" href="/posts/no-description-or-tags" aria-label="Go to the next post">
+			<a
+				class="post-link next"
+				role="button"
+				href="/posts/no-description-or-tags"
+				aria-label="Go to the next post"
+			>
 				<span aria-hidden="true">Next: No description or tags</span>
 				<span class="hidden">Go to the next post</span>
 			</a>
@@ -181,18 +184,16 @@
 		<div class="footer">
 	<div class="pure-g">
 		<div class="pure-u-1">
-			<p class="copyright">App built with ❤️ by <a href='https://lebcit.github.io/'>LebCit</a><br />Static Site <a href='https://blogdoc.github.io/'>Demo</a></p>
+			<p class="copyright">Proudly built with <a href='https://litenode.pages.dev/'>LiteNode</a> by <a href='https://lebcit.github.io/'>LebCit</a></p>
 		</div>
 	</div>
 </div>
 
-  <script type="module">
-	import hljs from "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/es/highlight.min.js"
-
+  <script src="/static/vendors/highlight/highlight.min.js"></script>
+<script>
 	hljs.highlightAll()
 </script>
 
-<script type="module" src="/static/scripts/handle-external-links.js"></script>
 <script type="module" src="/static/scripts/themes/default/default-scripts.js"></script>
 		<!--End footer-->
 	</body>

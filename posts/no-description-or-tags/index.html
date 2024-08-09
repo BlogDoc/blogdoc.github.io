@@ -3,14 +3,14 @@
 	<head>
 		<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description" content="" />
+	<meta name="description" content="undefined" />
 
-		<link rel="shortcut icon" href="/static/icons/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="/static/images/favicon.svg" type="image/svg+xml" />
 		<title>Blog-Doc | No description or tags</title>
 
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css" />
+		<link rel="stylesheet" href="/static/vendors/themes/default/purecss/pure-min.min.css" />
 	<link rel="stylesheet" href="/static/styles/themes/default/default-styles.min.css" />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.8.0/styles/atom-one-dark.min.css" />
+		<link rel="stylesheet" href="/static/vendors/highlight/atom-one-dark.min.css" />
 	</head>
 	<body>
 		<div id="layout">
@@ -28,9 +28,6 @@
 			</li>
 						<li class="pure-menu-item">
 				<a href="/tags" class="pure-menu-link">Tags</a>
-			</li>
-						<li class="pure-menu-item">
-				<a href="/search" class="pure-menu-link">Search</a>
 			</li>
 						<li class="pure-menu-item">
 				<a href="/pages/documentation" class="pure-menu-link">Documentation</a>
@@ -78,21 +75,20 @@
 				<div  class="content">    					<!-- Start Markdown file content -->
 					<p class="post-meta">
 	<span>Posted on</span>
-	<span class="posted-on"><time class="post-date">2022/08/26</time></span>
+	<span class="posted-on"><time class="post-date">2022-08-26</time></span>
 	</p>
 <div><p>This post is for testing the output of an article that doesn&#39;t have a description or even a tag. Everything seems to be okay since the display of the tags and their respective numbers are not affected by the absence of tags in a post on the <a href="/tags">Tags</a> route.</p>
 <h2>Note</h2>
-<p>While creating a post, you can leave the <code>description</code> and/or the <code>tags</code> empty, they will not be render.<vr />
-Please keep in mind that if you are creating a post manually, you <strong>must</strong> add those properties to the front matter of the file and leave them empty like so:</p>
+
+<p>While manually creating a post, remove the optional <code>description</code>, <code>tags</code> and <code>featuredImage</code> properties if you don&#39;t intend to use them.<br />
+Please keep in mind that if you are creating a post manually, the mandatory/required properties of the front matter are <code>title</code>, <code>publish_date</code> and <code>published</code>:</p>
 <pre><code>---
 title: The post title
-date: 2023/09/16
-description: 
-featuredImage: The path or URL to the post&#39;s image
-tags: []
+publish_date: 2024-08-05
+published: true
 ---
 </code></pre>
-<p>You can read more about it under <a href="/posts/posts-and-pages">Posts and Pages</a>.</p>
+<p>You can read more about it in <a href="/posts/posts-and-pages">Posts and Pages</a>.</p>
 </div>
 <!--Start posts pagination-->
 <style>
@@ -170,8 +166,13 @@ tags: []
 			</a>
 		</li>
 		  		<li>
-			<a class="post-link next" role="button" href="/posts/what-is-blog-doc" aria-label="Go to the next post">
-				<span aria-hidden="true">Next: What is Blog-Doc ?</span>
+			<a
+				class="post-link next"
+				role="button"
+				href="/posts/what-is-blog-doc"
+				aria-label="Go to the next post"
+			>
+				<span aria-hidden="true">Next: What is Blog-Doc?</span>
 				<span class="hidden">Go to the next post</span>
 			</a>
 		</li>
@@ -186,18 +187,16 @@ tags: []
 		<div class="footer">
 	<div class="pure-g">
 		<div class="pure-u-1">
-			<p class="copyright">App built with ❤️ by <a href='https://lebcit.github.io/'>LebCit</a><br />Static Site <a href='https://blogdoc.github.io/'>Demo</a></p>
+			<p class="copyright">Proudly built with <a href='https://litenode.pages.dev/'>LiteNode</a> by <a href='https://lebcit.github.io/'>LebCit</a></p>
 		</div>
 	</div>
 </div>
 
-  <script type="module">
-	import hljs from "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/es/highlight.min.js"
-
+  <script src="/static/vendors/highlight/highlight.min.js"></script>
+<script>
 	hljs.highlightAll()
 </script>
 
-<script type="module" src="/static/scripts/handle-external-links.js"></script>
 <script type="module" src="/static/scripts/themes/default/default-scripts.js"></script>
 		<!--End footer-->
 	</body>

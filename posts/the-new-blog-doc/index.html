@@ -5,12 +5,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="A tiny flame in the darkness of error" />
 
-		<link rel="shortcut icon" href="/static/icons/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="/static/images/favicon.svg" type="image/svg+xml" />
 		<title>Blog-Doc | The New Blog-Doc</title>
 
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css" />
+		<link rel="stylesheet" href="/static/vendors/themes/default/purecss/pure-min.min.css" />
 	<link rel="stylesheet" href="/static/styles/themes/default/default-styles.min.css" />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.8.0/styles/atom-one-dark.min.css" />
+		<link rel="stylesheet" href="/static/vendors/highlight/atom-one-dark.min.css" />
 	</head>
 	<body>
 		<div id="layout">
@@ -28,9 +28,6 @@
 			</li>
 						<li class="pure-menu-item">
 				<a href="/tags" class="pure-menu-link">Tags</a>
-			</li>
-						<li class="pure-menu-item">
-				<a href="/search" class="pure-menu-link">Search</a>
 			</li>
 						<li class="pure-menu-item">
 				<a href="/pages/documentation" class="pure-menu-link">Documentation</a>
@@ -78,40 +75,40 @@
 				<div  class="content">    					<!-- Start Markdown file content -->
 					<p class="post-meta">
 	<span>Posted on</span>
-	<span class="posted-on"><time class="post-date">2023/07/23</time></span>
+	<span class="posted-on"><time class="post-date">2023-07-26</time></span>
 		<br />
 	<span>Tagged</span>
 	<!--Start tag(s)-->
 		<a href="/tags/Blog-Doc" class="post-tag">Blog-Doc</a>
-		<a href="/tags/Hono" class="post-tag">Hono</a>
-		<a href="/tags/Eta" class="post-tag">Eta</a>
+		<a href="/tags/LiteNode" class="post-tag">LiteNode</a>
 		<a href="/tags/Marked" class="post-tag">Marked</a>
 		<!--End tag(s)-->
 	</p>
 <div><p>In the vast landscape of Node.js apps, Blog-Doc shines as a tiny flame in the darkness of error.<br>It is a remarkable and unique combination of a Content Management System (CMS) and a Static Site Generator (SSG) built entirely with Node.js.<br/>
 While paying homage to the developers of other Node.js-based Static Site Generators, Blog-Doc sets itself apart by offering unparalleled simplicity and speed.</p>
-<h2>Nota bene</h2>
-<p><strong>The <a href="/posts/templates">previous post</a> has been retained for demonstration purposes, but its content is no longer relevant to the new version of Blog-Doc.</strong></p>
 <p>Blog-Doc&#39;s latest version proudly employs:</p>
 <ul>
-<li><a href="https://hono.dev/">Hono</a>, small, simple, and ultrafast web framework for the Edges.</li>
-<li><a href="https://eta.js.org/">Eta</a>, lightweight, powerful, pluggable embedded JS template engine.</li>
-<li><a href="https://marked.js.org/">Marked</a>, Markdown parser and compiler. Built for speed.</li>
+<li><a href="https://litenode.pages.dev/">LiteNode</a>: Fast, lightweight, and independent Node.js web framework.</li>
+<li><a href="https://marked.js.org/">Marked</a>: Markdown parser and compiler. Built for speed.</li>
 </ul>
-<h2>Motivation &amp; Purpose</h2>
+<h2>Motivation & Purpose</h2>
+
 <p>Blog-Doc was born out of a desire to create something truly efficient and straightforward.<br/>
 I&#39;ve realized that existing Static Site Generators often came with unnecessary complexities, resembling gasworks more than elegant solutions.<br/>
 Blog-Doc is a passionate response to this challenge, aiming to provide a seamless experience for developers who seek a lightweight, fast, and user-friendly CMS and SSG.</p>
 <h2>Blazing Fast and Simple</h2>
+
 <p>Blog-Doc truly lives up to its name, offering blazing-fast performance and an incredibly simple configuration.<br/>
 With zero code required for configuration, Blog-Doc can be effortlessly set up as both a Node.js CMS and a static site generator.<br/>
 Its minimalist approach ensures that your site loads in the blink of an eye, free from any unnecessary functionalities.</p>
 <h2>Design</h2>
+
 <p>Blog-Doc boasts a responsive, elegant, and simple layout. It comes with a ready-to-use template for blogs and documentation, which can be easily customized to suit different designs.</p>
-<h2>Features</h2>
+<h2 id="features">Features</h2>
+
 <p>Blog-Doc is packed with a variety of powerful features, making it a versatile and practical tool for developers:</p>
 <ul>
-<li>Front-end Administration: Easily manage your app directly from the front-end.</li>
+<li>Front-end Administration: Easily manage your app directly from the admin interface.</li>
 <li>Gallery: Conveniently upload and manage images for your pages and posts.</li>
 <li>Content Management: Create, read, update, and delete pages and posts with ease.</li>
 <li>Paginated Blog: Enjoy a paginated blog with a customizable number of posts per page.</li>
@@ -124,16 +121,18 @@ Its minimalist approach ensures that your site loads in the blink of an eye, fre
 <li>Drag and Drop Menu: Easily reorder menu links with a simple drag-and-drop interface.</li>
 <li>RSS Feed: Generate an RSS feed for your site to keep your audience updated.</li>
 <li>Sitemap: Automatically generate a sitemap to enhance search engine discoverability.</li>
-<li>Built-in Search: Enjoy a built-in search feature for quick content retrieval.</li>
-<li>Code Highlighting: Utilize highlight.js for elegant code highlighting in your posts.</li>
-<li>IDs for Headings: Automatically generate IDs for H2 to H4 heading tags for easier linking.</li>
+<li>Built-in Search: Enjoy a built-in search feature for quick content retrieval. <strong>Only in Node.js app for now!</strong></li>
+<li>Code Highlighting: Utilize highlight.js for elegant code highlighting in your pages and posts.</li>
+<li>IDs for Headings: Automatically generate IDs for heading tags for easier linking.</li>
 <li>No Hot Reloading: Blog-Doc operates without the need for hot reloading during development.</li>
 </ul>
-<h2>What&#39;s Next?</h2>
+<h2>What's Next?</h2>
+
 <p>I have exciting plans for future improvements.<br/>
 The app will continue to evolve and receive updates, it&#39;s my personal contribution to the Node.js and Markdown communities.<br/>
 Feedback, ideas, and suggestions from the community are warmly welcomed, and Blog-Doc invites developers to explore its potential and customize it for various projects.</p>
 <h2>Conclusion</h2>
+
 <p>Blog-Doc is a remarkable achievement in the world of Node.js CMS and SSGs.<br/>
 Its simplicity, speed, and powerful features make it a standout choice for developers seeking a lightweight and efficient solution.<br/>
 Whether used as a CMS on a Node.js server or deployed as a static site, Blog-Doc promises an enjoyable and productive experience.</p>
@@ -212,7 +211,7 @@ Embrace the simplicity and embark on a journey of creating delightful content wi
 				href="/posts/templates"
 				aria-label="Go to the previous post"
 			>
-				<span aria-hidden="true">Previous: Templates</span>
+				<span aria-hidden="true">Previous: Why Templates Are a Game Changer</span>
 				<span class="hidden">Go to the previous post</span>
 			</a>
 		</li>
@@ -227,18 +226,16 @@ Embrace the simplicity and embark on a journey of creating delightful content wi
 		<div class="footer">
 	<div class="pure-g">
 		<div class="pure-u-1">
-			<p class="copyright">App built with ❤️ by <a href='https://lebcit.github.io/'>LebCit</a><br />Static Site <a href='https://blogdoc.github.io/'>Demo</a></p>
+			<p class="copyright">Proudly built with <a href='https://litenode.pages.dev/'>LiteNode</a> by <a href='https://lebcit.github.io/'>LebCit</a></p>
 		</div>
 	</div>
 </div>
 
-  <script type="module">
-	import hljs from "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/es/highlight.min.js"
-
+  <script src="/static/vendors/highlight/highlight.min.js"></script>
+<script>
 	hljs.highlightAll()
 </script>
 
-<script type="module" src="/static/scripts/handle-external-links.js"></script>
 <script type="module" src="/static/scripts/themes/default/default-scripts.js"></script>
 		<!--End footer-->
 	</body>
