@@ -1,109 +1,196 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="static/styles/rss-stylesheet.xsl"?>
 <rss version="2.0">
 	<channel>
+		<!-- Channel Information -->
+
 		<title>Blog-Doc</title>
+
 		<link>https://blogdoc.github.io/</link>
+
 		<description>The simplest Node.js CMS and SSG!</description>
+
 		<language>en-US</language>
+
 		<copyright>Copyright (c) 2022 - Present, LebCit under the MIT License</copyright>
+
 		<pubDate>Wed, 26 Jul 2023 00:00:00 GMT</pubDate>
+
 		<lastBuildDate>Wed, 26 Jul 2023 00:00:00 GMT</lastBuildDate>
+
 		<docs>https://www.rssboard.org/rss-specification</docs>
-					<item>
-				<title>The New Blog-Doc</title>
-				<link>https://blogdoc.github.io/posts/the-new-blog-doc</link>
-								<description>A tiny flame in the darkness of error</description>
-																<category domain="https://blogdoc.github.io/tags/Blog-Doc">Blog-Doc</category>
-								<category domain="https://blogdoc.github.io/tags/LiteNode">LiteNode</category>
-								<category domain="https://blogdoc.github.io/tags/Marked">Marked</category>
-												<pubDate>Wed, 26 Jul 2023 00:00:00 GMT</pubDate>
-			</item>
-					<item>
-				<title>Why Templates Are a Game Changer</title>
-				<link>https://blogdoc.github.io/posts/templates</link>
-								<description>Using template engine for specific pages</description>
-																<category domain="https://blogdoc.github.io/tags/Templates">Templates</category>
-								<category domain="https://blogdoc.github.io/tags/Server-Side">Server-Side</category>
-												<pubDate>Sun, 13 Nov 2022 00:00:00 GMT</pubDate>
-			</item>
-					<item>
-				<title>Posts and Pages</title>
-				<link>https://blogdoc.github.io/posts/posts-and-pages</link>
-								<description>Writing with Markdown</description>
-																<category domain="https://blogdoc.github.io/tags/Posts">Posts</category>
-								<category domain="https://blogdoc.github.io/tags/Pages">Pages</category>
-								<category domain="https://blogdoc.github.io/tags/Server-Side">Server-Side</category>
-												<pubDate>Sat, 12 Nov 2022 00:00:00 GMT</pubDate>
-			</item>
-					<item>
-				<title>The Markdown route</title>
-				<link>https://blogdoc.github.io/posts/the-markdown-route</link>
-								<description>Rendering posts and pages</description>
-																<category domain="https://blogdoc.github.io/tags/Blog-Doc">Blog-Doc</category>
-								<category domain="https://blogdoc.github.io/tags/Server-Side">Server-Side</category>
-												<pubDate>Fri, 11 Nov 2022 00:00:00 GMT</pubDate>
-			</item>
-					<item>
-				<title>The pagination component</title>
-				<link>https://blogdoc.github.io/posts/the-pagination-component</link>
-								<description>Navigating between blog&#39;s pages</description>
-																<category domain="https://blogdoc.github.io/tags/Blog">Blog</category>
-								<category domain="https://blogdoc.github.io/tags/Pagination">Pagination</category>
-												<pubDate>Thu, 10 Nov 2022 00:00:00 GMT</pubDate>
-			</item>
-					<item>
-				<title>The Main Route</title>
-				<link>https://blogdoc.github.io/posts/the-main-route</link>
-								<description>The blog behind the curtains</description>
-																<category domain="https://blogdoc.github.io/tags/Blog">Blog</category>
-								<category domain="https://blogdoc.github.io/tags/Server-Side">Server-Side</category>
-												<pubDate>Mon, 07 Nov 2022 00:00:00 GMT</pubDate>
-			</item>
-					<item>
-				<title>Archive and tags</title>
-				<link>https://blogdoc.github.io/posts/archive-and-tags</link>
-								<description>Archive and tags pages</description>
-																<category domain="https://blogdoc.github.io/tags/Archive">Archive</category>
-								<category domain="https://blogdoc.github.io/tags/Tags">Tags</category>
-												<pubDate>Thu, 20 Oct 2022 00:00:00 GMT</pubDate>
-			</item>
-					<item>
-				<title>The blog</title>
-				<link>https://blogdoc.github.io/posts/the-blog</link>
-								<description>How the blog works?</description>
-																<category domain="https://blogdoc.github.io/tags/Blog">Blog</category>
-												<pubDate>Wed, 05 Oct 2022 00:00:00 GMT</pubDate>
-			</item>
-					<item>
-				<title>What is Blog-Doc?</title>
-				<link>https://blogdoc.github.io/posts/what-is-blog-doc</link>
-								<description>A brief introduction to Blog-Doc</description>
-																<category domain="https://blogdoc.github.io/tags/Blog-Doc">Blog-Doc</category>
-												<pubDate>Fri, 30 Sep 2022 00:00:00 GMT</pubDate>
-			</item>
-					<item>
-				<title>No description or tags</title>
-				<link>https://blogdoc.github.io/posts/no-description-or-tags</link>
-												<pubDate>Fri, 26 Aug 2022 00:00:00 GMT</pubDate>
-			</item>
-					<item>
-				<title>Excerpt length</title>
-				<link>https://blogdoc.github.io/posts/excerpt-length</link>
-								<description>Testing the excerpt of posts</description>
-																<category domain="https://blogdoc.github.io/tags/Excerpt">Excerpt</category>
-												<pubDate>Fri, 12 Aug 2022 00:00:00 GMT</pubDate>
-			</item>
-					<item>
-				<title>My first article</title>
-				<link>https://blogdoc.github.io/posts/my-first-article</link>
-								<description>This is the description of my first article</description>
-																<category domain="https://blogdoc.github.io/tags/HTML">HTML</category>
-								<category domain="https://blogdoc.github.io/tags/CSS">CSS</category>
-								<category domain="https://blogdoc.github.io/tags/JS">JS</category>
-								<category domain="https://blogdoc.github.io/tags/Node.js">Node.js</category>
-								<category domain="https://blogdoc.github.io/tags/LiteNode">LiteNode</category>
-								<category domain="https://blogdoc.github.io/tags/Markdown">Markdown</category>
-												<pubDate>Sat, 23 Jul 2022 00:00:00 GMT</pubDate>
-			</item>
-			</channel>
+		
+		<!-- Items (Content) -->
+		
+		<item>
+			<title>The New Blog-Doc</title>
+
+			<link>https://blogdoc.github.io/posts/the-new-blog-doc</link>
+
+			<description>A tiny flame in the darkness of error</description>
+			
+			<category domain="https://blogdoc.github.io/tags/Blog-Doc">Blog-Doc</category>
+				
+			<category domain="https://blogdoc.github.io/tags/LiteNode">LiteNode</category>
+				
+			<category domain="https://blogdoc.github.io/tags/Marked">Marked</category>
+				
+			<pubDate>Wed, 26 Jul 2023 00:00:00 GMT</pubDate>
+		</item>
+		
+		<item>
+			<title>Why Templates Are a Game Changer</title>
+
+			<link>https://blogdoc.github.io/posts/templates</link>
+
+			<description>Using template engine for specific pages</description>
+			
+			<category domain="https://blogdoc.github.io/tags/Templates">Templates</category>
+				
+			<category domain="https://blogdoc.github.io/tags/Server-Side">Server-Side</category>
+				
+			<pubDate>Sun, 13 Nov 2022 00:00:00 GMT</pubDate>
+		</item>
+		
+		<item>
+			<title>Posts and Pages</title>
+
+			<link>https://blogdoc.github.io/posts/posts-and-pages</link>
+
+			<description>Writing with Markdown</description>
+			
+			<category domain="https://blogdoc.github.io/tags/Posts">Posts</category>
+				
+			<category domain="https://blogdoc.github.io/tags/Pages">Pages</category>
+				
+			<category domain="https://blogdoc.github.io/tags/Server-Side">Server-Side</category>
+				
+			<pubDate>Sat, 12 Nov 2022 00:00:00 GMT</pubDate>
+		</item>
+		
+		<item>
+			<title>The Markdown route</title>
+
+			<link>https://blogdoc.github.io/posts/the-markdown-route</link>
+
+			<description>Rendering posts and pages</description>
+			
+			<category domain="https://blogdoc.github.io/tags/Blog-Doc">Blog-Doc</category>
+				
+			<category domain="https://blogdoc.github.io/tags/Server-Side">Server-Side</category>
+				
+			<pubDate>Fri, 11 Nov 2022 00:00:00 GMT</pubDate>
+		</item>
+		
+		<item>
+			<title>The pagination component</title>
+
+			<link>https://blogdoc.github.io/posts/the-pagination-component</link>
+
+			<description>Navigating between blog's pages</description>
+			
+			<category domain="https://blogdoc.github.io/tags/Blog">Blog</category>
+				
+			<category domain="https://blogdoc.github.io/tags/Pagination">Pagination</category>
+				
+			<pubDate>Thu, 10 Nov 2022 00:00:00 GMT</pubDate>
+		</item>
+		
+		<item>
+			<title>The Main Route</title>
+
+			<link>https://blogdoc.github.io/posts/the-main-route</link>
+
+			<description>The blog behind the curtains</description>
+			
+			<category domain="https://blogdoc.github.io/tags/Blog">Blog</category>
+				
+			<category domain="https://blogdoc.github.io/tags/Server-Side">Server-Side</category>
+				
+			<pubDate>Mon, 07 Nov 2022 00:00:00 GMT</pubDate>
+		</item>
+		
+		<item>
+			<title>Archive and tags</title>
+
+			<link>https://blogdoc.github.io/posts/archive-and-tags</link>
+
+			<description>Archive and tags pages</description>
+			
+			<category domain="https://blogdoc.github.io/tags/Archive">Archive</category>
+				
+			<category domain="https://blogdoc.github.io/tags/Tags">Tags</category>
+				
+			<pubDate>Thu, 20 Oct 2022 00:00:00 GMT</pubDate>
+		</item>
+		
+		<item>
+			<title>The blog</title>
+
+			<link>https://blogdoc.github.io/posts/the-blog</link>
+
+			<description>How the blog works?</description>
+			
+			<category domain="https://blogdoc.github.io/tags/Blog">Blog</category>
+				
+			<pubDate>Wed, 05 Oct 2022 00:00:00 GMT</pubDate>
+		</item>
+		
+		<item>
+			<title>What is Blog-Doc?</title>
+
+			<link>https://blogdoc.github.io/posts/what-is-blog-doc</link>
+
+			<description>A brief introduction to Blog-Doc</description>
+			
+			<category domain="https://blogdoc.github.io/tags/Blog-Doc">Blog-Doc</category>
+				
+			<pubDate>Fri, 30 Sep 2022 00:00:00 GMT</pubDate>
+		</item>
+		
+		<item>
+			<title>No description or tags</title>
+
+			<link>https://blogdoc.github.io/posts/no-description-or-tags</link>
+
+			<description> </description>
+			
+			<pubDate>Fri, 26 Aug 2022 00:00:00 GMT</pubDate>
+		</item>
+		
+		<item>
+			<title>Excerpt length</title>
+
+			<link>https://blogdoc.github.io/posts/excerpt-length</link>
+
+			<description>Testing the excerpt of posts</description>
+			
+			<category domain="https://blogdoc.github.io/tags/Excerpt">Excerpt</category>
+				
+			<pubDate>Fri, 12 Aug 2022 00:00:00 GMT</pubDate>
+		</item>
+		
+		<item>
+			<title>My first article</title>
+
+			<link>https://blogdoc.github.io/posts/my-first-article</link>
+
+			<description>This is the description of my first article</description>
+			
+			<category domain="https://blogdoc.github.io/tags/HTML">HTML</category>
+				
+			<category domain="https://blogdoc.github.io/tags/CSS">CSS</category>
+				
+			<category domain="https://blogdoc.github.io/tags/JS">JS</category>
+				
+			<category domain="https://blogdoc.github.io/tags/Node.js">Node.js</category>
+				
+			<category domain="https://blogdoc.github.io/tags/LiteNode">LiteNode</category>
+				
+			<category domain="https://blogdoc.github.io/tags/Markdown">Markdown</category>
+				
+			<pubDate>Sat, 23 Jul 2022 00:00:00 GMT</pubDate>
+		</item>
+		
+	</channel>
 </rss>

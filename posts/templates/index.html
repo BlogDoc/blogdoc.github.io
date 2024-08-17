@@ -1,211 +1,279 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
+		<!--Metadata-->
 		<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description" content="Using template engine for specific pages" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Using template engine for specific pages" />
 
+		<!--Favicon-->
 		<link rel="shortcut icon" href="/static/images/favicon.svg" type="image/svg+xml" />
+		<!--Title-->
 		<title>Blog-Doc | Why Templates Are a Game Changer</title>
 
+		<!--Stylesheets-->
 		<link rel="stylesheet" href="/static/vendors/themes/default/purecss/pure-min.min.css" />
-	<link rel="stylesheet" href="/static/styles/themes/default/default-styles.min.css" />
+		<link rel="stylesheet" href="/static/styles/themes/default/default-styles.min.css" />
+
 		<link rel="stylesheet" href="/static/vendors/highlight/atom-one-dark.min.css" />
 	</head>
+
 	<body>
 		<div id="layout">
+			<!--Menu toggle-->
 			<span id="menuLink" class="menu-link" tabindex="0">
-		<span></span>
-</span>
+				<!--Hamburger icon-->
+				<span></span>
+			</span>
 
-<div id="menu">
-	<div class="pure-menu">
-		<a href="/" class="pure-menu-heading">Blog-Doc</a>
+			<!--Menu-->
+			<div id="menu">
+				<div class="pure-menu">
+					<a href="/" class="pure-menu-heading">Blog-Doc</a>
 
-		<ul class="pure-menu-list">
+					<ul class="pure-menu-list">
 						<li class="pure-menu-item">
-				<a href="/posts" class="pure-menu-link">Archive</a>
-			</li>
+							<a href="/posts" class="pure-menu-link">Archive</a>
+						</li>
+
 						<li class="pure-menu-item">
-				<a href="/tags" class="pure-menu-link">Tags</a>
-			</li>
+							<a href="/tags" class="pure-menu-link">Tags</a>
+						</li>
+
 						<li class="pure-menu-item">
-				<a href="/pages/documentation" class="pure-menu-link">Documentation</a>
-			</li>
+							<a href="/pages/documentation" class="pure-menu-link">Documentation</a>
+						</li>
+
 						<li class="pure-menu-item">
-				<a href="https://github.com/LebCit/blog-doc" class="pure-menu-link">GitHub Repo</a>
-			</li>
+							<a href="/rss.xml" class="pure-menu-link">RSS</a>
+						</li>
+
+						<li class="pure-menu-item">
+							<a href="/sitemap.xml" class="pure-menu-link">Sitemap</a>
+						</li>
+
+						<li class="pure-menu-item">
+							<a href="https://github.com/LebCit/blog-doc" class="pure-menu-link">GitHub Repo</a>
+						</li>
 					</ul>
-	</div>
+				</div>
+			</div>
 
-	</div>
 			<div id="main">
 				<style>
-	.post-header {
-		background-image: url("/static/images/templates.avif");
-	}
-</style>
-<style>
-	.post-header {
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: center;
-	}
-	.post-header .overlay {
-		background-color: rgba(0, 0, 0, 0.5);
-	}
-	.post-header .overlay h1,
-	.post-header .overlay h2 {
-		color: #fff;
-	}
-	@media (min-width: 48em) {
-		.post-header .overlay {
-			display: inline-block;
-			width: 50%;
-		}
-	}
-</style>
+					.post-header {
+						background-image: url("/static/images/templates.avif");
+						background-repeat: no-repeat;
+						background-size: cover;
+						background-position: center;
+					}
+					.post-header .overlay {
+						background-color: rgba(0, 0, 0, 0.5);
+					}
+					.post-header .overlay h1,
+					.post-header .overlay h2 {
+						color: #fff;
+					}
+					@media (min-width: 48em) {
+						.post-header .overlay {
+							display: inline-block;
+							width: 50%;
+						}
+					}
+				</style>
 
-<div class="header post-header">
-	<div class="overlay">
-		<h1>Why Templates Are a Game Changer</h1>
-		<h2>Using template engine for specific pages</h2>
-	</div>
-</div>
-				<div  class="content">    					<!-- Start Markdown file content -->
+				<div class="header post-header">
+					<div class="overlay">
+						<h1>Why Templates Are a Game Changer</h1>
+						<h2>Using template engine for specific pages</h2>
+					</div>
+				</div>
+
+				<div class="content">
+					<!-- Start Markdown file content -->
+
 					<p class="post-meta">
-	<span>Posted on</span>
-	<span class="posted-on"><time class="post-date">2022-11-13</time></span>
-		<br />
-	<span>Tagged</span>
-	<!--Start tag(s)-->
-		<a href="/tags/Templates" class="post-tag">Templates</a>
-		<a href="/tags/Server-Side" class="post-tag">Server-Side</a>
-		<!--End tag(s)-->
-	</p>
-<div><p>You might be wondering why we need a third type of file when we already have Markdown files for creating posts and pages. The magic of templates lies in their extended capabilities—they offer much more than your standard Markdown file can.</p>
-<p>Templates allow for a unique design and structure, different from the fixed layouts of Markdown files. In the future, I plan to make templates editable directly from the admin interface, just like posts and pages, but that&#39;s a bit down the road.</p>
-<h3>Capabilities & Security</h3>
+						<span>Posted on</span>
+						<span class="posted-on"><time class="post-date">2022-11-13</time></span>
 
-<p>Let&#39;s start with a simple example: a contact form. Implementing a contact form with Markdown would require a lot of complex data handling in the front-matter and in the route where it&#39;s rendered. Not to mention, directly converting sensitive data to HTML poses significant security risks. Templates simplify this process and handle sensitive data more securely.</p>
-<h3>Architecture & Design</h3>
+						<br />
+						<span>Tagged</span>
 
-<p>Blog-Doc processes Markdown content into HTML, which is then injected into templates for rendering. This means that the design and layout are controlled at the template level. While you can apply custom CSS for individual posts or pages directly in Markdown, creating a complete web page from Markdown alone would be cumbersome and inefficient.</p>
-<p>Templates let us leverage the full power of plain JavaScript to create dynamic and customized HTML markup. This approach also means we can easily switch up the design for specific pages using different templates. Trying to achieve this level of flexibility with Markdown alone would be a tangled mess.</p>
-<h3>Conclusion</h3>
+						<a href="/tags/Templates" class="post-tag">Templates</a>
 
-<p>If you&#39;ve been following along from the start, you should now have a solid grasp of how everything works under the hood—from the front-end display of components to the rendering of posts and pages. </p>
-<p>Feel free to use Blog-Doc as a starting point and customize it to fit your own design or template language. <strong>For a real-world example, I rebuilt <a href="https://lebcit.github.io/">my own blog</a> using Blog-Doc</strong> ❤️</p>
-<p>I genuinely hope this tool proves useful to many people out there. It’s my way of contributing to the Node.js and Markdown communities.</p>
-</div>
-<!--Start posts pagination-->
-<style>
-	nav {
-		display: flex;
-		justify-content: center;
-		margin-top: 50px;
-	}
+						<a href="/tags/Server-Side" class="post-tag">Server-Side</a>
+					</p>
 
-	.pagination {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		display: flex;
-	}
+					<div>
+						<p>
+							You might be wondering why we need a third type of file when we already have Markdown files
+							for creating posts and pages. The magic of templates lies in their extended
+							capabilities—they offer much more than your standard Markdown file can.
+						</p>
+						<p>
+							Templates allow for a unique design and structure, different from the fixed layouts of
+							Markdown files. In the future, I plan to make templates editable directly from the admin
+							interface, just like posts and pages, but that&#39;s a bit down the road.
+						</p>
+						<h3>Capabilities & Security</h3>
 
-	.pagination li {
-		margin: 10px;
-	}
+						<p>
+							Let&#39;s start with a simple example: a contact form. Implementing a contact form with
+							Markdown would require a lot of complex data handling in the front-matter and in the route
+							where it&#39;s rendered. Not to mention, directly converting sensitive data to HTML poses
+							significant security risks. Templates simplify this process and handle sensitive data more
+							securely.
+						</p>
+						<h3>Architecture & Design</h3>
 
-	.default {
-		border-color: #e7e7e7;
-		color: black;
-		text-decoration: none;
-	}
+						<p>
+							Blog-Doc processes Markdown content into HTML, which is then injected into templates for
+							rendering. This means that the design and layout are controlled at the template level. While
+							you can apply custom CSS for individual posts or pages directly in Markdown, creating a
+							complete web page from Markdown alone would be cumbersome and inefficient.
+						</p>
+						<p>
+							Templates let us leverage the full power of plain JavaScript to create dynamic and
+							customized HTML markup. This approach also means we can easily switch up the design for
+							specific pages using different templates. Trying to achieve this level of flexibility with
+							Markdown alone would be a tangled mess.
+						</p>
+						<h3>Conclusion</h3>
 
-	.default:hover,
-	.default:focus {
-		background: #e7e7e7;
-		text-decoration: underline;
-	}
+						<p>
+							If you&#39;ve been following along from the start, you should now have a solid grasp of how
+							everything works under the hood—from the front-end display of components to the rendering of
+							posts and pages.
+						</p>
+						<p>
+							Feel free to use Blog-Doc as a starting point and customize it to fit your own design or
+							template language.
+							<strong
+								>For a real-world example, I rebuilt
+								<a href="https://lebcit.github.io/">my own blog</a> using Blog-Doc</strong
+							>
+							❤️
+						</p>
+						<p>
+							I genuinely hope this tool proves useful to many people out there. It’s my way of
+							contributing to the Node.js and Markdown communities.
+						</p>
+					</div>
 
-	.post-link {
-		background-color: #ffc10d;
-		color: #000000;
-		padding: 0.5rem 1rem 0.75rem;
-		border: 5px solid #000000;
-		border-radius: 5px;
-		font-size: 1em;
-		text-decoration: none;
-		display: inline-grid;
-		font-family: "Open Sans", sans-serif;
-	}
+					<!--Start posts pagination-->
+					<style>
+						nav {
+							display: flex;
+							justify-content: center;
+							margin-top: 50px;
+						}
 
-	.post-link:hover,
-	.post-link:focus,
-	.post-link:active {
-		text-decoration: underline;
-		background: #000000;
-		color: #ffffff;
-		cursor: pointer;
-	}
+						.pagination {
+							list-style: none;
+							margin: 0;
+							padding: 0;
+							display: flex;
+						}
 
-	@media (max-width: 48em) {
-		.pagination {
-			flex-direction: column-reverse;
-		}
-		.pagination li {
-			margin: 5px;
-		}
-	}
-</style>
+						.pagination li {
+							margin: 10px;
+						}
 
-<nav aria-label="pagination">
-	<ul class="pagination">
-				<li>
-			<a
-				class="post-link prev"
-				role="button"
-				href="/posts/posts-and-pages"
-				aria-label="Go to the previous post"
-			>
-				<span aria-hidden="true">Previous: Posts and Pages</span>
-				<span class="hidden">Go to the previous post</span>
-			</a>
-		</li>
-		  		<li>
-			<a
-				class="post-link next"
-				role="button"
-				href="/posts/the-new-blog-doc"
-				aria-label="Go to the next post"
-			>
-				<span aria-hidden="true">Next: The New Blog-Doc</span>
-				<span class="hidden">Go to the next post</span>
-			</a>
-		</li>
-			</ul>
-</nav>
-<!--End posts pagination-->
+						.default {
+							border-color: #e7e7e7;
+							color: black;
+							text-decoration: none;
+						}
+
+						.default:hover,
+						.default:focus {
+							background: #e7e7e7;
+							text-decoration: underline;
+						}
+
+						.post-link {
+							background-color: #ffc10d;
+							color: #000000;
+							padding: 0.5rem 1rem 0.75rem;
+							border: 5px solid #000000;
+							border-radius: 5px;
+							font-size: 1em;
+							text-decoration: none;
+							display: inline-grid;
+							font-family: "Open Sans", sans-serif;
+						}
+
+						.post-link:hover,
+						.post-link:focus,
+						.post-link:active {
+							text-decoration: underline;
+							background: #000000;
+							color: #ffffff;
+							cursor: pointer;
+						}
+
+						@media (max-width: 48em) {
+							.pagination {
+								flex-direction: column-reverse;
+							}
+							.pagination li {
+								margin: 5px;
+							}
+						}
+					</style>
+
+					<nav aria-label="pagination">
+						<ul class="pagination">
+							<li>
+								<a
+									class="post-link prev"
+									role="button"
+									href="/posts/posts-and-pages"
+									aria-label="Go to the previous post"
+								>
+									<span aria-hidden="true">Previous: Posts and Pages</span>
+									<span class="hidden">Go to the previous post</span>
+								</a>
+							</li>
+
+							<!--Dynamic Markup Separator-->
+
+							<li>
+								<a
+									class="post-link next"
+									role="button"
+									href="/posts/the-new-blog-doc"
+									aria-label="Go to the next post"
+								>
+									<span aria-hidden="true">Next: The New Blog-Doc</span>
+									<span class="hidden">Go to the next post</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+
+					<!--End posts pagination-->
+
 					<!-- End Markdown file content -->
-					      				</div>
+				</div>
 			</div>
 		</div>
 		<!--Start footer-->
 		<div class="footer">
-	<div class="pure-g">
-		<div class="pure-u-1">
-			<p class="copyright">Proudly built with <a href='https://litenode.pages.dev/'>LiteNode</a> by <a href='https://lebcit.github.io/'>LebCit</a></p>
+			<div class="pure-g">
+				<div class="pure-u-1">
+					<p class="copyright">
+						Proudly built with <a href="https://litenode.pages.dev/">LiteNode</a> by
+						<a href="https://lebcit.github.io/">LebCit</a>
+					</p>
+				</div>
+			</div>
 		</div>
-	</div>
-</div>
 
-  <script src="/static/vendors/highlight/highlight.min.js"></script>
-<script>
-	hljs.highlightAll()
-</script>
+		<script src="/static/vendors/highlight/highlight.min.js" onload="hljs.highlightAll()"></script>
 
-<script type="module" src="/static/scripts/themes/default/default-scripts.js"></script>
+		<script type="module" src="/static/scripts/themes/default/default-scripts.js"></script>
+
 		<!--End footer-->
 	</body>
 </html>
