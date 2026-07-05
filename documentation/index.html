@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <!--Metadata-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="description" content="Blog-Doc is a Node.js-powered Markdown CMS and static site generator. Create, manage, and deploy fast static websites with ease." />
+    
+
+    <!--Site icon-->
+    
+    <link rel="icon" href="/images/blog-doc-favicon.svg" />
+    
+
+    <!--Title-->
+    
+    <title>Documentation | Blog-Doc</title>
+    
+
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    
+    <link rel="stylesheet" href="/assets/vendors/atom-one-dark.min.css" />
+    
+
+    <!--Custom head code-->
+    
+</head>
+
+    <body>
+        <div id="layout" class="layout">
+            <button id="menuToggle" class="menu-toggle">
+    <span></span>
+</button>
+
+<nav id="menu" class="menu">
+    <div class="menu-heading">Blog-Doc</div>
+
+    
+    <ul class="menu-list">
+        
+        <li class="menu-item  ">
+            <a href="/">
+                <i></i>
+                Home
+            </a>
+
+            
+        <!---->
+        
+        <li class="menu-item  ">
+            <a href="/documentation">
+                <i></i>
+                Documentation
+            </a>
+
+            
+        <!---->
+        
+        <li class="menu-item has-submenu ">
+            <a href="#">
+                <i></i>
+                Parent item
+            </a>
+
+            
+            <ul class="submenu menu-list" aria-hidden="true">
+                
+                <li class="menu-item">
+                    <a href="/404">
+                        <i></i>
+                        Child item
+                    </a>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <!---->
+        
+        <li class="menu-item  ">
+            <a href="https://github.com/LebCit/blog-doc">
+                <i></i>
+                GitHub
+            </a>
+
+            
+        <!---->
+        
+        <li class="menu-item  ">
+            <a href="https://www.npmjs.com/package/create-blog-doc">
+                <i></i>
+                NPM
+            </a>
+
+            
+        <!---->
+        
+    </ul>
+    
+
+    <div class="theme-switch">
+        <span id="themeLabel">Dark Mode</span>
+        <label class="switch" for="themeSwitch">
+            <input type="checkbox" id="themeSwitch" aria-labelledby="themeLabel" />
+            <span class="slider"></span>
+        </label>
+    </div>
+</nav>
+
+
+            <!---->
+            
+<style>
+    .page-header {
+        background-image: url("/images/black-and-white-checked-photo.avif");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .page-header .overlay {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .page-header .overlay h1,
+    .page-header .overlay h2 {
+        color: #fff;
+    }
+    @media (min-width: 48em) {
+        .page-header .overlay {
+            display: inline-block;
+            width: 50%;
+        }
+    }
+    /* === Dark Mode Page Header Overlay === */
+    body.dark-mode .page-header .overlay {
+        background-color: rgba(255, 255, 255, 0.7); /* lighter overlay for dark bg */
+    }
+
+    body.dark-mode .page-header .overlay h1,
+    body.dark-mode .page-header .overlay h2 {
+        color: #333;
+    }
+</style>
+
+
+<!---->
+
+<div class="header page-header">
+    <div class="overlay">
+        <!-- Current page header title and description/subtitle -->
+        
+        <h1>Documentation</h1>
+        <h2>Blog-Doc is a Node.js-powered Markdown CMS and static site generator. Create, manage, and deploy fast static websites with ease.</h2>
+        
+    </div>
+</div>
+
+
+            <!---->
+            <div class="content">
+    
+    <!--The page to display the Markdown content of posts and pages.-->
+    
+<!--The file type is not a post it's a normal page.-->
+<div><h1>Blog-Doc</h1>
+<p><strong>The Simplest Node.js CMS &amp; SSG</strong><br>A tiny flame in the darkness of error...</p>
+<hr>
+<h2>What is this?</h2>
+<p><a href="https://github.com/LebCit/blog-doc">Blog-Doc</a> is a local Markdown CMS and static site generator built on Node.js.</p>
+<p>Run a single command and you have a working project on your machine — write content in Markdown, manage it through a clean admin interface, and build a complete static site ready to deploy anywhere.</p>
+<hr>
+<h2>Requirements</h2>
+<ul>
+<li><a href="https://nodejs.org/en">Node.js</a> v18 or later (LTS recommended)</li>
+<li><a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">npm</a> (latest version recommended)</li>
+</ul>
+<hr>
+<h2>Installation</h2>
+<p>Open a terminal in the directory where you want to create your project and run one of the following:</p>
+<h3>Using <code>npx</code></h3>
+<pre><code class="language-bash">npx create-blog-doc my-blog
+</code></pre>
+<h3>Using <code>npm init</code></h3>
+<pre><code class="language-bash">npm init blog-doc my-blog
+</code></pre>
+<p>Replace <code>my-blog</code> with whatever you want your project folder to be named.</p>
+<p>This will clone the Blog-Doc repository into that folder and install all dependencies automatically.</p>
+<hr>
+<h2>Getting started</h2>
+<p>Once installation is complete, navigate into your project folder and start the app:</p>
+<pre><code class="language-bash">cd my-blog
+npm start
+</code></pre>
+<p>Then open your browser:</p>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>What&#39;s there</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>http://localhost:3000</code></td>
+<td>Live site preview</td>
+</tr>
+<tr>
+<td><code>http://localhost:3000/admin</code></td>
+<td>Admin interface</td>
+</tr>
+</tbody></table>
+<p>Create your own content through the admin interface.</p>
+<hr>
+<h2>Updating</h2>
+<p>To update Blog-Doc to the latest version at any time, run this from inside your project folder:</p>
+<pre><code class="language-bash">npm run update
+</code></pre>
+<p>Your content, settings, and installed themes are never affected by updates.</p>
+<hr>
+<h2>Further reading</h2>
+<p>Full documentation is available at <a href="https://blog-doc.pages.dev/">blog-doc.pages.dev</a>.</p>
+<hr>
+<h2>Support callout</h2>
+<p>Give <a href="https://www.npmjs.com/package/create-blog-doc">Blog-Doc</a> a try, I think you&#39;ll be amazed by its simplicity and features!</p>
+<p>If you find Blog-Doc useful, please consider giving it a star. It would mean a lot and genuinely helps.<br>Thank you for supporting the work of a solo developer whose goal is to make website creation easier and more
+accessible for everyone.</p>
+<p>See you around!<br><a href="https://lebcit.github.io/">LebCit</a></p>
+</div>
+
+
+    <!---->
+
+    
+</div>
+
+
+            <!---->
+            <div class="footer">
+    <p>Built with <a href="https://blog-doc.pages.dev/">Blog-Doc</a> · MIT License · Made by <a href="https://lebcit.github.io/">LebCit</a></p>
+<script>console.log("Hi")</script>
+    <!---->
+    
+</div>
+
+        </div>
+
+        <!---->
+        
+        <script src="/assets/vendors/highlight.min.js" onload="hljs.highlightAll()"></script>
+        
+
+        <script src="/assets/js/main.js"></script>
+    </body>
+</html>

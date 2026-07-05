@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <!--Metadata-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="description" content="Learn what Node.js is, how it works, and why developers use it to build servers, APIs, and backend applications with JavaScript" />
+    
+
+    <!--Site icon-->
+    
+    <link rel="icon" href="/images/blog-doc-favicon.svg" />
+    
+
+    <!--Title-->
+    
+    <title>What Is Node.js? A Beginner's Guide | Blog-Doc</title>
+    
+
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    
+    <link rel="stylesheet" href="/assets/vendors/atom-one-dark.min.css" />
+    
+
+    <!--Custom head code-->
+    
+</head>
+
+    <body>
+        <div id="layout" class="layout">
+            <button id="menuToggle" class="menu-toggle">
+    <span></span>
+</button>
+
+<nav id="menu" class="menu">
+    <div class="menu-heading">Blog-Doc</div>
+
+    
+    <ul class="menu-list">
+        
+        <li class="menu-item  ">
+            <a href="/">
+                <i></i>
+                Home
+            </a>
+
+            
+        <!---->
+        
+        <li class="menu-item  ">
+            <a href="/documentation">
+                <i></i>
+                Documentation
+            </a>
+
+            
+        <!---->
+        
+        <li class="menu-item has-submenu ">
+            <a href="#">
+                <i></i>
+                Parent item
+            </a>
+
+            
+            <ul class="submenu menu-list" aria-hidden="true">
+                
+                <li class="menu-item">
+                    <a href="/404">
+                        <i></i>
+                        Child item
+                    </a>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <!---->
+        
+        <li class="menu-item  ">
+            <a href="https://github.com/LebCit/blog-doc">
+                <i></i>
+                GitHub
+            </a>
+
+            
+        <!---->
+        
+        <li class="menu-item  ">
+            <a href="https://www.npmjs.com/package/create-blog-doc">
+                <i></i>
+                NPM
+            </a>
+
+            
+        <!---->
+        
+    </ul>
+    
+
+    <div class="theme-switch">
+        <span id="themeLabel">Dark Mode</span>
+        <label class="switch" for="themeSwitch">
+            <input type="checkbox" id="themeSwitch" aria-labelledby="themeLabel" />
+            <span class="slider"></span>
+        </label>
+    </div>
+</nav>
+
+
+            <!---->
+            
+<style>
+    .page-header {
+        background-image: url("/images/nodejs-logo.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .page-header .overlay {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .page-header .overlay h1,
+    .page-header .overlay h2 {
+        color: #fff;
+    }
+    @media (min-width: 48em) {
+        .page-header .overlay {
+            display: inline-block;
+            width: 50%;
+        }
+    }
+    /* === Dark Mode Page Header Overlay === */
+    body.dark-mode .page-header .overlay {
+        background-color: rgba(255, 255, 255, 0.7); /* lighter overlay for dark bg */
+    }
+
+    body.dark-mode .page-header .overlay h1,
+    body.dark-mode .page-header .overlay h2 {
+        color: #333;
+    }
+</style>
+
+
+<!---->
+
+<div class="header page-header">
+    <div class="overlay">
+        <!-- Current page header title and description/subtitle -->
+        
+        <h1>What Is Node.js? A Beginner's Guide</h1>
+        <h2>JavaScript’s Wild Ride to the Back End</h2>
+        
+    </div>
+</div>
+
+
+            <!---->
+            <div class="content">
+    
+    <!--The page to display the Markdown content of posts and pages.-->
+    
+<p class="post-meta">
+    <span>Posted on</span>
+    <span class="posted-on"><time class="post-date">2022-12-05</time></span>
+
+    
+    <!-- Start Post category -->
+    <br />
+    <span>Category:</span>
+    <a href="/categories/backend-development" class="post-tag">Backend Development</a>
+    <!-- End Post category -->
+    
+
+    <!---->
+
+    
+    <!-- Start Post tag(s) -->
+    <br />
+    <span>Tagged:</span>
+    
+    <a href="/tags/nodejs" class="post-tag">NodeJS</a>
+    
+    <a href="/tags/backend" class="post-tag">Backend</a>
+    
+    <a href="/tags/javascript" class="post-tag">JavaScript</a>
+    
+    <a href="/tags/server" class="post-tag">Server</a>
+    
+    <a href="/tags/api" class="post-tag">API</a>
+    
+    <a href="/tags/runtime" class="post-tag">Runtime</a>
+    
+    <a href="/tags/web-development" class="post-tag">Web Development</a>
+    
+    <a href="/tags/full-stack" class="post-tag">Full Stack</a>
+    
+    <!-- End Post tag(s) -->
+    
+</p>
+
+<div><h1>What Is Node.js?</h1>
+<p>After learning JavaScript, you can use it for more than just websites.</p>
+<p><strong>Node.js</strong> is a JavaScript runtime that allows you to run JavaScript outside of a web browser. This means you can use JavaScript to build servers, APIs, command-line tools, and backend applications.</p>
+<p>Instead of only creating interactive web pages, JavaScript with Node.js can power the systems behind those websites.</p>
+<h2>What Can Node.js Do?</h2>
+<p>Node.js is commonly used to:</p>
+<ul>
+<li>Create web servers.</li>
+<li>Build APIs that connect applications.</li>
+<li>Read and write files.</li>
+<li>Connect to databases.</li>
+<li>Send emails and process data.</li>
+<li>Build command-line tools and backend services.</li>
+</ul>
+<p>Because JavaScript can run on both the frontend and the backend, developers can use the same language throughout an entire project.</p>
+<h2>A Simple Node.js Example</h2>
+<pre><code class="language-js">// Save this as app.js
+const http = require(&quot;http&quot;);
+
+const server = http.createServer((req, res) =&gt; {
+  res.end(&quot;Hello, World!&quot;);
+});
+
+server.listen(3000, () =&gt; {
+  console.log(&quot;Server running on http://localhost:3000&quot;);
+});
+</code></pre>
+<p>Run the application with:</p>
+<pre><code class="language-bash">node app.js
+</code></pre>
+<p>This creates a simple web server that listens on port <strong>3000</strong> and returns &quot;Hello, World!&quot; when someone visits it.</p>
+<h2>Why Learn Node.js?</h2>
+<p>Node.js helps you:</p>
+<ul>
+<li>Use JavaScript on both the frontend and backend.</li>
+<li>Build fast and scalable web applications.</li>
+<li>Create APIs for websites and mobile apps.</li>
+<li>Access one of the largest software package ecosystems through <strong><a href="https://www.npmjs.com/">npm</a></strong>.</li>
+</ul>
+<p>Today, Node.js is used by companies of all sizes to build modern web applications and services.</p>
+<h2>Final Thoughts</h2>
+<p>Node.js extends JavaScript beyond the browser, making it possible to build complete web applications using a single programming language.</p>
+<p>If you already know JavaScript, learning Node.js is a natural next step toward backend and full-stack development.</p>
+</div>
+
+<link rel="stylesheet" href="/assets/css/pagination.css" />
+
+<!-- Pagination navigation -->
+<nav aria-label="pagination" id="pagination">
+    <ul class="pagination">
+        
+
+        <!-- Dynamic Markup Separator -->
+
+        
+
+        <!-- Posts navigation: previous and next -->
+
+        
+        <!-- Previous Post Link (only if there's a previous post) -->
+        <li>
+            <a class="post-link prev" role="button" href="/blog/what-is-javascript-a-beginners-guide" aria-label="Go to the previous post">
+                <span aria-hidden="true">Older: What Is JavaScript? A Beginner's Guide</span>
+                <span class="hidden">Go to the previous post</span>
+            </a>
+        </li>
+        
+
+        <!--Dynamic Markup Separator-->
+
+        
+        <!-- Next Post Link (only if there's a next post) -->
+        <li>
+            <a class="post-link next" role="button" href="/blog/what-is-markdown-a-beginners-guide" aria-label="Go to the next post">
+                <span aria-hidden="true">Newer: What Is Markdown? A Beginner's Guide</span>
+                <span class="hidden">Go to the next post</span>
+            </a>
+        </li>
+        
+    </ul>
+
+    
+</nav>
+
+<!---->
+
+
+
+    <!---->
+
+    
+</div>
+
+
+            <!---->
+            <div class="footer">
+    <p>Built with <a href="https://blog-doc.pages.dev/">Blog-Doc</a> · MIT License · Made by <a href="https://lebcit.github.io/">LebCit</a></p>
+<script>console.log("Hi")</script>
+    <!---->
+    
+</div>
+
+        </div>
+
+        <!---->
+        
+        <script src="/assets/vendors/highlight.min.js" onload="hljs.highlightAll()"></script>
+        
+
+        <script src="/assets/js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <!--Metadata-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="description" content="Learn what a static site generator (SSG) is, how it works, and why it creates fast, secure websites using pre-built HTML files" />
+    
+
+    <!--Site icon-->
+    
+    <link rel="icon" href="/images/blog-doc-favicon.svg" />
+    
+
+    <!--Title-->
+    
+    <title>What Is an SSG? A Beginner's Guide | Blog-Doc</title>
+    
+
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    
+    <link rel="stylesheet" href="/assets/vendors/atom-one-dark.min.css" />
+    
+
+    <!--Custom head code-->
+    
+</head>
+
+    <body>
+        <div id="layout" class="layout">
+            <button id="menuToggle" class="menu-toggle">
+    <span></span>
+</button>
+
+<nav id="menu" class="menu">
+    <div class="menu-heading">Blog-Doc</div>
+
+    
+    <ul class="menu-list">
+        
+        <li class="menu-item  ">
+            <a href="/">
+                <i></i>
+                Home
+            </a>
+
+            
+        <!---->
+        
+        <li class="menu-item  ">
+            <a href="/documentation">
+                <i></i>
+                Documentation
+            </a>
+
+            
+        <!---->
+        
+        <li class="menu-item has-submenu ">
+            <a href="#">
+                <i></i>
+                Parent item
+            </a>
+
+            
+            <ul class="submenu menu-list" aria-hidden="true">
+                
+                <li class="menu-item">
+                    <a href="/404">
+                        <i></i>
+                        Child item
+                    </a>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <!---->
+        
+        <li class="menu-item  ">
+            <a href="https://github.com/LebCit/blog-doc">
+                <i></i>
+                GitHub
+            </a>
+
+            
+        <!---->
+        
+        <li class="menu-item  ">
+            <a href="https://www.npmjs.com/package/create-blog-doc">
+                <i></i>
+                NPM
+            </a>
+
+            
+        <!---->
+        
+    </ul>
+    
+
+    <div class="theme-switch">
+        <span id="themeLabel">Dark Mode</span>
+        <label class="switch" for="themeSwitch">
+            <input type="checkbox" id="themeSwitch" aria-labelledby="themeLabel" />
+            <span class="slider"></span>
+        </label>
+    </div>
+</nav>
+
+
+            <!---->
+            
+<style>
+    .page-header {
+        background-image: url("/images/lightning-icon.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .page-header .overlay {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .page-header .overlay h1,
+    .page-header .overlay h2 {
+        color: #fff;
+    }
+    @media (min-width: 48em) {
+        .page-header .overlay {
+            display: inline-block;
+            width: 50%;
+        }
+    }
+    /* === Dark Mode Page Header Overlay === */
+    body.dark-mode .page-header .overlay {
+        background-color: rgba(255, 255, 255, 0.7); /* lighter overlay for dark bg */
+    }
+
+    body.dark-mode .page-header .overlay h1,
+    body.dark-mode .page-header .overlay h2 {
+        color: #333;
+    }
+</style>
+
+
+<!---->
+
+<div class="header page-header">
+    <div class="overlay">
+        <!-- Current page header title and description/subtitle -->
+        
+        <h1>What Is an SSG? A Beginner's Guide</h1>
+        <h2>Learn how static site generators build fast websites using pre-built HTML files and simple content workflows</h2>
+        
+    </div>
+</div>
+
+
+            <!---->
+            <div class="content">
+    
+    <!--The page to display the Markdown content of posts and pages.-->
+    
+<p class="post-meta">
+    <span>Posted on</span>
+    <span class="posted-on"><time class="post-date">2023-03-16</time></span>
+
+    
+    <!-- Start Post category -->
+    <br />
+    <span>Category:</span>
+    <a href="/categories/static-site-development" class="post-tag">Static Site Development</a>
+    <!-- End Post category -->
+    
+
+    <!---->
+
+    
+</p>
+
+<div><h1>What Is an SSG?</h1>
+<p>A <strong>Static Site Generator (SSG)</strong> is a tool that builds websites by converting content into static HTML files.</p>
+<p>Instead of generating pages dynamically on a server, an SSG prepares all pages in advance. The result is a set of ready-to-use files that can be hosted anywhere.</p>
+<h2>How an SSG Works</h2>
+<p>The process is simple:</p>
+<ol>
+<li>You write content, often in Markdown.</li>
+<li>You define templates for how pages should look.</li>
+<li>The SSG combines content and templates.</li>
+<li>It generates static HTML files.</li>
+<li>You deploy these files to a server or hosting platform.</li>
+</ol>
+<p>Once built, the website does not need a database or server-side processing to run.</p>
+<h2>Why Use an SSG?</h2>
+<p>SSGs are popular because they:</p>
+<ul>
+<li>Load very fast since pages are pre-built HTML.</li>
+<li>Are more secure due to the lack of a live backend.</li>
+<li>Can be hosted easily and often at low or no cost.</li>
+<li>Produce lightweight websites with good performance.</li>
+</ul>
+<h2>Common Use Cases</h2>
+<p>Static site generators are often used for:</p>
+<ul>
+<li>Personal blogs.</li>
+<li>Portfolios.</li>
+<li>Documentation websites.</li>
+<li>Landing pages.</li>
+<li>Projects with mostly static content.</li>
+</ul>
+<p>They are best suited for websites where content does not change constantly.</p>
+<h2>CMS vs SSG</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>CMS</th>
+<th>SSG</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Content editing</td>
+<td>Easy, visual interface</td>
+<td>File-based editing</td>
+</tr>
+<tr>
+<td>Performance</td>
+<td>Depends on backend</td>
+<td>Very fast</td>
+</tr>
+<tr>
+<td>Hosting</td>
+<td>Requires server or platform</td>
+<td>Simple static hosting</td>
+</tr>
+<tr>
+<td>Best for</td>
+<td>Frequent updates, teams</td>
+<td>Performance-focused sites</td>
+</tr>
+</tbody></table>
+<h2>Final Thoughts</h2>
+<p>A static site generator creates websites that are fast, secure, and simple to deploy. It is a strong choice for developers who prefer working with files and want full control over the final output.</p>
+<p>SSGs focus on performance and simplicity by generating everything before the site goes live.</p>
+</div>
+
+<link rel="stylesheet" href="/assets/css/pagination.css" />
+
+<!-- Pagination navigation -->
+<nav aria-label="pagination" id="pagination">
+    <ul class="pagination">
+        
+
+        <!-- Dynamic Markup Separator -->
+
+        
+
+        <!-- Posts navigation: previous and next -->
+
+        
+        <!-- Previous Post Link (only if there's a previous post) -->
+        <li>
+            <a class="post-link prev" role="button" href="/blog/what-is-a-cms-a-beginners-guide" aria-label="Go to the previous post">
+                <span aria-hidden="true">Older: What Is a CMS? A Beginner's Guide</span>
+                <span class="hidden">Go to the previous post</span>
+            </a>
+        </li>
+        
+
+        <!--Dynamic Markup Separator-->
+
+        
+        <!-- Next Post Link (only if there's a next post) -->
+        <li>
+            <a class="post-link next" role="button" href="/blog/what-is-coding-a-beginners-guide" aria-label="Go to the next post">
+                <span aria-hidden="true">Newer: What Is Coding? A Beginner's Guide</span>
+                <span class="hidden">Go to the next post</span>
+            </a>
+        </li>
+        
+    </ul>
+
+    
+</nav>
+
+<!---->
+
+
+
+    <!---->
+
+    
+</div>
+
+
+            <!---->
+            <div class="footer">
+    <p>Built with <a href="https://blog-doc.pages.dev/">Blog-Doc</a> · MIT License · Made by <a href="https://lebcit.github.io/">LebCit</a></p>
+<script>console.log("Hi")</script>
+    <!---->
+    
+</div>
+
+        </div>
+
+        <!---->
+        
+        <script src="/assets/vendors/highlight.min.js" onload="hljs.highlightAll()"></script>
+        
+
+        <script src="/assets/js/main.js"></script>
+    </body>
+</html>
