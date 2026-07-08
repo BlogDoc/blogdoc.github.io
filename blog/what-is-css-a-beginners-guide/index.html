@@ -1,320 +1,243 @@
 <!doctype html>
 <html lang="en">
     <head>
-    <!--Metadata-->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <meta name="description" content="Learn what CSS is, how it works, and why it's essential for styling websites. A simple beginner-friendly introduction to Cascading Style Sheets" />
-    
-
-    <!--Site icon-->
-    
-    <link rel="icon" href="/images/blog-doc-favicon.svg" />
-    
-
-    <!--Title-->
-    
-    <title>What Is CSS? A Beginner's Guide | Blog-Doc</title>
-    
-
-    <!--Stylesheets-->
-    <link rel="stylesheet" href="/assets/css/style.css" />
-    
-    <link rel="stylesheet" href="/assets/vendors/atom-one-dark.min.css" />
-    
-
-    <!--Custom head code-->
-    
-</head>
-
+        <!--Metadata-->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Learn what CSS is, how it works, and why it's essential for styling websites. A simple beginner-friendly introduction to Cascading Style Sheets"
+        />
+        <!--Site icon-->
+        <link rel="icon" href="/images/blog-doc-favicon.svg" />
+        <!--Title-->
+        <title>What Is CSS? A Beginner's Guide | Blog-Doc</title>
+        <!--Stylesheets-->
+        <link rel="stylesheet" href="/assets/css/style.css" />
+        <link rel="stylesheet" href="/assets/vendors/atom-one-dark.min.css" />
+        <!--Custom head code-->
+    </head>
     <body>
         <div id="layout" class="layout">
             <button id="menuToggle" class="menu-toggle">
-    <span></span>
-</button>
-
-<nav id="menu" class="menu">
-    <div class="menu-heading">Blog-Doc</div>
-
-    
-    <ul class="menu-list">
-        
-        <li class="menu-item  ">
-            <a href="/">
-                <i></i>
-                Home
-            </a>
-
-            
-        <!---->
-        
-        <li class="menu-item  ">
-            <a href="/documentation">
-                <i></i>
-                Documentation
-            </a>
-
-            
-        <!---->
-        
-        <li class="menu-item has-submenu ">
-            <a href="#">
-                <i></i>
-                Parent item
-            </a>
-
-            
-            <ul class="submenu menu-list" aria-hidden="true">
-                
-                <li class="menu-item">
-                    <a href="/404">
-                        <i></i>
-                        Child item
-                    </a>
-                </li>
-                
-            </ul>
-        </li>
-        
-        <!---->
-        
-        <li class="menu-item  ">
-            <a href="https://github.com/LebCit/blog-doc">
-                <i></i>
-                GitHub
-            </a>
-
-            
-        <!---->
-        
-        <li class="menu-item  ">
-            <a href="https://www.npmjs.com/package/create-blog-doc">
-                <i></i>
-                NPM
-            </a>
-
-            
-        <!---->
-        
-    </ul>
-    
-
-    <div class="theme-switch">
-        <span id="themeLabel">Dark Mode</span>
-        <label class="switch" for="themeSwitch">
-            <input type="checkbox" id="themeSwitch" aria-labelledby="themeLabel" />
-            <span class="slider"></span>
-        </label>
-    </div>
-</nav>
-
-
-            <!---->
-            
-<style>
-    .page-header {
-        background-image: url("/images/css-official-logo.svg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-    }
-    .page-header .overlay {
-        background-color: rgba(0, 0, 0, 0.5);
-    }
-    .page-header .overlay h1,
-    .page-header .overlay h2 {
-        color: #fff;
-    }
-    @media (min-width: 48em) {
-        .page-header .overlay {
-            display: inline-block;
-            width: 50%;
-        }
-    }
-    /* === Dark Mode Page Header Overlay === */
-    body.dark-mode .page-header .overlay {
-        background-color: rgba(255, 255, 255, 0.7); /* lighter overlay for dark bg */
-    }
-
-    body.dark-mode .page-header .overlay h1,
-    body.dark-mode .page-header .overlay h2 {
-        color: #333;
-    }
-</style>
-
-
-<!---->
-
-<div class="header page-header">
-    <div class="overlay">
-        <!-- Current page header title and description/subtitle -->
-        
-        <h1>What Is CSS? A Beginner's Guide</h1>
-        <h2>Learn how CSS styles web pages with colors, layouts, fonts, and responsive designs</h2>
-        
-    </div>
-</div>
-
-
-            <!---->
+                <span></span>
+            </button>
+            <nav id="menu" class="menu">
+                <div class="menu-heading">Blog-Doc</div>
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a href="/">
+                            <i></i>
+                            Home
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/documentation">
+                            <i></i>
+                            Documentation
+                        </a>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="#">
+                            <i></i>
+                            Parent item
+                        </a>
+                        <ul class="submenu menu-list" aria-hidden="true">
+                            <li class="menu-item">
+                                <a href="/404">
+                                    <i></i>
+                                    Child item
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="https://github.com/LebCit/blog-doc">
+                            <i></i>
+                            GitHub
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="https://www.npmjs.com/package/create-blog-doc">
+                            <i></i>
+                            NPM
+                        </a>
+                    </li>
+                </ul>
+                <div class="theme-switch">
+                    <span id="themeLabel">Dark Mode</span>
+                    <label class="switch" for="themeSwitch">
+                        <input type="checkbox" id="themeSwitch" aria-labelledby="themeLabel" />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </nav>
+            <style>
+                .page-header {
+                    background-image: url("/images/css-official-logo.svg");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                }
+                .page-header .overlay {
+                    background-color: rgba(0, 0, 0, 0.5);
+                }
+                .page-header .overlay h1,
+                .page-header .overlay h2 {
+                    color: #fff;
+                }
+                @media (min-width: 48em) {
+                    .page-header .overlay {
+                        display: inline-block;
+                        width: 50%;
+                    }
+                }
+                /* === Dark Mode Page Header Overlay === */
+                body.dark-mode .page-header .overlay {
+                    background-color: rgba(255, 255, 255, 0.7); /* lighter overlay for dark bg */
+                }
+                body.dark-mode .page-header .overlay h1,
+                body.dark-mode .page-header .overlay h2 {
+                    color: #333;
+                }
+            </style>
+            <div class="header page-header">
+                <div class="overlay">
+                    <!-- Current page header title and description/subtitle -->
+                    <h1>What Is CSS? A Beginner's Guide</h1>
+                    <h2>Learn how CSS styles web pages with colors, layouts, fonts, and responsive designs</h2>
+                </div>
+            </div>
             <div class="content">
-    
-    <!--The page to display the Markdown content of posts and pages.-->
-    
-<p class="post-meta">
-    <span>Posted on</span>
-    <span class="posted-on"><time class="post-date">2022-09-28</time></span>
-
-    
-    <!-- Start Post category -->
-    <br />
-    <span>Category:</span>
-    <a href="/categories/web-design-styling" class="post-tag">Web Design & Styling</a>
-    <!-- End Post category -->
-    
-
-    <!---->
-
-    
-    <!-- Start Post tag(s) -->
-    <br />
-    <span>Tagged:</span>
-    
-    <a href="/tags/css" class="post-tag">CSS</a>
-    
-    <a href="/tags/web-design" class="post-tag">Web Design</a>
-    
-    <a href="/tags/frontend" class="post-tag">Frontend</a>
-    
-    <a href="/tags/styling" class="post-tag">Styling</a>
-    
-    <a href="/tags/layout" class="post-tag">Layout</a>
-    
-    <a href="/tags/responsive-design" class="post-tag">Responsive Design</a>
-    
-    <a href="/tags/beginner" class="post-tag">Beginner</a>
-    
-    <!-- End Post tag(s) -->
-    
-</p>
-
-<div><h1>What Is CSS?</h1>
-<p>Now that you know HTML creates the structure of a webpage, it&#39;s time to learn about <strong>CSS</strong>.</p>
-<p><strong>CSS</strong> stands for <strong>Cascading Style Sheets</strong>. It is the language used to control how a webpage looks. With CSS, you can change colors, fonts, spacing, layouts, and much more.</p>
-<p>Think of it this way:</p>
-<ul>
-<li><strong>HTML</strong> creates the content and structure.</li>
-<li><strong>CSS</strong> controls the appearance.</li>
-<li><strong>JavaScript</strong> adds interactivity.</li>
-</ul>
-<p>Without CSS, websites would still work, but they would look very plain.</p>
-<h2>A Simple CSS Example</h2>
-<pre><code class="language-css">body {
+                <!--The page to display the Markdown content of posts and pages.-->
+                <p class="post-meta">
+                    <span>Posted on</span>
+                    <span class="posted-on"><time class="post-date">2022-09-28</time></span>
+                    <!-- Start Post category -->
+                    <br />
+                    <span>Category:</span>
+                    <a href="/categories/web-design-styling" class="post-tag">Web Design & Styling</a>
+                    <!-- End Post category -->
+                    <!-- Start Post tag(s) -->
+                    <br />
+                    <span>Tagged:</span>
+                    <a href="/tags/css" class="post-tag">CSS</a>
+                    <a href="/tags/web-design" class="post-tag">Web Design</a>
+                    <a href="/tags/frontend" class="post-tag">Frontend</a>
+                    <a href="/tags/styling" class="post-tag">Styling</a>
+                    <a href="/tags/layout" class="post-tag">Layout</a>
+                    <a href="/tags/responsive-design" class="post-tag">Responsive Design</a>
+                    <a href="/tags/beginner" class="post-tag">Beginner</a>
+                    <!-- End Post tag(s) -->
+                </p>
+                <div>
+                    <h1>What Is CSS?</h1>
+                    <p>
+                        Now that you know HTML creates the structure of a webpage, it&#39;s time to learn about
+                        <strong>CSS</strong>.
+                    </p>
+                    <p>
+                        <strong>CSS</strong> stands for <strong>Cascading Style Sheets</strong>. It is the language used
+                        to control how a webpage looks. With CSS, you can change colors, fonts, spacing, layouts, and
+                        much more.
+                    </p>
+                    <p>Think of it this way:</p>
+                    <ul>
+                        <li><strong>HTML</strong> creates the content and structure.</li>
+                        <li><strong>CSS</strong> controls the appearance.</li>
+                        <li><strong>JavaScript</strong> adds interactivity.</li>
+                    </ul>
+                    <p>Without CSS, websites would still work, but they would look very plain.</p>
+                    <h2>A Simple CSS Example</h2>
+                    <pre><code class="language-css">body {
   background-color: #f0f8ff;
   font-family: Arial, sans-serif;
 }
-
 h1 {
   color: #0078d4;
   text-align: center;
 }
-
 p {
   font-size: 18px;
   line-height: 1.5;
 }
 </code></pre>
-<p>This code does the following:</p>
-<ul>
-<li>Changes the page background color.</li>
-<li>Sets the font for the entire page.</li>
-<li>Centers the main heading and changes its color.</li>
-<li>Makes paragraphs easier to read by adjusting their size and spacing.</li>
-</ul>
-<h2>How HTML and CSS Work Together</h2>
-<p>CSS is usually stored in a separate file, often called <code>styles.css</code>.</p>
-<p>You connect it to your HTML page like this:</p>
-<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;
+                    <p>This code does the following:</p>
+                    <ul>
+                        <li>Changes the page background color.</li>
+                        <li>Sets the font for the entire page.</li>
+                        <li>Centers the main heading and changes its color.</li>
+                        <li>Makes paragraphs easier to read by adjusting their size and spacing.</li>
+                    </ul>
+                    <h2>How HTML and CSS Work Together</h2>
+                    <p>CSS is usually stored in a separate file, often called <code>styles.css</code>.</p>
+                    <p>You connect it to your HTML page like this:</p>
+                    <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;
 </code></pre>
-<p>This allows HTML to focus on the page&#39;s structure while CSS handles its design.</p>
-<h2>Why Learn CSS?</h2>
-<p>CSS allows you to:</p>
-<ul>
-<li>Create attractive and modern websites.</li>
-<li>Build responsive layouts for different screen sizes.</li>
-<li>Improve readability and user experience.</li>
-<li>Customize every part of a webpage&#39;s appearance.</li>
-</ul>
-<h2>Final Thoughts</h2>
-<p>CSS transforms a basic webpage into something visually appealing. It works alongside HTML to create websites that are both functional and enjoyable to use.</p>
-<p>Once you&#39;re comfortable with HTML and CSS, you&#39;ll be ready to learn JavaScript and make your webpages interactive.</p>
-</div>
-
-<link rel="stylesheet" href="/assets/css/pagination.css" />
-
-<!-- Pagination navigation -->
-<nav aria-label="pagination" id="pagination">
-    <ul class="pagination">
-        
-
-        <!-- Dynamic Markup Separator -->
-
-        
-
-        <!-- Posts navigation: previous and next -->
-
-        
-        <!-- Previous Post Link (only if there's a previous post) -->
-        <li>
-            <a class="post-link prev" role="button" href="/blog/what-is-html-a-beginners-guide" aria-label="Go to the previous post">
-                <span aria-hidden="true">Older: What Is HTML? A Beginner's Guide</span>
-                <span class="hidden">Go to the previous post</span>
-            </a>
-        </li>
-        
-
-        <!--Dynamic Markup Separator-->
-
-        
-        <!-- Next Post Link (only if there's a next post) -->
-        <li>
-            <a class="post-link next" role="button" href="/blog/what-is-javascript-a-beginners-guide" aria-label="Go to the next post">
-                <span aria-hidden="true">Newer: What Is JavaScript? A Beginner's Guide</span>
-                <span class="hidden">Go to the next post</span>
-            </a>
-        </li>
-        
-    </ul>
-
-    
-</nav>
-
-<!---->
-
-
-
-    <!---->
-
-    
-</div>
-
-
-            <!---->
+                    <p>This allows HTML to focus on the page&#39;s structure while CSS handles its design.</p>
+                    <h2>Why Learn CSS?</h2>
+                    <p>CSS allows you to:</p>
+                    <ul>
+                        <li>Create attractive and modern websites.</li>
+                        <li>Build responsive layouts for different screen sizes.</li>
+                        <li>Improve readability and user experience.</li>
+                        <li>Customize every part of a webpage&#39;s appearance.</li>
+                    </ul>
+                    <h2>Final Thoughts</h2>
+                    <p>
+                        CSS transforms a basic webpage into something visually appealing. It works alongside HTML to
+                        create websites that are both functional and enjoyable to use.
+                    </p>
+                    <p>
+                        Once you&#39;re comfortable with HTML and CSS, you&#39;ll be ready to learn JavaScript and make
+                        your webpages interactive.
+                    </p>
+                </div>
+                <link rel="stylesheet" href="/assets/css/pagination.css" />
+                <!-- Pagination navigation -->
+                <nav aria-label="pagination" id="pagination">
+                    <ul class="pagination">
+                        <!-- Dynamic Markup Separator -->
+                        <!-- Posts navigation: previous and next -->
+                        <!-- Previous Post Link (only if there's a previous post) -->
+                        <li>
+                            <a
+                                class="post-link prev"
+                                role="button"
+                                href="/blog/what-is-html-a-beginners-guide"
+                                aria-label="Go to the previous post"
+                            >
+                                <span aria-hidden="true">Older: What Is HTML? A Beginner's Guide</span>
+                                <span class="hidden">Go to the previous post</span>
+                            </a>
+                        </li>
+                        <!--Dynamic Markup Separator-->
+                        <!-- Next Post Link (only if there's a next post) -->
+                        <li>
+                            <a
+                                class="post-link next"
+                                role="button"
+                                href="/blog/what-is-javascript-a-beginners-guide"
+                                aria-label="Go to the next post"
+                            >
+                                <span aria-hidden="true">Newer: What Is JavaScript? A Beginner's Guide</span>
+                                <span class="hidden">Go to the next post</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
             <div class="footer">
-    <p>Built with <a href="https://blog-doc.pages.dev/">Blog-Doc</a> · MIT License · Made by <a href="https://lebcit.github.io/">LebCit</a></p>
-<script>console.log("Hi")</script>
-    <!---->
-    
-</div>
-
+                <p>
+                    Built with <a href="https://blog-doc.pages.dev/">Blog-Doc</a> · MIT License · Made by
+                    <a href="https://lebcit.github.io/">LebCit</a>
+                </p>
+                <script>
+                    console.log("Hi")
+                </script>
+            </div>
         </div>
-
-        <!---->
-        
         <script src="/assets/vendors/highlight.min.js" onload="hljs.highlightAll()"></script>
-        
-
         <script src="/assets/js/main.js"></script>
     </body>
 </html>

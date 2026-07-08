@@ -1,454 +1,322 @@
 <!doctype html>
 <html lang="en">
     <head>
-    <!--Metadata-->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <meta name="description" content="The simplest Node.js CMS and SSG!" />
-    
-
-    <!--Site icon-->
-    
-    <link rel="icon" href="/images/blog-doc-favicon.svg" />
-    
-
-    <!--Title-->
-    
-    <title>Blog | Blog-Doc</title>
-    
-
-    <!--Stylesheets-->
-    <link rel="stylesheet" href="/assets/css/style.css" />
-    
-
-    <!--Custom head code-->
-    
-</head>
-
+        <!--Metadata-->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="The simplest Node.js CMS and SSG!" />
+        <!--Site icon-->
+        <link rel="icon" href="/images/blog-doc-favicon.svg" />
+        <!--Title-->
+        <title>Blog | Blog-Doc</title>
+        <!--Stylesheets-->
+        <link rel="stylesheet" href="/assets/css/style.css" />
+        <!--Custom head code-->
+    </head>
     <body>
         <div id="layout" class="layout">
             <button id="menuToggle" class="menu-toggle">
-    <span></span>
-</button>
-
-<nav id="menu" class="menu">
-    <div class="menu-heading">Blog-Doc</div>
-
-    
-    <ul class="menu-list">
-        
-        <li class="menu-item  ">
-            <a href="/">
-                <i></i>
-                Home
-            </a>
-
-            
-        <!---->
-        
-        <li class="menu-item  ">
-            <a href="/documentation">
-                <i></i>
-                Documentation
-            </a>
-
-            
-        <!---->
-        
-        <li class="menu-item has-submenu ">
-            <a href="#">
-                <i></i>
-                Parent item
-            </a>
-
-            
-            <ul class="submenu menu-list" aria-hidden="true">
-                
-                <li class="menu-item">
-                    <a href="/404">
-                        <i></i>
-                        Child item
-                    </a>
-                </li>
-                
-            </ul>
-        </li>
-        
-        <!---->
-        
-        <li class="menu-item  ">
-            <a href="https://github.com/LebCit/blog-doc">
-                <i></i>
-                GitHub
-            </a>
-
-            
-        <!---->
-        
-        <li class="menu-item  ">
-            <a href="https://www.npmjs.com/package/create-blog-doc">
-                <i></i>
-                NPM
-            </a>
-
-            
-        <!---->
-        
-    </ul>
-    
-
-    <div class="theme-switch">
-        <span id="themeLabel">Dark Mode</span>
-        <label class="switch" for="themeSwitch">
-            <input type="checkbox" id="themeSwitch" aria-labelledby="themeLabel" />
-            <span class="slider"></span>
-        </label>
-    </div>
-</nav>
-
-
-            <!---->
-            
-
-<!---->
-
-<div class="header">
-    <div class="overlay">
-        <!-- Current page header title and description/subtitle -->
-        
-        <h1>Blog-Doc</h1>
-        <h2>The simplest Node.js CMS and SSG!</h2>
-        
-    </div>
-</div>
-
-
-            <!---->
+                <span></span>
+            </button>
+            <nav id="menu" class="menu">
+                <div class="menu-heading">Blog-Doc</div>
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a href="/">
+                            <i></i>
+                            Home
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/documentation">
+                            <i></i>
+                            Documentation
+                        </a>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="#">
+                            <i></i>
+                            Parent item
+                        </a>
+                        <ul class="submenu menu-list" aria-hidden="true">
+                            <li class="menu-item">
+                                <a href="/404">
+                                    <i></i>
+                                    Child item
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="https://github.com/LebCit/blog-doc">
+                            <i></i>
+                            GitHub
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="https://www.npmjs.com/package/create-blog-doc">
+                            <i></i>
+                            NPM
+                        </a>
+                    </li>
+                </ul>
+                <div class="theme-switch">
+                    <span id="themeLabel">Dark Mode</span>
+                    <label class="switch" for="themeSwitch">
+                        <input type="checkbox" id="themeSwitch" aria-labelledby="themeLabel" />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </nav>
+            <div class="header">
+                <div class="overlay">
+                    <!-- Current page header title and description/subtitle -->
+                    <h1>Blog-Doc</h1>
+                    <h2>The simplest Node.js CMS and SSG!</h2>
+                </div>
+            </div>
             <div class="content">
-    
-
-    <!---->
-    
-
-<link rel="stylesheet" href="/assets/css/post-preview.css" />
-
-
-<div class="blog-card">
-    <div class="meta">
-        <!--Display the featured image if any, otherwise fallback to a default one-->
-        
-        <div class="photo" style="background-image: url(/images/digital-profiles.avif)"></div>
-        
-
-        <ul class="details">
-            <li class="date"><span>2023-05-22</span></li>
-
-            
-            <li class="category">
-                <ul>
-                    <li>
-                        <a href="/categories/software-development-culture"><span>Software Development Culture</span></a>
-                    </li>
-                </ul>
-            </li>
-            
-
-            <!---->
-
-            
-            <li class="tags">
-                <ul>
-                    
-                    <li>
-                        <a href="/tags/developers"><span>Developers</span></a>
-                    </li>
-                    
-                    <li>
-                        <a href="/tags/programming"><span>Programming</span></a>
-                    </li>
-                    
-                    <li>
-                        <a href="/tags/software-engineering"><span>Software Engineering</span></a>
-                    </li>
-                    
-                    <li>
-                        <a href="/tags/open-source"><span>Open Source</span></a>
-                    </li>
-                    
-                    <li>
-                        <a href="/tags/tech-careers"><span>Tech Careers</span></a>
-                    </li>
-                    
-                    <li>
-                        <a href="/tags/coding-community"><span>Coding Community</span></a>
-                    </li>
-                    
-                    <li>
-                        <a href="/tags/web-development"><span>Web Development</span></a>
-                    </li>
-                    
-                </ul>
-            </li>
-            
-        </ul>
-    </div>
-
-    <div class="description">
-        <h2>
-            <a href="/blog/who-are-developers-a-beginners-guide" rel="bookmark">Who Are Developers? A Beginner's Guide</a>
-        </h2>
-
-        
-        <h3>Learn who developers are, what they do, and how they build the apps, websites, and tools we use every day</h3>
-        
-
-        <section>Who Are Developers? Developers are people who build and maintain software, websites, and applications. They write code that tells computers how to behave and what tasks to perform. They are responsibl…</section>
-
-        <p class="read-more">
-            <a
-                href="/blog/who-are-developers-a-beginners-guide"
-                aria-label="Read more about Who Are Developers? A Beginner's Guide"
-                tabindex="0"
-                role="button"
-                class="button-info"
-            >
-                Read the post
-            </a>
-        </p>
-    </div>
-</div>
-
-<hr />
-
-<div class="blog-card alt">
-    <div class="meta">
-        <!--Display the featured image if any, otherwise fallback to a default one-->
-        
-        <div class="photo" style="background-image: url(/images/terminal-icon.svg)"></div>
-        
-
-        <ul class="details">
-            <li class="date"><span>2023-04-19</span></li>
-
-            
-            <li class="category">
-                <ul>
-                    <li>
-                        <a href="/categories/programming-fundamentals"><span>Programming Fundamentals</span></a>
-                    </li>
-                </ul>
-            </li>
-            
-
-            <!---->
-
-            
-            <li class="tags">
-                <ul>
-                    
-                    <li>
-                        <a href="/tags/coding"><span>Coding</span></a>
-                    </li>
-                    
-                    <li>
-                        <a href="/tags/programming"><span>Programming</span></a>
-                    </li>
-                    
-                    <li>
-                        <a href="/tags/logic"><span>Logic</span></a>
-                    </li>
-                    
-                    <li>
-                        <a href="/tags/problem-solving"><span>Problem Solving</span></a>
-                    </li>
-                    
-                    <li>
-                        <a href="/tags/software-development"><span>Software Development</span></a>
-                    </li>
-                    
-                    <li>
-                        <a href="/tags/beginner"><span>Beginner</span></a>
-                    </li>
-                    
-                    <li>
-                        <a href="/tags/algorithms"><span>Algorithms</span></a>
-                    </li>
-                    
-                </ul>
-            </li>
-            
-        </ul>
-    </div>
-
-    <div class="description">
-        <h2>
-            <a href="/blog/what-is-coding-a-beginners-guide" rel="bookmark">What Is Coding? A Beginner's Guide</a>
-        </h2>
-
-        
-        <h3>Telling Computers What To Do</h3>
-        
-
-        <section>What Is Coding? Coding is the process of giving instructions to a computer so it can perform specific tasks. Computers do not understand human language. They only follow precise instructions written i…</section>
-
-        <p class="read-more">
-            <a
-                href="/blog/what-is-coding-a-beginners-guide"
-                aria-label="Read more about What Is Coding? A Beginner's Guide"
-                tabindex="0"
-                role="button"
-                class="button-info"
-            >
-                Read the post
-            </a>
-        </p>
-    </div>
-</div>
-
-<hr />
-
-<div class="blog-card">
-    <div class="meta">
-        <!--Display the featured image if any, otherwise fallback to a default one-->
-        
-        <div class="photo" style="background-image: url(/images/lightning-icon.svg)"></div>
-        
-
-        <ul class="details">
-            <li class="date"><span>2023-03-16</span></li>
-
-            
-            <li class="category">
-                <ul>
-                    <li>
-                        <a href="/categories/static-site-development"><span>Static Site Development</span></a>
-                    </li>
-                </ul>
-            </li>
-            
-
-            <!---->
-
-            
-        </ul>
-    </div>
-
-    <div class="description">
-        <h2>
-            <a href="/blog/what-is-an-ssg-a-beginners-guide" rel="bookmark">What Is an SSG? A Beginner's Guide</a>
-        </h2>
-
-        
-        <h3>Learn how static site generators build fast websites using pre-built HTML files and simple content workflows</h3>
-        
-
-        <section>What Is an SSG? A Static Site Generator (SSG) is a tool that builds websites by converting content into static HTML files. Instead of generating pages dynamically on a server, an SSG prepares all page…</section>
-
-        <p class="read-more">
-            <a
-                href="/blog/what-is-an-ssg-a-beginners-guide"
-                aria-label="Read more about What Is an SSG? A Beginner's Guide"
-                tabindex="0"
-                role="button"
-                class="button-info"
-            >
-                Read the post
-            </a>
-        </p>
-    </div>
-</div>
-
-<hr />
-
-
-<!---->
-
-
-<!-- Include pagination for taxonomies and blog -->
-<link rel="stylesheet" href="/assets/css/pagination.css" />
-
-<!-- Pagination navigation -->
-<nav aria-label="pagination" id="pagination">
-    <ul class="pagination">
-        
-        <!-- Older Posts (only if there's a next page) -->
-        <li>
-            <a href="/blog/page/5" title="Last page" aria-label="Go to the last page">
-                <span aria-hidden="true">
-                    <img src="/assets/images/chevrons-left.svg" alt="Last page" />
-                </span>
-                <span class="hidden">Last page</span>
-            </a>
-        </li>
-        <li>
-            <a class="button-default prev" href="/blog/page/3" aria-label="Older Posts">
-                <span aria-hidden="true">Older Posts</span>
-                <span class="hidden">Go to older posts</span>
-            </a>
-        </li>
-        
-
-        <!-- Dynamic Markup Separator -->
-
-        
-        <!-- Newer Posts (only if there's a previous page) -->
-        <li>            
-            <a class="button-default next" href="/blog" aria-label="Newer Posts">
-                <span aria-hidden="true">Newer Posts</span>
-                <span class="hidden">Go to newer posts</span>
-            </a>
-        </li>
-        <li>
-            <a href="/blog" title="First page" aria-label="Go to the first page">
-                <span aria-hidden="true">
-                    <img src="/assets/images/chevrons-right.svg" alt="Last page" />
-                </span>
-                <span class="hidden">First page</span>
-            </a>
-        </li>
-        
-
-        <!-- Posts navigation: previous and next -->
-
-        
-
-        <!--Dynamic Markup Separator-->
-
-        
-    </ul>
-
-    
-    <!-- Page information counter -->
-    <div class="page-info">
-        <span>Page 2 of 5</span>
-    </div>
-    
-</nav>
-
-<!---->
-
-
-    <!---->
-
-    
-</div>
-
-
-            <!---->
+                <link rel="stylesheet" href="/assets/css/post-preview.css" />
+                <div class="blog-card">
+                    <div class="meta">
+                        <!--Display the featured image if any, otherwise fallback to a default one-->
+                        <div class="photo" style="background-image: url(/images/digital-profiles.avif)"></div>
+                        <ul class="details">
+                            <li class="date"><span>2023-05-22</span></li>
+                            <li class="category">
+                                <ul>
+                                    <li>
+                                        <a href="/categories/software-development-culture"
+                                            ><span>Software Development Culture</span></a
+                                        >
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="tags">
+                                <ul>
+                                    <li>
+                                        <a href="/tags/developers"><span>Developers</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="/tags/programming"><span>Programming</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="/tags/software-engineering"><span>Software Engineering</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="/tags/open-source"><span>Open Source</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="/tags/tech-careers"><span>Tech Careers</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="/tags/coding-community"><span>Coding Community</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="/tags/web-development"><span>Web Development</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="description">
+                        <h2>
+                            <a href="/blog/who-are-developers-a-beginners-guide" rel="bookmark"
+                                >Who Are Developers? A Beginner's Guide</a
+                            >
+                        </h2>
+                        <h3>
+                            Learn who developers are, what they do, and how they build the apps, websites, and tools we
+                            use every day
+                        </h3>
+                        <section>
+                            Who Are Developers? Developers are people who build and maintain software, websites, and
+                            applications. They write code that tells computers how to behave and what tasks to perform.
+                            They are responsibl…
+                        </section>
+                        <p class="read-more">
+                            <a
+                                href="/blog/who-are-developers-a-beginners-guide"
+                                aria-label="Read more about Who Are Developers? A Beginner's Guide"
+                                tabindex="0"
+                                role="button"
+                                class="button-info"
+                            >
+                                Read the post
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <hr />
+                <div class="blog-card alt">
+                    <div class="meta">
+                        <!--Display the featured image if any, otherwise fallback to a default one-->
+                        <div class="photo" style="background-image: url(/images/terminal-icon.svg)"></div>
+                        <ul class="details">
+                            <li class="date"><span>2023-04-19</span></li>
+                            <li class="category">
+                                <ul>
+                                    <li>
+                                        <a href="/categories/programming-fundamentals"
+                                            ><span>Programming Fundamentals</span></a
+                                        >
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="tags">
+                                <ul>
+                                    <li>
+                                        <a href="/tags/coding"><span>Coding</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="/tags/programming"><span>Programming</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="/tags/logic"><span>Logic</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="/tags/problem-solving"><span>Problem Solving</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="/tags/software-development"><span>Software Development</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="/tags/beginner"><span>Beginner</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="/tags/algorithms"><span>Algorithms</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="description">
+                        <h2>
+                            <a href="/blog/what-is-coding-a-beginners-guide" rel="bookmark"
+                                >What Is Coding? A Beginner's Guide</a
+                            >
+                        </h2>
+                        <h3>Telling Computers What To Do</h3>
+                        <section>
+                            What Is Coding? Coding is the process of giving instructions to a computer so it can perform
+                            specific tasks. Computers do not understand human language. They only follow precise
+                            instructions written i…
+                        </section>
+                        <p class="read-more">
+                            <a
+                                href="/blog/what-is-coding-a-beginners-guide"
+                                aria-label="Read more about What Is Coding? A Beginner's Guide"
+                                tabindex="0"
+                                role="button"
+                                class="button-info"
+                            >
+                                Read the post
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <hr />
+                <div class="blog-card">
+                    <div class="meta">
+                        <!--Display the featured image if any, otherwise fallback to a default one-->
+                        <div class="photo" style="background-image: url(/images/lightning-icon.svg)"></div>
+                        <ul class="details">
+                            <li class="date"><span>2023-03-16</span></li>
+                            <li class="category">
+                                <ul>
+                                    <li>
+                                        <a href="/categories/static-site-development"
+                                            ><span>Static Site Development</span></a
+                                        >
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="description">
+                        <h2>
+                            <a href="/blog/what-is-an-ssg-a-beginners-guide" rel="bookmark"
+                                >What Is an SSG? A Beginner's Guide</a
+                            >
+                        </h2>
+                        <h3>
+                            Learn how static site generators build fast websites using pre-built HTML files and simple
+                            content workflows
+                        </h3>
+                        <section>
+                            What Is an SSG? A Static Site Generator (SSG) is a tool that builds websites by converting
+                            content into static HTML files. Instead of generating pages dynamically on a server, an SSG
+                            prepares all page…
+                        </section>
+                        <p class="read-more">
+                            <a
+                                href="/blog/what-is-an-ssg-a-beginners-guide"
+                                aria-label="Read more about What Is an SSG? A Beginner's Guide"
+                                tabindex="0"
+                                role="button"
+                                class="button-info"
+                            >
+                                Read the post
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <hr />
+                <!-- Include pagination for taxonomies and blog -->
+                <link rel="stylesheet" href="/assets/css/pagination.css" />
+                <!-- Pagination navigation -->
+                <nav aria-label="pagination" id="pagination">
+                    <ul class="pagination">
+                        <!-- Older Posts (only if there's a next page) -->
+                        <li>
+                            <a href="/blog/page/5" title="Last page" aria-label="Go to the last page">
+                                <span aria-hidden="true">
+                                    <img src="/assets/images/chevrons-left.svg" alt="Last page" />
+                                </span>
+                                <span class="hidden">Last page</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="button-default prev" href="/blog/page/3" aria-label="Older Posts">
+                                <span aria-hidden="true">Older Posts</span>
+                                <span class="hidden">Go to older posts</span>
+                            </a>
+                        </li>
+                        <!-- Dynamic Markup Separator -->
+                        <!-- Newer Posts (only if there's a previous page) -->
+                        <li>
+                            <a class="button-default next" href="/blog" aria-label="Newer Posts">
+                                <span aria-hidden="true">Newer Posts</span>
+                                <span class="hidden">Go to newer posts</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/blog" title="First page" aria-label="Go to the first page">
+                                <span aria-hidden="true">
+                                    <img src="/assets/images/chevrons-right.svg" alt="Last page" />
+                                </span>
+                                <span class="hidden">First page</span>
+                            </a>
+                        </li>
+                        <!-- Posts navigation: previous and next -->
+                        <!--Dynamic Markup Separator-->
+                    </ul>
+                    <!-- Page information counter -->
+                    <div class="page-info">
+                        <span>Page 2 of 5</span>
+                    </div>
+                </nav>
+            </div>
             <div class="footer">
-    <p>Built with <a href="https://blog-doc.pages.dev/">Blog-Doc</a> · MIT License · Made by <a href="https://lebcit.github.io/">LebCit</a></p>
-<script>console.log("Hi")</script>
-    <!---->
-    
-</div>
-
+                <p>
+                    Built with <a href="https://blog-doc.pages.dev/">Blog-Doc</a> · MIT License · Made by
+                    <a href="https://lebcit.github.io/">LebCit</a>
+                </p>
+                <script>
+                    console.log("Hi")
+                </script>
+            </div>
         </div>
-
-        <!---->
-        
-
         <script src="/assets/js/main.js"></script>
     </body>
 </html>
-
