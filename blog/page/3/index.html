@@ -11,7 +11,6 @@
         <title>Blog | Blog-Doc</title>
         <!--Stylesheets-->
         <link rel="stylesheet" href="/assets/css/style.css" />
-        <!--Custom head code-->
     </head>
     <body>
         <div id="layout" class="layout">
@@ -79,7 +78,7 @@
                 <link rel="stylesheet" href="/assets/css/post-preview.css" />
                 <div class="blog-card">
                     <div class="meta">
-                        <!--Display the featured image if any, otherwise fallback to a default one-->
+                        <!--Display the featured image if set-->
                         <div class="photo" style="background-image: url(/images/cube-icon.svg)"></div>
                         <ul class="details">
                             <li class="date"><span>2023-02-10</span></li>
@@ -147,7 +146,7 @@
                 <hr />
                 <div class="blog-card alt">
                     <div class="meta">
-                        <!--Display the featured image if any, otherwise fallback to a default one-->
+                        <!--Display the featured image if set-->
                         <div class="photo" style="background-image: url(/images/markdown-logo.svg)"></div>
                         <ul class="details">
                             <li class="date"><span>2023-01-08</span></li>
@@ -216,7 +215,7 @@
                 <hr />
                 <div class="blog-card">
                     <div class="meta">
-                        <!--Display the featured image if any, otherwise fallback to a default one-->
+                        <!--Display the featured image if set-->
                         <div class="photo" style="background-image: url(/images/nodejs-logo.svg)"></div>
                         <ul class="details">
                             <li class="date"><span>2022-12-05</span></li>
@@ -303,7 +302,6 @@
                                 <span class="hidden">Go to older posts</span>
                             </a>
                         </li>
-                        <!-- Dynamic Markup Separator -->
                         <!-- Newer Posts (only if there's a previous page) -->
                         <li>
                             <a class="button-default next" href="/blog/page/2" aria-label="Newer Posts">
@@ -319,8 +317,6 @@
                                 <span class="hidden">First page</span>
                             </a>
                         </li>
-                        <!-- Posts navigation: previous and next -->
-                        <!--Dynamic Markup Separator-->
                     </ul>
                     <!-- Page information counter -->
                     <div class="page-info">
